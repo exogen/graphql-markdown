@@ -1,6 +1,6 @@
 {
   "name": "graphql-markdown",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Generate documentation for your GraphQL schema in Markdown",
   "main": "src/index.js",
   "bin": "src/index.js",
