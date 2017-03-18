@@ -33,7 +33,7 @@ $ graphql-markdown --help
 
   Options:
 
-    --title <string>       Change the document title
+    --title <string>       Change the document title (default: 'Schema Types')
     --prologue <string>    Include custom Markdown at the beginning of the document
     --epilogue <string>    Include custom Markdown at the end of the document
 
