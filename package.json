@@ -7,6 +7,9 @@
   "repository": "git@github.com:exogen/graphql-markdown.git",
   "author": "Brian Beck <exogen@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "scripts": {
     "lint": "standard --verbose | snazzy",
     "lint:fix": "standard --verbose --fix | snazzy"
