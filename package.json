@@ -1,0 +1,24 @@
+{
+  "name": "graphql-markdown",
+  "version": "0.0.1",
+  "description": "Generate documentation for your GraphQL schema in Markdown",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "repository": "git@github.com:exogen/graphql-markdown.git",
+  "author": "Brian Beck <exogen@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "standard --verbose | snazzy",
+    "lint:fix": "standard --verbose --fix | snazzy"
+  },
+  "dependencies": {
+    "graphql": "^0.9.1",
+    "marked": "^0.3.6",
+    "minimist": "^1.2.0",
+    "node-fetch": "^1.6.3"
+  },
+  "devDependencies": {
+    "snazzy": "^6.0.0",
+    "standard": "^9.0.2"
+  }
+}
