@@ -1,6 +1,6 @@
 # graphql-markdown
 
-Generate Markdown docs for a GraphQL schema.
+Generate nice docs for your GraphQL schema right in your GitHub repository.
 
 ```sh
 npm install graphql-markdown --save-dev
