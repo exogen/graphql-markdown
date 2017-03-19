@@ -8,10 +8,6 @@ npm install graphql-markdown --save-dev
 
 **[See an example][example]** generated from the [graphbrainz][] schema.
 
-## Requirements
-
-Node 6+ (this project uses untranspiled ES2015 syntax, because why not).
-
 ## Usage
 
 Installing the package adds a `graphql-markdown` script. Point it at a schema
