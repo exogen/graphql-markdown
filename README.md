@@ -10,7 +10,7 @@ npm install graphql-markdown --save-dev
 
 ## Requirements
 
-Node 6+ (`graphql-markdown` uses untranspiled ES2015 syntax, because why not).
+Node 6+ (this project uses untranspiled ES2015 syntax, because why not).
 
 ## Usage
 
