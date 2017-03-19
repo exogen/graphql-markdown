@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+"use strict"
 const parseArgs = require('minimist')
 const loadSchemaJSON = require('./loadSchemaJSON')
 const renderSchema = require('./renderSchema')

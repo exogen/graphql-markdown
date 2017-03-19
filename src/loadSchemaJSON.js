@@ -1,10 +1,11 @@
+"use strict"
 const path = require('path')
 const fs = require('fs')
 const fetch = require('node-fetch')
-const { graphql, introspectionQuery, buildSchema } = require('graphql')
+const graphql = require('graphql')
 
 function schemaToJSON (schema) {
-  return graphql(schema, introspectionQuery).then(result => {
+  return graphql.graphql(schema, graphql.introspectionQuery).then(result => {
     return result.data
   })
 }
@@ -16,7 +17,7 @@ function fetchSchemaJSON (url) {
       Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ query: introspectionQuery })
+    body: JSON.stringify({ query: graphql.introspectionQuery })
   }).then(res => res.json()).then(result => result.data)
 }
 
@@ -27,7 +28,7 @@ function readFile (filename) {
 }
 
 function parseSchemaGraphQL (filename) {
-  return readFile(filename).then(data => buildSchema(data))
+  return readFile(filename).then(data => graphql.buildSchema(data))
 }
 
 function readSchemaJSON (filename) {

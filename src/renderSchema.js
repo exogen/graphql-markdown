@@ -1,3 +1,4 @@
+"use strict"
 const marked = require('marked')
 
 // Ideally, we could just spit out the existing description Markdown everywhere
@@ -37,7 +38,11 @@ function renderType (type) {
   return `[${type.name}](#${type.name.toLowerCase()})`
 }
 
-function renderObject (type, { skipTitle = false, printer = console.log } = {}) {
+function renderObject (type, options) {
+  options = options || {}
+  const skipTitle = options.skipTitle === true
+  const printer = options.printer || console.log
+
   if (!skipTitle) {
     printer(`\n### ${type.name}\n`)
   }
@@ -81,12 +86,13 @@ function renderObject (type, { skipTitle = false, printer = console.log } = {}) 
   printer('</tbody></table>')
 }
 
-function renderSchema (schema, {
-  title = 'Schema Types',
-  prologue = '',
-  epilogue = '',
-  printer = console.log
-} = {}) {
+function renderSchema (schema, options) {
+  options = options || {}
+  const title = options.title || 'Schema Types'
+  const prologue = options.prologue || ''
+  const epilogue = options.epilogue || ''
+  const printer = console.log
+
   if (schema.__schema) {
     schema = schema.__schema
   }
