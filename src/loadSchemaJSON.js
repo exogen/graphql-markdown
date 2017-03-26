@@ -1,16 +1,18 @@
-"use strict"
-const path = require('path')
+'use strict'
 const fs = require('fs')
 const fetch = require('node-fetch')
 const graphql = require('graphql')
+const resolveFrom = require('resolve-from')
 
-function schemaToJSON (schema) {
+const DEFAULT_GRAPHQL = graphql
+
+function schemaToJSON (schema, { graphql = DEFAULT_GRAPHQL } = {}) {
   return graphql.graphql(schema, graphql.introspectionQuery).then(result => {
     return result.data
   })
 }
 
-function fetchSchemaJSON (url) {
+function fetchSchemaJSON (url, { graphql = DEFAULT_GRAPHQL } = {}) {
   return fetch(url, {
     method: 'POST',
     headers: {
@@ -27,29 +29,44 @@ function readFile (filename) {
   })
 }
 
-function parseSchemaGraphQL (filename) {
+function parseSchemaGraphQL (filename, { graphq = DEFAULT_GRAPHQL }) {
   return readFile(filename).then(data => graphql.buildSchema(data))
 }
 
-function readSchemaJSON (filename) {
-  return readFile(filename).then(JSON.parse).then(data => {
-    if (data.queryType) {
-      return { __schema: data }
-    } else if (data.__schema) {
-      return data
-    } else if (data.data && data.data.__schema) {
-      return data.data
-    }
-    throw new Error(`Cannot find schema in ${filename}`)
-  })
-}
-
-function requireSchemaJSON (filename) {
-  let schema = require(path.resolve(filename))
-  if (schema.default) {
-    schema = schema.default
+function requireSchema (schemaPath) {
+  schemaPath = resolveFrom('.', schemaPath)
+  if (!schemaPath) {
+    throw new Error(`Could not resolve schema module: ${schemaPath}`)
   }
-  return Promise.resolve(schema)
+  let schema = require(schemaPath)
+  if (schema) {
+    if (schema.default) {
+      schema = schema.default
+    }
+    if (typeof schema === 'object' && schema.constructor !== Object) {
+      if (schema instanceof DEFAULT_GRAPHQL.GraphQLSchema) {
+        return schemaToJSON(schema)
+      }
+      const graphqlPath = resolveFrom(schemaPath, 'graphql')
+      if (!graphqlPath) {
+        throw new Error('Could not import the `graphql` instance used by the given schema')
+      }
+      const graphql = require(graphqlPath)
+      if (schema instanceof graphql.GraphQLSchema) {
+        return schemaToJSON(schema, { graphql })
+      }
+    } else if (schema.queryType) {
+      return Promise.resolve({ __schema: schema })
+    } else if (schema.__schema) {
+      return Promise.resolve(schema)
+    } else if (schema.data && schema.data.__schema) {
+      return Promise.resolve(schema.data)
+    }
+  }
+  throw new Error(
+    `Schema not found in ${schemaPath} - check that you are exporting ` +
+    `an instance of GraphQLSchema or the result of an introspection query`
+  )
 }
 
 function loadSchemaJSON (schemaPath) {
@@ -57,10 +74,8 @@ function loadSchemaJSON (schemaPath) {
     return fetchSchemaJSON(schemaPath)
   } else if (schemaPath.match(/\.g(raph)?ql$/)) {
     return parseSchemaGraphQL(schemaPath).then(schemaToJSON)
-  } else if (schemaPath.match(/\.json$/)) {
-    return readSchemaJSON(schemaPath)
   }
-  return requireSchemaJSON(schemaPath)
+  return requireSchema(schemaPath)
 }
 
 module.exports = loadSchemaJSON

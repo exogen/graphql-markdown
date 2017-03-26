@@ -18,7 +18,8 @@
     "graphql": "^0.9.1",
     "marked": "^0.3.6",
     "minimist": "^1.2.0",
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^1.6.3",
+    "resolve-from": "^2.0.0"
   },
   "devDependencies": {
     "snazzy": "^6.0.0",
