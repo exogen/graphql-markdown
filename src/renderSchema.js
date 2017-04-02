@@ -7,15 +7,20 @@ const marked = require('marked')
 // an HTML tag. So in some places (like descriptions of the types themselves) we
 // just output the raw description. In other places, like table cells, we need
 // to output pre-rendered Markdown, otherwise GitHub won't interpret it.
-marked.setOptions({
-  breaks: false
-})
+marked.setOptions({ gfm: true })
 
 function markdown (markup) {
-  return marked(markup || '')
-    .replace(/<\/p>\s*<p>/g, '<br><br>')
-    .replace(/<\/?p>/g, '')
+  let output = marked(markup || '')
+    // Join lines, unless the next line starts with a tag.
+    .replace(/\n(?!<)/g, ' ')
+    // Wrap after 80 characters.
+    .replace(/([^\n]{80,}?) /g, '$1\n')
     .trim()
+  // If there's only one paragraph, unwrap it.
+  if (output.lastIndexOf('<p>') === 0 && output.endsWith('</p>')) {
+    output = output.slice(3, -4)
+  }
+  return output
 }
 
 function sortBy (arr, property) {
