@@ -1,27 +1,4 @@
 'use strict'
-const marked = require('marked')
-
-// Ideally, we could just spit out the existing description Markdown everywhere
-// and leave it to be rendered by whatever processes the output. But some
-// Markdown renderers, including GitHub's, don't process Markdown if it's within
-// an HTML tag. So in some places (like descriptions of the types themselves) we
-// just output the raw description. In other places, like table cells, we need
-// to output pre-rendered Markdown, otherwise GitHub won't interpret it.
-marked.setOptions({ gfm: true })
-
-function markdown (markup) {
-  let output = marked(markup || '')
-    // Join lines, unless the next line starts with a tag.
-    .replace(/\n(?!<)/g, ' ')
-    // Wrap after 80 characters.
-    .replace(/([^\n]{80,}?) /g, '$1\n')
-    .trim()
-  // If there's only one paragraph, unwrap it.
-  if (output.lastIndexOf('<p>') === 0 && output.endsWith('</p>')) {
-    output = output.slice(3, -4)
-  }
-  return output
-}
 
 function sortBy (arr, property) {
   arr.sort((a, b) => {
@@ -40,7 +17,7 @@ function renderType (type) {
   if (type.kind === 'LIST') {
     return `[${renderType(type.ofType)}]`
   }
-  return `[${type.name}](#${type.name.toLowerCase()})`
+  return `<a href="#${type.name.toLowerCase()}">${type.name}</a>`
 }
 
 function renderObject (type, options) {
@@ -54,41 +31,56 @@ function renderObject (type, options) {
   if (type.description) {
     printer(`${type.description}\n`)
   }
-  printer('<table><thead>')
-  printer('  <tr>')
-  printer('    <th align="left">Field</th>')
-  printer('    <th align="right">Argument</th>')
-  printer('    <th align="left">Type</th>')
-  printer('    <th align="left">Description</th>')
-  printer('  </tr>')
-  printer('</thead><tbody>')
+  printer('<table>')
+  printer('<thead>')
+  printer('<tr>')
+  printer('<th align="left">Field</th>')
+  printer('<th align="right">Argument</th>')
+  printer('<th align="left">Type</th>')
+  printer('<th align="left">Description</th>')
+  printer('</tr>')
+  printer('</thead>')
+  printer('<tbody>')
   type.fields.forEach(field => {
-    printer('  <tr>')
-    printer(`    <td colspan="2" valign="top"><strong>${field.name}</strong>${field.isDeprecated ? ' ⚠️' : ''}</td>`)
-    printer(`    <td valign="top">${markdown(renderType(field.type))}</td>`)
-    printer('    <td>')
-    if (field.description) {
-      // If we were to print an empty, indented line here, the Markdown renderer
-      // would think the </td> is a code block.
-      printer(`${markdown(field.description)}`)
+    printer('<tr>')
+    printer(`<td colspan="2" valign="top"><strong>${field.name}</strong>${field.isDeprecated ? ' ⚠️' : ''}</td>`)
+    printer(`<td valign="top">${renderType(field.type)}</td>`)
+    if (field.description || field.isDeprecated) {
+      printer('<td>')
+      if (field.description) {
+        printer(`\n${field.description}\n`)
+      }
+      if (field.isDeprecated) {
+        printer('<p>⚠️ <strong>DEPRECATED</strong></p>')
+        if (field.deprecationReason) {
+          printer('<blockquote>')
+          printer(`\n${field.deprecationReason}\n`)
+          printer('</blockquote>')
+        }
+      }
+      printer('</td>')
+    } else {
+      printer('<td></td>')
     }
-    if (field.isDeprecated) {
-      printer('      <br/><br/><p>⚠️ <strong>DEPRECATED</strong></p>')
-      printer(`      <blockquote>${markdown(field.deprecationReason)}</blockquote>`)
-    }
-    printer('    </td>')
-    printer('  </tr>')
+    printer('</tr>')
     if (field.args.length) {
       field.args.forEach((arg, i) => {
-        printer('  <tr>')
-        printer(`    <td colspan="2" align="right" valign="top">${arg.name}</td>`)
-        printer(`    <td valign="top">${markdown(renderType(arg.type))}</td>`)
-        printer(`    <td>${markdown(arg.description)}</td>`)
-        printer('  </tr>')
+        printer('<tr>')
+        printer(`<td colspan="2" align="right" valign="top">${arg.name}</td>`)
+        printer(`<td valign="top">${renderType(arg.type)}</td>`)
+        if (arg.description) {
+          printer('<td>')
+          printer(`\n${arg.description}\n`)
+          printer('</td>')
+        } else {
+          printer(`<td></td>`)
+        }
+        printer('</tr>')
       })
     }
   })
-  printer('</tbody></table>')
+  printer('</tbody>')
+  printer('</table>')
 }
 
 function renderSchema (schema, options) {
@@ -154,27 +146,36 @@ function renderSchema (schema, options) {
     if (type.description) {
       printer(`${type.description}\n`)
     }
-    printer('<table><thead>')
-    printer('  <th align="left">Value</th>')
-    printer('  <th align="left">Description</th>')
-    printer('</thead><tbody>')
+    printer('<table>')
+    printer('<thead>')
+    printer('<th align="left">Value</th>')
+    printer('<th align="left">Description</th>')
+    printer('</thead>')
+    printer('<tbody>')
     type.enumValues.forEach(value => {
-      printer('  <tr>')
-      printer(`    <td valign="top"><strong>${value.name}</strong>${value.isDeprecated ? ' ⚠️' : ''}</td>`)
-      printer('    <td>')
-      if (value.description) {
-        // If we were to print an empty, indented line here, the Markdown renderer
-        // would think the </td> is a code block.
-        printer(`${markdown(value.description)}`)
+      printer('<tr>')
+      printer(`<td valign="top"><strong>${value.name}</strong>${value.isDeprecated ? ' ⚠️' : ''}</td>`)
+      if (value.description || value.isDeprecated) {
+        printer('<td>')
+        if (value.description) {
+          printer(`\n${value.description}\n`)
+        }
+        if (value.isDeprecated) {
+          printer('<p>⚠️ <strong>DEPRECATED</strong></p>')
+          if (value.deprecationReason) {
+            printer('<blockquote>')
+            printer(`\n${value.deprecationReason}\n`)
+            printer('</blockquote>')
+          }
+        }
+        printer('</td>')
+      } else {
+        printer('<td></td>')
       }
-      if (value.isDeprecated) {
-        printer('      <br/><br/><p>⚠️ <strong>DEPRECATED</strong></p>')
-        printer(`      <blockquote>${markdown(value.deprecationReason)}</blockquote>`)
-      }
-      printer('    </td>')
-      printer('  </tr>')
+      printer('</tr>')
     })
-    printer('</tbody></table>')
+    printer('</tbody>')
+    printer('</table>')
   })
 
   printer('\n## Scalars\n')

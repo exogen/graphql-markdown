@@ -64,13 +64,10 @@ Options:
 
 ## Output
 
-Output is optimized for display on GitHub, using GitHub's Markdown renderer.
+Output is optimized for display on GitHub, using GitHub Flavored Markdown.
 
-Due to the complexity of the tables in the generated document, much of the
-output is HTML (as allowed by Markdown). Some of your GraphQL descriptions may
-be printed as-is (for GitHub to render) while others are pre-rendered by
-`graphql-markdown` (if they need to be included in certain HTML tags – GitHub
-will not render such content as Markdown).
+Due to the complexity of the tables in the generated document, much of the table
+output is HTML (as allowed by Markdown).
 
 
 [example]: https://github.com/exogen/graphbrainz/blob/master/docs/types.md
