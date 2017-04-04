@@ -17,7 +17,6 @@
   "pre-commit": "lint",
   "dependencies": {
     "graphql": "^0.9.1",
-    "marked": "^0.3.6",
     "minimist": "^1.2.0",
     "node-fetch": "^1.6.3",
     "pre-commit": "^1.2.2",
