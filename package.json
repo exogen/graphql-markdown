@@ -12,17 +12,18 @@
   },
   "scripts": {
     "lint": "standard --verbose | snazzy",
-    "lint:fix": "standard --verbose --fix | snazzy"
+    "lint:fix": "standard --verbose --fix | snazzy",
+    "test": "npm run lint"
   },
   "pre-commit": "lint",
   "dependencies": {
     "graphql": "^0.9.1",
     "minimist": "^1.2.0",
     "node-fetch": "^1.6.3",
-    "pre-commit": "^1.2.2",
     "resolve-from": "^2.0.0"
   },
   "devDependencies": {
+    "pre-commit": "^1.2.2",
     "snazzy": "^6.0.0",
     "standard": "^9.0.2"
   }
