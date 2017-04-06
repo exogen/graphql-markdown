@@ -25,6 +25,6 @@
   "devDependencies": {
     "pre-commit": "^1.2.2",
     "snazzy": "^6.0.0",
-    "standard": "^9.0.2"
+    "standard": "^10.0.0"
   }
 }
