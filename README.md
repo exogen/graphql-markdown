@@ -1,5 +1,7 @@
 # graphql-markdown
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/exogen/graphql-markdown.svg)](https://greenkeeper.io/)
+
 Generate nice docs for your GraphQL schema right in your GitHub repository.
 
 ```sh
