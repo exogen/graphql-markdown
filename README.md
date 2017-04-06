@@ -1,3 +1,6 @@
+[![npm version](https://img.shields.io/npm/v/graphql-markdown.svg)](https://www.npmjs.com/package/graphql-markdown)
+[![Greenkeeper](https://badges.greenkeeper.io/exogen/graphql-markdown.svg)](https://greenkeeper.io/)
+
 # graphql-markdown
 
 Generate nice docs for your GraphQL schema right in your GitHub repository.
