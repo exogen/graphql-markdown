@@ -6,10 +6,10 @@
 Generate nice docs for your GraphQL schema right in your GitHub repository.
 
 ```console
-npm install graphql-markdown --save-dev
+$ npm install graphql-markdown --save-dev
 ```
 
-**[See an example][example]** generated from the [graphbrainz][] schema.
+**[See an example][example]** generated from the [GraphBrainz][] schema.
 
 ## Usage
 
