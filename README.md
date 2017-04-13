@@ -67,10 +67,9 @@ Options:
 
 ## Output
 
-Output is optimized for display on GitHub, using GitHub Flavored Markdown.
-
-Due to the complexity of the tables in the generated document, much of the table
-output is HTML (as allowed by Markdown).
+Output is optimized for display on GitHub, using GitHub Flavored Markdown. Due to the
+complexity of the tables in the generated document, much of the table output is raw HTML
+(as allowed by Markdown).
 
 
 [example]: https://github.com/exogen/graphbrainz/blob/master/docs/types.md
