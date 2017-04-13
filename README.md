@@ -5,7 +5,7 @@
 
 Generate nice docs for your GraphQL schema right in your GitHub repository.
 
-```sh
+```console
 npm install graphql-markdown --save-dev
 ```
 
@@ -18,31 +18,31 @@ and the output will be written to stdout.
 
 The schema may be retrieved from a GraphQL endpoint:
 
-```sh
+```console
 $ graphql-markdown http://your-server.com/graphql > schema.md
 ```
 
 …or a module exporting an instance of `GraphQLSchema`:
 
-```sh
+```console
 $ graphql-markdown ./path/to/schema.js > schema.md
 ```
 
 …or a file containing GraphQL syntax:
 
-```sh
+```console
 $ graphql-markdown ./path/to/schema.graphql > schema.md
 ```
 
 …or a file containing the JSON output of an introspection query:
 
-```sh
+```console
 $ graphql-markdown ./path/to/schema.json > schema.md
 ```
 
 ### Options
 
-```
+```console
 $ graphql-markdown --help
 Usage: graphql-markdown [options] <schema>
 
