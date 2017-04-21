@@ -88,7 +88,7 @@ function renderSchema (schema, options) {
   const title = options.title || 'Schema Types'
   const prologue = options.prologue || ''
   const epilogue = options.epilogue || ''
-  const printer = console.log
+  const printer = options.printer || console.log
 
   if (schema.__schema) {
     schema = schema.__schema
