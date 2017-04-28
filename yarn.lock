@@ -331,9 +331,9 @@ eslint-config-standard-jsx@4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-4.0.1.tgz#cd4e463d0268e2d9e707f61f42f73f5b3333c642"
 
-eslint-config-standard@10.2.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-10.2.0.tgz#9e5a495c32aae8aa8aeb580b703ef645a1765e9b"
+eslint-config-standard@10.2.1:
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-10.2.1.tgz#c061e4d066f379dc17cd562c64e819b4dd454591"
 
 eslint-import-resolver-node@^0.2.0:
   version "0.2.3"
@@ -580,9 +580,9 @@ graceful-fs@^4.1.2:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-graphql@^0.9.2:
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.9.2.tgz#2cb5c635de13f790a77c5879649cb401b1589386"
+graphql@^0.9.4:
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.9.4.tgz#04c8d5804139539995f2d9c3c97d8090dd1480fe"
   dependencies:
     iterall "1.0.3"
 
@@ -1131,12 +1131,12 @@ standard-json@^1.0.0:
   dependencies:
     concat-stream "^1.5.0"
 
-standard@^10.0.1:
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/standard/-/standard-10.0.1.tgz#99c1578fcca8d6f54ce8c2711f5452443e839082"
+standard@^10.0.2:
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/standard/-/standard-10.0.2.tgz#974c1c53cc865b075a4b576e78441e1695daaf7b"
   dependencies:
     eslint "~3.19.0"
-    eslint-config-standard "10.2.0"
+    eslint-config-standard "10.2.1"
     eslint-config-standard-jsx "4.0.1"
     eslint-plugin-import "~2.2.0"
     eslint-plugin-node "~4.2.2"
