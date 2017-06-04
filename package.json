@@ -17,10 +17,10 @@
   },
   "pre-commit": "lint",
   "dependencies": {
-    "graphql": "^0.9.4",
+    "graphql": "^0.10.1",
     "minimist": "^1.2.0",
-    "node-fetch": "^1.6.3",
-    "resolve-from": "^2.0.0"
+    "node-fetch": "^1.7.1",
+    "resolve-from": "^3.0.0"
   },
   "devDependencies": {
     "pre-commit": "^1.2.2",
