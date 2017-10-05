@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - "6"
+  - "8"
+
+# Use container-based Travis infrastructure.
+sudo: false
+
+branches:
+  only:
+    - master
+    - /^greenkeeper/.*$/
+
+script:
+  - yarn test
+
+after_success:
+  - yarn run coverage
