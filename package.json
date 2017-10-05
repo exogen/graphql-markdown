@@ -11,19 +11,26 @@
     "node": ">=4.0.0"
   },
   "scripts": {
+    "format": "npm run format:prettier && npm run format:standard",
+    "format:prettier": "prettier --write --no-semi --single-quote **/*.js",
+    "format:standard": "npm run lint:fix",
     "lint": "standard --verbose | snazzy",
     "lint:fix": "standard --verbose --fix | snazzy",
-    "test": "npm run lint"
+    "test": "npm run lint && npm run test:only",
+    "test:only": "ava",
+    "test:update": "ava --update-snapshot"
   },
-  "pre-commit": "lint",
+  "pre-commit": ["format", "lint"],
   "dependencies": {
-    "graphql": "^0.10.1",
+    "graphql": "^0.11.7",
     "minimist": "^1.2.0",
     "node-fetch": "^1.7.1",
-    "resolve-from": "^3.0.0"
+    "resolve-from": "^4.0.0"
   },
   "devDependencies": {
+    "ava": "^0.22.0",
     "pre-commit": "^1.2.2",
+    "prettier": "^1.7.4",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2"
   }

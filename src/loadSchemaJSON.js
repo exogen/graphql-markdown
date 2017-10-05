@@ -8,7 +8,11 @@ const DEFAULT_GRAPHQL = graphql
 
 function readFile (filename) {
   return new Promise((resolve, reject) => {
-    fs.readFile(filename, 'utf8', (err, data) => err ? reject(err) : resolve(data))
+    fs.readFile(
+      filename,
+      'utf8',
+      (err, data) => (err ? reject(err) : resolve(data))
+    )
   })
 }
 
@@ -30,7 +34,9 @@ function fetchSchemaJSON (url, options) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ query: graphql.introspectionQuery })
-  }).then(res => res.json()).then(result => result.data)
+  })
+    .then(res => res.json())
+    .then(result => result.data)
 }
 
 function parseSchemaGraphQL (filename, options) {
@@ -55,7 +61,9 @@ function requireSchema (schemaPath) {
       }
       const graphqlPath = resolveFrom(schemaModule, 'graphql')
       if (!graphqlPath) {
-        throw new Error('Could not import the `graphql` instance used by the given schema')
+        throw new Error(
+          'Could not import the `graphql` instance used by the given schema'
+        )
       }
       const graphql = require(graphqlPath)
       if (schema instanceof graphql.GraphQLSchema) {
@@ -71,7 +79,7 @@ function requireSchema (schemaPath) {
   }
   throw new Error(
     `Schema not found in ${schemaModule} - check that you are exporting ` +
-    `an instance of GraphQLSchema or the result of an introspection query`
+      `an instance of GraphQLSchema or the result of an introspection query`
   )
 }
 
