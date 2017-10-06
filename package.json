@@ -11,19 +11,33 @@
     "node": ">=4.0.0"
   },
   "scripts": {
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "format": "npm run format:prettier && npm run format:standard",
+    "format:prettier": "prettier --write --no-semi --single-quote **/*.js",
+    "format:standard": "npm run lint:fix",
     "lint": "standard --verbose | snazzy",
     "lint:fix": "standard --verbose --fix | snazzy",
-    "test": "npm run lint"
+    "test": "npm run lint && npm run test:coverage",
+    "test:coverage": "nyc ava",
+    "test:only": "ava",
+    "test:update": "ava --update-snapshot"
   },
-  "pre-commit": "lint",
+  "pre-commit": [
+    "format",
+    "lint"
+  ],
   "dependencies": {
-    "graphql": "^0.9.4",
+    "graphql": "^0.11.7",
     "minimist": "^1.2.0",
-    "node-fetch": "^1.6.3",
-    "resolve-from": "^2.0.0"
+    "node-fetch": "^1.7.1",
+    "resolve-from": "^4.0.0"
   },
   "devDependencies": {
+    "ava": "^0.22.0",
+    "coveralls": "^3.0.0",
+    "nyc": "^11.2.1",
     "pre-commit": "^1.2.2",
+    "prettier": "^1.7.4",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2"
   }
