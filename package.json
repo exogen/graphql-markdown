@@ -24,7 +24,7 @@
     "test": "npm run lint && npm run test:coverage",
     "test:coverage": "nyc ava",
     "test:only": "ava",
-    "test:update": "ava --update-snapshot"
+    "test:update": "ava --update-snapshots"
   },
   "pre-commit": [
     "format",
