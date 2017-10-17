@@ -105,7 +105,7 @@ function renderSchema (schema, options) {
   const typeMap = schema.types.reduce((typeMap, type) => {
     return Object.assign(typeMap, { [type.name]: type })
   }, {})
-  const getTypeURL = (type) => {
+  const getTypeURL = type => {
     const url = `#${type.name.toLowerCase()}`
     if (typeMap[type.name]) {
       return url
