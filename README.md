@@ -83,12 +83,17 @@ Given a schema JSON object (the output of the introspection query, an object
 with a `__schema` property), render the schema to the console or the provided
 `printer` function.
 
-| Option     | Description |
-| ---------- | ----------- |
-| `title`    | The title of the document, defaults to “Schema Types”. |
-| `prologue` | Markdown content to include after the title. |
-| `epilogue` | Markdown content to include at the end of the document. |
-| `printer`  | A function to handle each line of output, defaults to `console.log`. |
+##### Options
+
+* **`title`**: The title of the document, defaults to “Schema Types”.
+* **`prologue`**: Markdown content to include after the title.
+* **`epilogue`**: Markdown content to include at the end of the document.
+* **`printer`**: A function to handle each line of output, defaults to `console.log`.
+* **`unknownTypeURL`**: A string or function to determine the URL for linking to
+  types that aren’t found in the schema being rendered. This may be the case if
+  you’re rendering the result of `diffSchema()`, for example. String values will
+  have `#${type.name.toLowerCase()}` appended, and function values will be
+  called with the type object for full control.
 
 #### diffSchema(oldSchema: object, newSchema: object, options: object)
 
@@ -97,9 +102,10 @@ schemas), return a new schema JSON object containing only the added or updated
 types and fields. You can use this to document a schema update, or to document
 the effects of a schema extension (e.g. `extend type` definitions).
 
-| Option            | Description |
-| ----------------- | ----------- |
-| `processTypeDiff` | A function to add or modify fields on each type that will be output. |
+##### Options
+
+* **`processTypeDiff`**: A function to add or modify fields on each type that
+  will be output.
 
 ## Output
 

@@ -10,20 +10,22 @@ function sortBy (arr, property) {
   })
 }
 
-function renderType (type) {
+function renderType (type, options) {
   if (type.kind === 'NON_NULL') {
-    return renderType(type.ofType) + '!'
+    return renderType(type.ofType, options) + '!'
   }
   if (type.kind === 'LIST') {
-    return `[${renderType(type.ofType)}]`
+    return `[${renderType(type.ofType, options)}]`
   }
-  return `<a href="#${type.name.toLowerCase()}">${type.name}</a>`
+  const url = options.getTypeURL(type)
+  return url ? `<a href="${url}">${type.name}</a>` : type.name
 }
 
 function renderObject (type, options) {
   options = options || {}
   const skipTitle = options.skipTitle === true
   const printer = options.printer || console.log
+  const getTypeURL = options.getTypeURL
 
   if (!skipTitle) {
     printer(`\n### ${type.name}\n`)
@@ -48,7 +50,7 @@ function renderObject (type, options) {
         ? ' ⚠️'
         : ''}</td>`
     )
-    printer(`<td valign="top">${renderType(field.type)}</td>`)
+    printer(`<td valign="top">${renderType(field.type, { getTypeURL })}</td>`)
     if (field.description || field.isDeprecated) {
       printer('<td>')
       if (field.description) {
@@ -71,7 +73,7 @@ function renderObject (type, options) {
       field.args.forEach((arg, i) => {
         printer('<tr>')
         printer(`<td colspan="2" align="right" valign="top">${arg.name}</td>`)
-        printer(`<td valign="top">${renderType(arg.type)}</td>`)
+        printer(`<td valign="top">${renderType(arg.type, { getTypeURL })}</td>`)
         if (arg.description) {
           printer('<td>')
           printer(`\n${arg.description}\n`)
@@ -93,12 +95,26 @@ function renderSchema (schema, options) {
   const prologue = options.prologue || ''
   const epilogue = options.epilogue || ''
   const printer = options.printer || console.log
+  const unknownTypeURL = options.unknownTypeURL
 
   if (schema.__schema) {
     schema = schema.__schema
   }
 
   const types = schema.types.filter(type => !type.name.startsWith('__'))
+  const typeMap = schema.types.reduce((typeMap, type) => {
+    return Object.assign(typeMap, { [type.name]: type })
+  }, {})
+  const getTypeURL = (type) => {
+    const url = `#${type.name.toLowerCase()}`
+    if (typeMap[type.name]) {
+      return url
+    } else if (typeof unknownTypeURL === 'function') {
+      return unknownTypeURL(type)
+    } else if (unknownTypeURL) {
+      return unknownTypeURL + url
+    }
+  }
 
   const queryType = schema.queryType
   const query =
@@ -154,12 +170,12 @@ function renderSchema (schema, options) {
     printer(
       `\n## Query ${query.name === 'Query' ? '' : '(' + query.name + ')'}`
     )
-    renderObject(query, { skipTitle: true, printer })
+    renderObject(query, { skipTitle: true, printer, getTypeURL })
   }
 
   if (objects.length) {
     printer('\n## Objects')
-    objects.forEach(type => renderObject(type, { printer }))
+    objects.forEach(type => renderObject(type, { printer, getTypeURL }))
   }
 
   if (enums.length) {
@@ -218,7 +234,7 @@ function renderSchema (schema, options) {
 
   if (interfaces.length) {
     printer('\n## Interfaces\n')
-    interfaces.forEach(type => renderObject(type, { printer }))
+    interfaces.forEach(type => renderObject(type, { printer, getTypeURL }))
   }
 
   if (epilogue) {
