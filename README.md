@@ -80,7 +80,8 @@ result of the introspection query, suitable for use as input to `renderSchema`.
 #### renderSchema(schema: object, options: object)
 
 Given a schema JSON object (the output of the introspection query, an object
-with a `__schema` property), render the schema to a string.
+with a `__schema` property), render the schema to the console or the provided
+`printer` function.
 
 | Option     | Description |
 | ---------- | ----------- |
