@@ -13,6 +13,8 @@ $ npm install graphql-markdown --save-dev
 
 ## Usage
 
+### Command Line API
+
 Installing the package adds a `graphql-markdown` script. Point it at a schema
 and the output will be written to stdout.
 
@@ -40,7 +42,7 @@ $ graphql-markdown ./path/to/schema.graphql > schema.md
 $ graphql-markdown ./path/to/schema.json > schema.md
 ```
 
-### Options
+#### Options
 
 ```console
 $ graphql-markdown --help
@@ -64,6 +66,39 @@ Options:
                          module first (useful for e.g. babel-register)
   --version              Print version and exit
 ```
+
+### Node API
+
+The following functions are exported from the `graphql-markdown` module for
+programmatic use.
+
+#### loadSchemaJSON(schemaPath: string)
+
+Given a string pointing to a GraphQL schema (URL, module, or file path), get the
+result of the introspection query, suitable for use as input to `renderSchema`.
+
+#### renderSchema(schema: object, options: object)
+
+Given a schema JSON object (the output of the introspection query, an object
+with a `__schema` property), render the schema to a string.
+
+| Option     | Description |
+| ---------- | ----------- |
+| `title`    | The title of the document, defaults to “Schema Types”. |
+| `prologue` | Markdown content to include after the title. |
+| `epilogue` | Markdown content to include at the end of the document. |
+| `printer`  | A function to handle each line of output, defaults to `console.log`. |
+
+#### diffSchema(oldSchema: object, newSchema: object, options: object)
+
+Given two schema JSON objects (the results of the introspection query on two
+schemas), return a new schema JSON object containing only the added or updated
+types and fields. You can use this to document a schema update, or to document
+the effects of a schema extension (e.g. `extend type` definitions).
+
+| Option            | Description |
+| ----------------- | ----------- |
+| `processTypeDiff` | A function to add or modify fields on each type that will be output. |
 
 ## Output
 
