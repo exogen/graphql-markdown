@@ -4,6 +4,7 @@ const parseArgs = require('minimist')
 const resolveFrom = require('resolve-from')
 const loadSchemaJSON = require('./loadSchemaJSON')
 const renderSchema = require('./renderSchema')
+const diffSchema = require('./diffSchema')
 
 function safeExit (code) {
   process.on('exit', function () {
@@ -63,4 +64,8 @@ if (require.main === module) {
   }
 }
 
-module.exports = { loadSchemaJSON, renderSchema }
+module.exports = {
+  loadSchemaJSON,
+  renderSchema,
+  diffSchema
+}

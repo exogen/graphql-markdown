@@ -100,7 +100,9 @@ function renderSchema (schema, options) {
 
   const types = schema.types.filter(type => !type.name.startsWith('__'))
 
-  const query = types.filter(type => type.name === schema.queryType.name)[0]
+  const queryType = schema.queryType
+  const query =
+    queryType && types.find(type => type.name === schema.queryType.name)
   const objects = types.filter(type => type.kind === 'OBJECT' && type !== query)
   const enums = types.filter(type => type.kind === 'ENUM')
   const scalars = types.filter(type => type.kind === 'SCALAR')
@@ -119,83 +121,105 @@ function renderSchema (schema, options) {
 
   printer('<details>')
   printer('  <summary><strong>Table of Contents</strong></summary>\n')
-  printer('  * [Query](#query)')
-  printer('  * [Objects](#objects)')
-  objects.forEach(type => {
-    printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
-  })
-  printer('  * [Enums](#enums)')
-  enums.forEach(type => {
-    printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
-  })
-  printer('  * [Scalars](#scalars)')
-  scalars.forEach(type => {
-    printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
-  })
-  printer('  * [Interfaces](#interfaces)')
-  interfaces.forEach(type => {
-    printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
-  })
+  if (query) {
+    printer('  * [Query](#query)')
+  }
+  if (objects.length) {
+    printer('  * [Objects](#objects)')
+    objects.forEach(type => {
+      printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
+    })
+  }
+  if (enums.length) {
+    printer('  * [Enums](#enums)')
+    enums.forEach(type => {
+      printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
+    })
+  }
+  if (scalars.length) {
+    printer('  * [Scalars](#scalars)')
+    scalars.forEach(type => {
+      printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
+    })
+  }
+  if (interfaces.length) {
+    printer('  * [Interfaces](#interfaces)')
+    interfaces.forEach(type => {
+      printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
+    })
+  }
   printer('\n</details>')
 
-  printer(`\n## Query ${query.name === 'Query' ? '' : '(' + query.name + ')'}`)
-  renderObject(query, { skipTitle: true, printer })
+  if (query) {
+    printer(
+      `\n## Query ${query.name === 'Query' ? '' : '(' + query.name + ')'}`
+    )
+    renderObject(query, { skipTitle: true, printer })
+  }
 
-  printer('\n## Objects')
-  objects.forEach(type => renderObject(type, { printer }))
+  if (objects.length) {
+    printer('\n## Objects')
+    objects.forEach(type => renderObject(type, { printer }))
+  }
 
-  printer('\n## Enums')
-  enums.forEach(type => {
-    printer(`\n### ${type.name}\n`)
-    if (type.description) {
-      printer(`${type.description}\n`)
-    }
-    printer('<table>')
-    printer('<thead>')
-    printer('<th align="left">Value</th>')
-    printer('<th align="left">Description</th>')
-    printer('</thead>')
-    printer('<tbody>')
-    type.enumValues.forEach(value => {
-      printer('<tr>')
-      printer(
-        `<td valign="top"><strong>${value.name}</strong>${value.isDeprecated
-          ? ' ⚠️'
-          : ''}</td>`
-      )
-      if (value.description || value.isDeprecated) {
-        printer('<td>')
-        if (value.description) {
-          printer(`\n${value.description}\n`)
-        }
-        if (value.isDeprecated) {
-          printer('<p>⚠️ <strong>DEPRECATED</strong></p>')
-          if (value.deprecationReason) {
-            printer('<blockquote>')
-            printer(`\n${value.deprecationReason}\n`)
-            printer('</blockquote>')
-          }
-        }
-        printer('</td>')
-      } else {
-        printer('<td></td>')
+  if (enums.length) {
+    printer('\n## Enums')
+    enums.forEach(type => {
+      printer(`\n### ${type.name}\n`)
+      if (type.description) {
+        printer(`${type.description}\n`)
       }
-      printer('</tr>')
+      printer('<table>')
+      printer('<thead>')
+      printer('<th align="left">Value</th>')
+      printer('<th align="left">Description</th>')
+      printer('</thead>')
+      printer('<tbody>')
+      type.enumValues.forEach(value => {
+        printer('<tr>')
+        printer(
+          `<td valign="top"><strong>${value.name}</strong>${value.isDeprecated
+            ? ' ⚠️'
+            : ''}</td>`
+        )
+        if (value.description || value.isDeprecated) {
+          printer('<td>')
+          if (value.description) {
+            printer(`\n${value.description}\n`)
+          }
+          if (value.isDeprecated) {
+            printer('<p>⚠️ <strong>DEPRECATED</strong></p>')
+            if (value.deprecationReason) {
+              printer('<blockquote>')
+              printer(`\n${value.deprecationReason}\n`)
+              printer('</blockquote>')
+            }
+          }
+          printer('</td>')
+        } else {
+          printer('<td></td>')
+        }
+        printer('</tr>')
+      })
+      printer('</tbody>')
+      printer('</table>')
     })
-    printer('</tbody>')
-    printer('</table>')
-  })
+  }
 
-  printer('\n## Scalars\n')
-  scalars.forEach(type => {
-    printer(`### ${type.name}\n`)
-    if (type.description) {
-      printer(`${type.description}\n`)
-    }
-  })
+  if (scalars.length) {
+    printer('\n## Scalars\n')
+    scalars.forEach(type => {
+      printer(`### ${type.name}\n`)
+      if (type.description) {
+        printer(`${type.description}\n`)
+      }
+    })
+  }
 
-  printer('\n## Interfaces\n')
-  interfaces.forEach(type => renderObject(type, { printer }))
+  if (interfaces.length) {
+    printer('\n## Interfaces\n')
+    interfaces.forEach(type => renderObject(type, { printer }))
+  }
 
   if (epilogue) {
     printer(`\n${epilogue}`)
