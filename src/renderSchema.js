@@ -1,5 +1,4 @@
 'use strict'
-
 function sortBy (arr, property) {
   arr.sort((a, b) => {
     const aValue = a[property]
@@ -25,10 +24,11 @@ function renderObject (type, options) {
   options = options || {}
   const skipTitle = options.skipTitle === true
   const printer = options.printer || console.log
+  const headingLevel = options.headingLevel || 1
   const getTypeURL = options.getTypeURL
 
   if (!skipTitle) {
-    printer(`\n### ${type.name}\n`)
+    printer(`\n${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
   }
   if (type.description) {
     printer(`${type.description}\n`)
@@ -92,9 +92,11 @@ function renderObject (type, options) {
 function renderSchema (schema, options) {
   options = options || {}
   const title = options.title || 'Schema Types'
+  const skipTitle = options.skipTitle || false
   const prologue = options.prologue || ''
   const epilogue = options.epilogue || ''
   const printer = options.printer || console.log
+  const headingLevel = options.headingLevel || 1
   const unknownTypeURL = options.unknownTypeURL
 
   if (schema.__schema) {
@@ -129,7 +131,9 @@ function renderSchema (schema, options) {
   sortBy(scalars, 'name')
   sortBy(interfaces, 'name')
 
-  printer(`# ${title}\n`)
+  if (!skipTitle) {
+    printer(`${'#'.repeat(headingLevel)} ${title}\n`)
+  }
 
   if (prologue) {
     printer(`${prologue}\n`)
@@ -168,20 +172,24 @@ function renderSchema (schema, options) {
 
   if (query) {
     printer(
-      `\n## Query ${query.name === 'Query' ? '' : '(' + query.name + ')'}`
+      `\n${'#'.repeat(headingLevel + 1)} Query ${query.name === 'Query'
+        ? ''
+        : '(' + query.name + ')'}`
     )
-    renderObject(query, { skipTitle: true, printer, getTypeURL })
+    renderObject(query, { skipTitle: true, headingLevel, printer, getTypeURL })
   }
 
   if (objects.length) {
-    printer('\n## Objects')
-    objects.forEach(type => renderObject(type, { printer, getTypeURL }))
+    printer(`\n${'#'.repeat(headingLevel + 1)} Objects`)
+    objects.forEach(type =>
+      renderObject(type, { headingLevel, printer, getTypeURL })
+    )
   }
 
   if (enums.length) {
-    printer('\n## Enums')
+    printer(`\n${'#'.repeat(headingLevel + 1)} Enums`)
     enums.forEach(type => {
-      printer(`\n### ${type.name}\n`)
+      printer(`\n${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
       if (type.description) {
         printer(`${type.description}\n`)
       }
@@ -223,9 +231,9 @@ function renderSchema (schema, options) {
   }
 
   if (scalars.length) {
-    printer('\n## Scalars\n')
+    printer(`\n${'#'.repeat(headingLevel + 1)} Scalars\n`)
     scalars.forEach(type => {
-      printer(`### ${type.name}\n`)
+      printer(`${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
       if (type.description) {
         printer(`${type.description}\n`)
       }
@@ -233,8 +241,10 @@ function renderSchema (schema, options) {
   }
 
   if (interfaces.length) {
-    printer('\n## Interfaces\n')
-    interfaces.forEach(type => renderObject(type, { printer, getTypeURL }))
+    printer(`\n${'#'.repeat(headingLevel + 1)} Interfaces\n`)
+    interfaces.forEach(type =>
+      renderObject(type, { headingLevel, printer, getTypeURL })
+    )
   }
 
   if (epilogue) {
