@@ -4,6 +4,7 @@ const parseArgs = require('minimist')
 const resolveFrom = require('resolve-from')
 const loadSchemaJSON = require('./loadSchemaJSON')
 const renderSchema = require('./renderSchema')
+const updateSchema = require('./updateSchema')
 const diffSchema = require('./diffSchema')
 
 function safeExit (code) {
@@ -28,9 +29,14 @@ function printHelp () {
 
   Options:
 
-    --title <string>       Change the document title (default: 'Schema Types')
-    --prologue <string>    Include custom Markdown at the beginning of the document
-    --epilogue <string>    Include custom Markdown at the end of the document
+    --title <string>       Change the top heading title (default: 'Schema Types')
+    --no-title             Do not print a default title
+    --prologue <string>    Include custom Markdown after the title
+    --epilogue <string>    Include custom Markdown after everything else
+    --heading-level <num>  Heading level to begin at, useful if you are embedding the
+                           output in a document with other sections (default: 1)
+    --update-file <file>   Markdown document to update (between comment markers) or
+                           create (if the file does not exist)
     --require <module>     If importing the schema from a module, require the specified
                            module first (useful for e.g. babel-register)
     --version              Print version and exit
@@ -55,8 +61,39 @@ if (require.main === module) {
     }
     const schemaPath = args._[0]
     loadSchemaJSON(schemaPath).then(schema => {
-      renderSchema(schema, args)
-      safeExit(0) // Prevents error when writing to a pipe.
+      const options = {
+        title: args.title,
+        skipTitle: false,
+        prologue: args.prologue,
+        epilogue: args.epilogue,
+        headingLevel: args['heading-level']
+      }
+      if (options.title === false) {
+        options.title = ''
+        options.skipTitle = true
+      } else if (Array.isArray(options.title)) {
+        options.title.forEach(value => {
+          if (typeof value === 'string') {
+            options.title = value
+          } else if (value === false) {
+            options.skipTitle = true
+          }
+        })
+      }
+      const updateFile = args['update-file']
+      if (updateFile) {
+        updateSchema(updateFile, schema, options)
+          .then(() => {
+            safeExit(0)
+          })
+          .catch(err => {
+            console.error(err)
+            safeExit(1)
+          })
+      } else {
+        renderSchema(schema, options)
+        safeExit(0)
+      }
     })
   } else {
     printHelp()
@@ -67,5 +104,6 @@ if (require.main === module) {
 module.exports = {
   loadSchemaJSON,
   renderSchema,
+  updateSchema,
   diffSchema
 }

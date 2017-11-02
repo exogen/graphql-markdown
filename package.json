@@ -38,7 +38,7 @@
     "resolve-from": "^4.0.0"
   },
   "devDependencies": {
-    "ava": "^0.22.0",
+    "ava": "^0.23.0",
     "coveralls": "^3.0.0",
     "nyc": "^11.2.1",
     "pre-commit": "^1.2.2",

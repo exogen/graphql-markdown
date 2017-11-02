@@ -42,10 +42,18 @@ $ graphql-markdown ./path/to/schema.graphql > schema.md
 $ graphql-markdown ./path/to/schema.json > schema.md
 ```
 
+If `--update-file` is given, the generated Markdown will be output to the given
+file between the `<!-- START graphql-markdown -->` and `<!-- END graphql-markdown -->`
+comment markers instead of printed to STDOUT. If the file does not exist, it
+will be created (and will include the comment markers for future updates). Use
+this if you’d like to embed the rendered Markdown as just one section in a
+larger document.
+
 #### Options
 
 ```console
 $ graphql-markdown --help
+
 Usage: graphql-markdown [options] <schema>
 
 Output a Markdown document with rendered descriptions and links between types.
@@ -59,9 +67,14 @@ The schema may be specified as:
 
 Options:
 
-  --title <string>       Change the document title (default: 'Schema Types')
-  --prologue <string>    Include custom Markdown at the beginning of the document
-  --epilogue <string>    Include custom Markdown at the end of the document
+  --title <string>       Change the top heading title (default: 'Schema Types')
+  --no-title             Do not print a default title
+  --prologue <string>    Include custom Markdown after the title
+  --epilogue <string>    Include custom Markdown after everything else
+  --heading-level <num>  Heading level to begin at, useful if you are embedding the
+                         output in a document with other sections (default: 1)
+  --update-file <file>   Markdown document to update (between comment markers) or
+                         create (if the file does not exist)
   --require <module>     If importing the schema from a module, require the specified
                          module first (useful for e.g. babel-register)
   --version              Print version and exit
@@ -87,13 +100,28 @@ with a `__schema` property), render the schema to the console or the provided
 
 * **`title`**: The title of the document, defaults to “Schema Types”.
 * **`prologue`**: Markdown content to include after the title.
-* **`epilogue`**: Markdown content to include at the end of the document.
+* **`epilogue`**: Markdown content to include after everything else.
 * **`printer`**: A function to handle each line of output, defaults to `console.log`.
+* **`headingLevel`**: The initial heading level at which to render Markdown
+  sections in the output, defaults to 1. Use this if you are using `updateFile`
+  to embed the output in a larger document with other sections.
 * **`unknownTypeURL`**: A string or function to determine the URL for linking to
   types that aren’t found in the schema being rendered. This may be the case if
   you’re rendering the result of `diffSchema()`, for example. String values will
   have `#${type.name.toLowerCase()}` appended, and function values will be
   called with the type object for full control.
+
+#### updateSchema(path: string, schema: object, options: object)
+
+Given a path to a Markdown document, inject the output of `renderSchema` (with
+the given schema and options) into the document between the comment markers
+`<!-- START graphql-markdown -->` and `<!-- END graphql-markdown -->`. Returns a
+Promise.
+
+If the file does not exist, it will be created. If the document is empty, the
+necessary comment markers will automatically be inserted, but if there is
+existing content and no comment markers, the Promise will be rejected with an
+error.
 
 #### diffSchema(oldSchema: object, newSchema: object, options: object)
 
