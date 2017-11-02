@@ -46,8 +46,8 @@ If `--update-file` is given, the generated Markdown will be output to the given
 file between the `<!-- START graphql-markdown -->` and `<!-- END graphql-markdown -->`
 comment markers instead of printed to STDOUT. If the file does not exist, it
 will be created (and will include the comment markers for future updates). Use
-this if you’d like to embed the rendered Markdown as just one section in a
-larger document.
+this if you’d like to embed the rendered Markdown as just one part of a larger
+document (see also the `--heading-level` option).
 
 #### Options
 
