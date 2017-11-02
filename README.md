@@ -102,9 +102,9 @@ with a `__schema` property), render the schema to the console or the provided
 * **`prologue`**: Markdown content to include after the title.
 * **`epilogue`**: Markdown content to include after everything else.
 * **`printer`**: A function to handle each line of output, defaults to `console.log`.
-* **`headingLevel`**: The initial heading level at which to render Markdown
-  sections in the output, defaults to 1. Use this if you are using `updateFile`
-  to embed the output in a larger document with other sections.
+* **`headingLevel`**: The initial level at which to render Markdown headings in
+  the output, defaults to 1. Use this if you are using `updateSchema` to embed
+  the output in a larger document with other sections.
 * **`unknownTypeURL`**: A string or function to determine the URL for linking to
   types that aren’t found in the schema being rendered. This may be the case if
   you’re rendering the result of `diffSchema()`, for example. String values will
