@@ -1,7 +1,7 @@
 const fs = require('fs')
 const renderSchema = require('./renderSchema')
 
-function updateMarkdown (doc, newContent, options = {}) {
+function updateMarkdown(doc, newContent, options = {}) {
   const includeMarkers = options.includeMarkers !== false
   const startMarker = options.startMarker || '<!-- START graphql-markdown -->'
   const endMarker = options.endMarker || '<!-- END graphql-markdown -->'
@@ -23,7 +23,7 @@ function updateMarkdown (doc, newContent, options = {}) {
   }
 }
 
-function updateSchema (path, schema, options) {
+function updateSchema(path, schema, options) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf8', (err, doc) => {
       if (err) {

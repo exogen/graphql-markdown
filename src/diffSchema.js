@@ -1,7 +1,7 @@
 'use strict'
 const diff = require('deep-diff')
 
-function toNamedObject (arr, modifier = obj => obj) {
+function toNamedObject(arr, modifier = obj => obj) {
   if (!arr) {
     return {}
   }
@@ -11,7 +11,7 @@ function toNamedObject (arr, modifier = obj => obj) {
   }, {})
 }
 
-function toNamedArray (obj, modifier = obj => obj) {
+function toNamedArray(obj, modifier = obj => obj) {
   if (!obj) {
     return []
   }
@@ -20,7 +20,7 @@ function toNamedArray (obj, modifier = obj => obj) {
   })
 }
 
-function toDiffableSchema (schema) {
+function toDiffableSchema(schema) {
   const types = toNamedObject(schema.__schema.types, type => {
     if (type.fields) {
       type = Object.assign({}, type, {
@@ -45,7 +45,7 @@ function toDiffableSchema (schema) {
   })
 }
 
-function fromDiffableSchema (schema) {
+function fromDiffableSchema(schema) {
   const types = toNamedArray(schema.__schema.types, type => {
     if (type.fields) {
       type = Object.assign({}, type, {
@@ -70,7 +70,7 @@ function fromDiffableSchema (schema) {
   })
 }
 
-function diffSchema (oldSchema, newSchema, options) {
+function diffSchema(oldSchema, newSchema, options) {
   const oldDiffableSchema = toDiffableSchema(oldSchema)
   const newDiffableSchema = toDiffableSchema(newSchema)
   const changes = diff(oldDiffableSchema, newDiffableSchema)

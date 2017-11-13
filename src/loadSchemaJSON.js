@@ -6,7 +6,7 @@ const resolveFrom = require('resolve-from')
 
 const DEFAULT_GRAPHQL = graphql
 
-function readFile (filename) {
+function readFile(filename) {
   return new Promise((resolve, reject) => {
     fs.readFile(
       filename,
@@ -16,7 +16,7 @@ function readFile (filename) {
   })
 }
 
-function schemaToJSON (schema, options) {
+function schemaToJSON(schema, options) {
   options = options || {}
   const graphql = options.graphql || DEFAULT_GRAPHQL
   return graphql.graphql(schema, graphql.introspectionQuery).then(result => {
@@ -24,7 +24,7 @@ function schemaToJSON (schema, options) {
   })
 }
 
-function fetchSchemaJSON (url, options) {
+function fetchSchemaJSON(url, options) {
   options = options || {}
   const graphql = options.graphql || DEFAULT_GRAPHQL
   return fetch(url, {
@@ -39,13 +39,13 @@ function fetchSchemaJSON (url, options) {
     .then(result => result.data)
 }
 
-function parseSchemaGraphQL (filename, options) {
+function parseSchemaGraphQL(filename, options) {
   options = options || {}
   const graphql = options.graphql || DEFAULT_GRAPHQL
   return readFile(filename).then(data => graphql.buildSchema(data))
 }
 
-function requireSchema (schemaPath) {
+function requireSchema(schemaPath) {
   const schemaModule = resolveFrom('.', schemaPath)
   if (!schemaModule) {
     throw new Error(`Could not resolve schema module: ${schemaPath}`)
@@ -83,7 +83,7 @@ function requireSchema (schemaPath) {
   )
 }
 
-function loadSchemaJSON (schemaPath) {
+function loadSchemaJSON(schemaPath) {
   if (schemaPath.indexOf('://') >= 0) {
     return fetchSchemaJSON(schemaPath)
   } else if (schemaPath.match(/\.g(raph)?ql$/)) {

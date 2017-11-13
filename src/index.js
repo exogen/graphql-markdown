@@ -7,13 +7,13 @@ const renderSchema = require('./renderSchema')
 const updateSchema = require('./updateSchema')
 const diffSchema = require('./diffSchema')
 
-function safeExit (code) {
-  process.on('exit', function () {
+function safeExit(code) {
+  process.on('exit', function() {
     process.exit(code)
   })
 }
 
-function printHelp () {
+function printHelp() {
   const name = require('../package.json').name
   console.log(`
   Usage: ${name} [options] <schema>

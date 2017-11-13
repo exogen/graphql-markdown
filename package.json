@@ -16,20 +16,18 @@
   ],
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "format": "npm run format:prettier && npm run format:standard",
-    "format:prettier": "prettier --write --no-semi --single-quote **/*.js",
-    "format:standard": "npm run lint:fix",
-    "lint": "standard --verbose | snazzy",
-    "lint:fix": "standard --verbose --fix | snazzy",
+    "format": "npm run lint:fix || true",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "precommit": "lint-staged",
     "test": "npm run lint && npm run test:coverage",
     "test:coverage": "nyc ava",
     "test:only": "ava",
     "test:update": "ava --update-snapshots"
   },
-  "pre-commit": [
-    "format",
-    "lint"
-  ],
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
+  },
   "dependencies": {
     "deep-diff": "^0.3.8",
     "graphql": "^0.11.7",
@@ -40,10 +38,17 @@
   "devDependencies": {
     "ava": "^0.23.0",
     "coveralls": "^3.0.0",
+    "eslint": "^4.11.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^5.0.0",
     "nyc": "^11.3.0",
-    "pre-commit": "^1.2.2",
-    "prettier": "^1.8.2",
-    "snazzy": "^7.0.0",
-    "standard": "^10.0.2"
+    "prettier": "^1.8.2"
   }
 }

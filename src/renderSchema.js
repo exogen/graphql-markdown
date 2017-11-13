@@ -1,5 +1,5 @@
 'use strict'
-function sortBy (arr, property) {
+function sortBy(arr, property) {
   arr.sort((a, b) => {
     const aValue = a[property]
     const bValue = b[property]
@@ -9,7 +9,7 @@ function sortBy (arr, property) {
   })
 }
 
-function renderType (type, options) {
+function renderType(type, options) {
   if (type.kind === 'NON_NULL') {
     return renderType(type.ofType, options) + '!'
   }
@@ -20,7 +20,7 @@ function renderType (type, options) {
   return url ? `<a href="${url}">${type.name}</a>` : type.name
 }
 
-function renderObject (type, options) {
+function renderObject(type, options) {
   options = options || {}
   const skipTitle = options.skipTitle === true
   const printer = options.printer || console.log
@@ -46,9 +46,9 @@ function renderObject (type, options) {
   type.fields.forEach(field => {
     printer('<tr>')
     printer(
-      `<td colspan="2" valign="top"><strong>${field.name}</strong>${field.isDeprecated
-        ? ' ⚠️'
-        : ''}</td>`
+      `<td colspan="2" valign="top"><strong>${field.name}</strong>${
+        field.isDeprecated ? ' ⚠️' : ''
+      }</td>`
     )
     printer(`<td valign="top">${renderType(field.type, { getTypeURL })}</td>`)
     if (field.description || field.isDeprecated) {
@@ -89,7 +89,7 @@ function renderObject (type, options) {
   printer('</table>')
 }
 
-function renderSchema (schema, options) {
+function renderSchema(schema, options) {
   options = options || {}
   const title = options.title || 'Schema Types'
   const skipTitle = options.skipTitle || false
@@ -172,9 +172,9 @@ function renderSchema (schema, options) {
 
   if (query) {
     printer(
-      `\n${'#'.repeat(headingLevel + 1)} Query ${query.name === 'Query'
-        ? ''
-        : '(' + query.name + ')'}`
+      `\n${'#'.repeat(headingLevel + 1)} Query ${
+        query.name === 'Query' ? '' : '(' + query.name + ')'
+      }`
     )
     renderObject(query, { skipTitle: true, headingLevel, printer, getTypeURL })
   }
@@ -202,9 +202,9 @@ function renderSchema (schema, options) {
       type.enumValues.forEach(value => {
         printer('<tr>')
         printer(
-          `<td valign="top"><strong>${value.name}</strong>${value.isDeprecated
-            ? ' ⚠️'
-            : ''}</td>`
+          `<td valign="top"><strong>${value.name}</strong>${
+            value.isDeprecated ? ' ⚠️' : ''
+          }</td>`
         )
         if (value.description || value.isDeprecated) {
           printer('<td>')
