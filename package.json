@@ -29,7 +29,7 @@
     "*.js": ["eslint --fix", "git add"]
   },
   "dependencies": {
-    "deep-diff": "^0.3.8",
+    "deep-diff": "^1.0.0",
     "graphql": "^0.11.7",
     "minimist": "^1.2.0",
     "node-fetch": "^1.7.1",
