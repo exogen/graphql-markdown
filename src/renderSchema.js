@@ -121,7 +121,12 @@ function renderSchema(schema, options) {
   const queryType = schema.queryType
   const query =
     queryType && types.find(type => type.name === schema.queryType.name)
-  const objects = types.filter(type => type.kind === 'OBJECT' && type !== query)
+  const mutationType = schema.mutationType
+  const mutation =
+    mutationType && types.find(type => type.name === schema.mutationType.name)
+  const objects = types.filter(
+    type => type.kind === 'OBJECT' && type !== query && type !== mutation
+  )
   const enums = types.filter(type => type.kind === 'ENUM')
   const scalars = types.filter(type => type.kind === 'SCALAR')
   const interfaces = types.filter(type => type.kind === 'INTERFACE')
@@ -143,6 +148,9 @@ function renderSchema(schema, options) {
   printer('  <summary><strong>Table of Contents</strong></summary>\n')
   if (query) {
     printer('  * [Query](#query)')
+  }
+  if (mutation) {
+    printer('  * [Mutation](#mutation)')
   }
   if (objects.length) {
     printer('  * [Objects](#objects)')
@@ -177,6 +185,20 @@ function renderSchema(schema, options) {
       }`
     )
     renderObject(query, { skipTitle: true, headingLevel, printer, getTypeURL })
+  }
+
+  if (mutation) {
+    printer(
+      `\n${'#'.repeat(headingLevel + 1)} Mutation ${
+        mutation.name === 'Mutation' ? '' : '(' + mutation.name + ')'
+      }`
+    )
+    renderObject(mutation, {
+      skipTitle: true,
+      headingLevel,
+      printer,
+      getTypeURL
+    })
   }
 
   if (objects.length) {
