@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "deep-diff": "^1.0.1",
-    "graphql": "^0.13.2",
+    "graphql": "^14.0.0",
     "minimist": "^1.2.0",
     "node-fetch": "^2.2.0",
     "resolve-from": "^4.0.0"
