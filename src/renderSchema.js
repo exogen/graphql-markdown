@@ -26,6 +26,7 @@ function renderObject(type, options) {
   const printer = options.printer || console.log
   const headingLevel = options.headingLevel || 1
   const getTypeURL = options.getTypeURL
+  const isInputObject = type.kind === 'INPUT_OBJECT'
 
   if (!skipTitle) {
     printer(`\n${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
@@ -36,14 +37,20 @@ function renderObject(type, options) {
   printer('<table>')
   printer('<thead>')
   printer('<tr>')
-  printer('<th align="left">Field</th>')
-  printer('<th align="right">Argument</th>')
+  if (isInputObject) {
+    printer('<th colspan="2" align="left">Field</th>')
+  } else {
+    printer('<th align="left">Field</th>')
+    printer('<th align="right">Argument</th>')
+  }
   printer('<th align="left">Type</th>')
   printer('<th align="left">Description</th>')
   printer('</tr>')
   printer('</thead>')
   printer('<tbody>')
-  type.fields.forEach(field => {
+
+  const fields = isInputObject ? type.inputFields : type.fields
+  fields.forEach(field => {
     printer('<tr>')
     printer(
       `<td colspan="2" valign="top"><strong>${field.name}</strong>${
@@ -69,7 +76,7 @@ function renderObject(type, options) {
       printer('<td></td>')
     }
     printer('</tr>')
-    if (field.args.length) {
+    if (!isInputObject && field.args.length) {
       field.args.forEach((arg, i) => {
         printer('<tr>')
         printer(`<td colspan="2" align="right" valign="top">${arg.name}</td>`)
@@ -127,11 +134,13 @@ function renderSchema(schema, options) {
   const objects = types.filter(
     type => type.kind === 'OBJECT' && type !== query && type !== mutation
   )
+  const inputs = types.filter(type => type.kind === 'INPUT_OBJECT')
   const enums = types.filter(type => type.kind === 'ENUM')
   const scalars = types.filter(type => type.kind === 'SCALAR')
   const interfaces = types.filter(type => type.kind === 'INTERFACE')
 
   sortBy(objects, 'name')
+  sortBy(inputs, 'name')
   sortBy(enums, 'name')
   sortBy(scalars, 'name')
   sortBy(interfaces, 'name')
@@ -155,6 +164,12 @@ function renderSchema(schema, options) {
   if (objects.length) {
     printer('  * [Objects](#objects)')
     objects.forEach(type => {
+      printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
+    })
+  }
+  if (inputs.length) {
+    printer('  * [Inputs](#inputs)')
+    inputs.forEach(type => {
       printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
     })
   }
@@ -204,6 +219,13 @@ function renderSchema(schema, options) {
   if (objects.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Objects`)
     objects.forEach(type =>
+      renderObject(type, { headingLevel, printer, getTypeURL })
+    )
+  }
+
+  if (inputs.length) {
+    printer(`\n${'#'.repeat(headingLevel + 1)} Inputs`)
+    inputs.forEach(type =>
       renderObject(type, { headingLevel, printer, getTypeURL })
     )
   }
