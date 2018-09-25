@@ -32,7 +32,12 @@ function renderObject(type, options) {
     printer(`\n${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
   }
   if (type.description) {
-    printer(`${type.description}\n`)
+    // newlines in markdown require double returns
+    printer(`${type.description.replace(/\n/g, '\n\n')}\n`)
+  }
+  if (type.interfaces !== null && type.interfaces.length) {
+    const interfaces = type.interfaces.map(i => i.name).join(', ')
+    printer(`__Implements__: _${interfaces}_`)
   }
   printer('<table>')
   printer('<thead>')
