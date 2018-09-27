@@ -2,10 +2,11 @@ module.exports = {
   extends: ['standard', 'prettier', 'prettier/standard'],
   env: {
     es6: true,
-    node: true
+    node: true,
+    jest: true
   },
   parserOptions: {
-    ecmaVersion: 6
+    ecmaVersion: 2018
   },
   plugins: ['prettier'],
   rules: {

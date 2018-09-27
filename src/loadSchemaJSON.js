@@ -45,7 +45,7 @@ function parseSchemaGraphQL(filename, options) {
   return readFile(filename).then(data => graphql.buildSchema(data))
 }
 
-function requireSchema(schemaPath) {
+async function requireSchema(schemaPath) {
   const schemaModule = resolveFrom('.', schemaPath)
   if (!schemaModule) {
     throw new Error(`Could not resolve schema module: ${schemaPath}`)
@@ -55,6 +55,8 @@ function requireSchema(schemaPath) {
     if (schema.default) {
       schema = schema.default
     }
+    // Allow modules to export a Promise that resolves to a schema.
+    schema = await schema
     if (typeof schema === 'object' && schema.constructor !== Object) {
       if (schema instanceof DEFAULT_GRAPHQL.GraphQLSchema) {
         return schemaToJSON(schema)
@@ -70,11 +72,11 @@ function requireSchema(schemaPath) {
         return schemaToJSON(schema, { graphql })
       }
     } else if (schema.queryType) {
-      return Promise.resolve({ __schema: schema })
+      return { __schema: schema }
     } else if (schema.__schema) {
-      return Promise.resolve(schema)
+      return schema
     } else if (schema.data && schema.data.__schema) {
-      return Promise.resolve(schema.data)
+      return schema.data
     }
   }
   throw new Error(
@@ -92,4 +94,4 @@ function loadSchemaJSON(schemaPath) {
   return requireSchema(schemaPath)
 }
 
-module.exports = loadSchemaJSON
+module.exports = { loadSchemaJSON, schemaToJSON }
