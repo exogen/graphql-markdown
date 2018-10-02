@@ -195,8 +195,8 @@ function renderSchema(schema, options) {
 
   if (query) {
     printer(
-      `\n${'#'.repeat(headingLevel + 1)} Query ${
-        query.name === 'Query' ? '' : '(' + query.name + ')'
+      `\n${'#'.repeat(headingLevel + 1)} Query${
+        query.name === 'Query' ? '' : ' (' + query.name + ')'
       }`
     )
     renderObject(query, { skipTitle: true, headingLevel, printer, getTypeURL })
@@ -204,8 +204,8 @@ function renderSchema(schema, options) {
 
   if (mutation) {
     printer(
-      `\n${'#'.repeat(headingLevel + 1)} Mutation ${
-        mutation.name === 'Mutation' ? '' : '(' + mutation.name + ')'
+      `\n${'#'.repeat(headingLevel + 1)} Mutation${
+        mutation.name === 'Mutation' ? '' : ' (' + mutation.name + ')'
       }`
     )
     renderObject(mutation, {

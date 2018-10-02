@@ -92,7 +92,7 @@
 
 </details>
 
-## Query 
+## Query
 The query root, from which multiple types of MusicBrainz
 requests can be made.
 

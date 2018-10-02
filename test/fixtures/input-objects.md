@@ -16,7 +16,7 @@
 
 </details>
 
-## Query 
+## Query
 <table>
 <thead>
 <tr>
@@ -40,7 +40,7 @@
 </tbody>
 </table>
 
-## Mutation 
+## Mutation
 <table>
 <thead>
 <tr>

@@ -3,6 +3,7 @@ const fs = require('fs')
 const fetch = require('node-fetch')
 const graphql = require('graphql')
 const resolveFrom = require('resolve-from')
+const isPlainObject = require('lodash.isplainobject')
 
 const DEFAULT_GRAPHQL = graphql
 
@@ -57,7 +58,11 @@ async function requireSchema(schemaPath) {
     }
     // Allow modules to export a Promise that resolves to a schema.
     schema = await schema
-    if (typeof schema === 'object' && schema.constructor !== Object) {
+  }
+  // Getting `.default` and resolving a potential Promise may have resulted in
+  // `schema` not being an object anymore.
+  if (schema) {
+    if (!isPlainObject(schema)) {
       if (schema instanceof DEFAULT_GRAPHQL.GraphQLSchema) {
         return schemaToJSON(schema)
       }

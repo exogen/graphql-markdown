@@ -90,12 +90,9 @@ describe('updateSchema()', () => {
   const filename = tempy.file()
 
   it('adds schema and comment markers to file if it does not exist', async () => {
-    const {
-      initial,
-      graphql
-    } = await require('./fixtures/graphbrainz-updateSchema')
+    const initialSchema = await loadSchemaJSON('graphbrainz/schema.json')
 
-    await updateSchema(filename, initial, { graphql })
+    await updateSchema(filename, initialSchema)
     const actual = await readFile(filename)
     const expected = await readFile(
       './fixtures/graphbrainz-updateSchema-initial.md'
@@ -104,12 +101,8 @@ describe('updateSchema()', () => {
   })
 
   it('updates schema between comment markers in an existing file', async () => {
-    const {
-      updated,
-      graphql
-    } = await require('./fixtures/graphbrainz-updateSchema')
-
-    await updateSchema(filename, updated, { graphql })
+    const updatedSchema = await require('./fixtures/graphbrainz-updateSchema')
+    await updateSchema(filename, updatedSchema)
     const actual = await readFile(filename)
     const expected = await readFile(
       './fixtures/graphbrainz-updateSchema-updated.md'

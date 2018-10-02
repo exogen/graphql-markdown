@@ -6,29 +6,20 @@ const {
 const { schemaToJSON } = require('../../src/index')
 
 /**
- * Generate an `initial` and `updated` schema, to test running `updateSchema`
- * twice on the same file.
+ * Generate an update to the base GraphBrainz schema.
  */
-async function generateSchemas() {
+function generateSchema() {
   // Get the instance of `graphql` that `graphbrainz` sees.
   const graphql = require(resolveFrom(
     require.resolve('graphbrainz'),
     'graphql'
   ))
 
-  const initial = await schemaToJSON(graphBrainzSchema, { graphql })
-
   const extendedSchema = createSchema(graphBrainzSchema, {
     extensions: ['graphbrainz/extensions/cover-art-archive']
   })
 
-  const updated = await schemaToJSON(extendedSchema, { graphql })
-
-  return {
-    initial,
-    updated,
-    graphql
-  }
+  return schemaToJSON(extendedSchema, { graphql })
 }
 
-module.exports = generateSchemas()
+module.exports = generateSchema()
