@@ -40,6 +40,16 @@ describe('renderSchema()', () => {
     const expected = await readFile('./fixtures/graphbrainz.md')
     expect(printer.output).toBe(expected)
   })
+
+  it('supports Input Objects', async () => {
+    const schema = await loadSchemaJSON(
+      path.resolve(__dirname, './fixtures/input-objects.graphql')
+    )
+    const printer = createPrinter()
+    renderSchema(schema, { printer })
+    const expected = await readFile('./fixtures/input-objects.md')
+    expect(printer.output).toBe(expected)
+  })
 })
 
 describe('diffSchema()', () => {
