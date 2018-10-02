@@ -32,7 +32,6 @@ function renderObject(type, options) {
     printer(`\n${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
   }
   if (type.description) {
-    // newlines in markdown require double returns
     printer(`${type.description}\n`)
   }
   printer('<table>')
