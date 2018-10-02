@@ -33,11 +33,7 @@ function renderObject(type, options) {
   }
   if (type.description) {
     // newlines in markdown require double returns
-    printer(`${type.description.replace(/\n/g, '\n\n')}\n`)
-  }
-  if (type.interfaces !== null && type.interfaces.length) {
-    const interfaces = type.interfaces.map(i => i.name).join(', ')
-    printer(`__Implements__: _${interfaces}_`)
+    printer(`${type.description}\n`)
   }
   printer('<table>')
   printer('<thead>')
