@@ -70,7 +70,7 @@ function fromDiffableSchema(schema) {
   })
 }
 
-function diffSchema(oldSchema, newSchema, options) {
+function diffSchema(oldSchema, newSchema, options = {}) {
   const oldDiffableSchema = toDiffableSchema(oldSchema)
   const newDiffableSchema = toDiffableSchema(newSchema)
   const changes = diff(oldDiffableSchema, newDiffableSchema)

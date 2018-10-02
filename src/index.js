@@ -2,7 +2,7 @@
 'use strict'
 const parseArgs = require('minimist')
 const resolveFrom = require('resolve-from')
-const loadSchemaJSON = require('./loadSchemaJSON')
+const { loadSchemaJSON, schemaToJSON } = require('./loadSchemaJSON')
 const renderSchema = require('./renderSchema')
 const updateSchema = require('./updateSchema')
 const diffSchema = require('./diffSchema')
@@ -13,7 +13,7 @@ function safeExit(code) {
   })
 }
 
-function printHelp() {
+function printHelp(console) {
   const name = require('../package.json').name
   console.log(`
   Usage: ${name} [options] <schema>
@@ -43,11 +43,14 @@ function printHelp() {
 `)
 }
 
-if (require.main === module) {
-  const args = parseArgs(process.argv.slice(2))
+function run(
+  argv = process.argv.slice(2),
+  { console = global.console, exit = true } = {}
+) {
+  const args = parseArgs(argv)
 
   if (args.help) {
-    printHelp()
+    printHelp(console)
   } else if (args.version) {
     console.log(require('../package.json').version)
   } else if (args._.length === 1) {
@@ -84,26 +87,40 @@ if (require.main === module) {
       if (updateFile) {
         updateSchema(updateFile, schema, options)
           .then(() => {
-            safeExit(0)
+            if (exit) {
+              safeExit(0)
+            }
           })
           .catch(err => {
             console.error(err)
-            safeExit(1)
+            if (exit) {
+              safeExit(1)
+            }
           })
       } else {
         renderSchema(schema, options)
-        safeExit(0)
+        if (exit) {
+          safeExit(0)
+        }
       }
     })
   } else {
-    printHelp()
-    safeExit(1)
+    printHelp(console)
+    if (exit) {
+      safeExit(1)
+    }
   }
 }
 
 module.exports = {
+  run,
   loadSchemaJSON,
+  schemaToJSON,
   renderSchema,
   updateSchema,
   diffSchema
+}
+
+if (require.main === module) {
+  run()
 }
