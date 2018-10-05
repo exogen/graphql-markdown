@@ -1,8 +1,12 @@
-[![npm version](https://img.shields.io/npm/v/graphql-markdown.svg)](https://www.npmjs.com/package/graphql-markdown)
+<div align="center">
 
-# graphql-markdown
+#graphql-markdown
 
 **The easiest way to document your GraphQL schema.**
+
+[![npm version](https://img.shields.io/npm/v/graphql-markdown.svg)](https://www.npmjs.com/package/graphql-markdown)
+
+</div>
 
 This package will generate Markdown that beautifully renders your GraphQL schema
 in an easily explorable document.
