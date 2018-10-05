@@ -1,6 +1,6 @@
 <div align="center">
 
-#graphql-markdown
+# graphql-markdown
 
 **The easiest way to document your GraphQL schema.**
 
