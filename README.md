@@ -8,6 +8,8 @@
 
 </div>
 
+---
+
 This package will generate Markdown that beautifully renders your GraphQL schema
 in an easily explorable document.
 
