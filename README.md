@@ -2,9 +2,10 @@
 
 # graphql-markdown
 
-**The easiest way to document your GraphQL schema.** This package will generate
-a Markdown document to browse your GraphQL schema in a beautifully rendered and
-easily explorable way.
+**The easiest way to document your GraphQL schema.**
+
+This package will generate a Markdown document to browse your GraphQL schema
+in a beautifully rendered and easily explorable way.
 
 ```console
 $ npm install graphql-markdown --save-dev
