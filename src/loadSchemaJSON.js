@@ -25,15 +25,19 @@ function schemaToJSON(schema, options) {
   })
 }
 
-function fetchSchemaJSON(url, options) {
-  options = options || {}
-  const graphql = options.graphql || DEFAULT_GRAPHQL
+function fetchSchemaJSON(url, extraHeaders) {
+  const headers = {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  }
+  for (var key in extraHeaders) {
+    headers[key] = extraHeaders[key]
+  }
+
+  const graphql = DEFAULT_GRAPHQL
   return fetch(url, {
     method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    },
+    headers: headers,
     body: JSON.stringify({ query: graphql.introspectionQuery })
   })
     .then(res => res.json())
@@ -90,9 +94,9 @@ async function requireSchema(schemaPath) {
   )
 }
 
-function loadSchemaJSON(schemaPath) {
+function loadSchemaJSON(schemaPath, extraHeaders) {
   if (schemaPath.indexOf('://') >= 0) {
-    return fetchSchemaJSON(schemaPath)
+    return fetchSchemaJSON(schemaPath, extraHeaders)
   } else if (schemaPath.match(/\.g(raph)?ql$/)) {
     return parseSchemaGraphQL(schemaPath).then(schemaToJSON)
   }

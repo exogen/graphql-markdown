@@ -29,17 +29,19 @@ function printHelp(console) {
 
   Options:
 
-    --title <string>       Change the top heading title (default: 'Schema Types')
-    --no-title             Do not print a default title
-    --prologue <string>    Include custom Markdown after the title
-    --epilogue <string>    Include custom Markdown after everything else
-    --heading-level <num>  Heading level to begin at, useful if you are embedding the
-                           output in a document with other sections (default: 1)
-    --update-file <file>   Markdown document to update (between comment markers) or
-                           create (if the file does not exist)
-    --require <module>     If importing the schema from a module, require the specified
-                           module first (useful for e.g. babel-register)
-    --version              Print version and exit
+    --title <string>          Change the top heading title (default: 'Schema Types')
+    --no-title                Do not print a default title
+    --prologue <string>       Include custom Markdown after the title
+    --epilogue <string>       Include custom Markdown after everything else
+    --heading-level <num>     Heading level to begin at, useful if you are embedding the
+                              output in a document with other sections (default: 1)
+    --update-file <file>      Markdown document to update (between comment markers) or
+                              create (if the file does not exist)
+    --require <module>        If importing the schema from a module, require the specified
+                              module first (useful for e.g. babel-register)
+    --extra-headers <headers> json containing additional http headers to pass to the GraphQL
+                              endpoint. Example : '{"apiKey":"12345"}'
+    --version                 Print version and exit
 `)
 }
 
@@ -63,7 +65,11 @@ function run(
       }
     }
     const schemaPath = args._[0]
-    loadSchemaJSON(schemaPath).then(schema => {
+    var extraHeaders = {}
+    if (args['extra-headers']) {
+      extraHeaders = JSON.parse(args['extra-headers'])
+    }
+    loadSchemaJSON(schemaPath, extraHeaders).then(schema => {
       const options = {
         title: args.title,
         skipTitle: false,
