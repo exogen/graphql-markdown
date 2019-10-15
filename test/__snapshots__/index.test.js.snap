@@ -477,6 +477,14 @@ Object {
                            create (if the file does not exist)
     --require <module>     If importing the schema from a module, require the specified
                            module first (useful for e.g. babel-register)
+    --by-kind <boolean>    Split markdown by kind (default: false)
+                             - Query
+                             - Mutation
+                             - Objects
+                             - Inputs
+                             - Enums
+                             - Scalar
+                             - Interfaces
     --version              Print version and exit
 
 ",
@@ -510,6 +518,14 @@ Object {
                            create (if the file does not exist)
     --require <module>     If importing the schema from a module, require the specified
                            module first (useful for e.g. babel-register)
+    --by-kind <boolean>    Split markdown by kind (default: false)
+                             - Query
+                             - Mutation
+                             - Objects
+                             - Inputs
+                             - Enums
+                             - Scalar
+                             - Interfaces
     --version              Print version and exit
 
 ",

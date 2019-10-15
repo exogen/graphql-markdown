@@ -5,6 +5,7 @@ const resolveFrom = require('resolve-from')
 const { loadSchemaJSON, schemaToJSON } = require('./loadSchemaJSON')
 const renderSchema = require('./renderSchema')
 const updateSchema = require('./updateSchema')
+const updateSchemaByKind = require('./updateSchemaByKind')
 const diffSchema = require('./diffSchema')
 
 function safeExit(code) {
@@ -39,6 +40,14 @@ function printHelp(console) {
                            create (if the file does not exist)
     --require <module>     If importing the schema from a module, require the specified
                            module first (useful for e.g. babel-register)
+    --by-kind <boolean>    Split markdown by kind (default: false)
+                             - Query
+                             - Mutation
+                             - Objects
+                             - Inputs
+                             - Enums
+                             - Scalar
+                             - Interfaces
     --version              Print version and exit
 `)
 }
@@ -47,7 +56,10 @@ function run(
   argv = process.argv.slice(2),
   { console = global.console, exit = true } = {}
 ) {
-  const args = parseArgs(argv)
+  const args = parseArgs(argv, {
+    boolean: 'by-kind',
+    default: { 'by-kind': false }
+  })
 
   if (args.help) {
     printHelp(console)
@@ -97,6 +109,29 @@ function run(
               safeExit(1)
             }
           })
+      } else if (args['by-kind']) {
+        ;[
+          'Query.md',
+          'Mutation.md',
+          'Objects.md',
+          'InputObjects.md',
+          'Enums.md',
+          'Scalars.md',
+          'Interfaces.md'
+        ].forEach(item => {
+          updateSchemaByKind(item, schema, options)
+            .then(() => {
+              if (exit) {
+                safeExit(0)
+              }
+            })
+            .catch(err => {
+              console.error(err)
+              if (exit) {
+                safeExit(1)
+              }
+            })
+        })
       } else {
         renderSchema(schema, options)
         if (exit) {
