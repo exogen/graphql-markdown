@@ -1,12 +1,16 @@
 const fs = require('fs')
 const path = require('path')
 const tempy = require('tempy')
+const resolveFrom = require('resolve-from')
 const {
   run,
   loadSchemaJSON,
   renderSchema,
   updateSchema
 } = require('../src/index')
+
+jest.mock('node-fetch')
+const fetch = require('node-fetch')
 
 function createPrinter() {
   const printer = chunk => {
@@ -83,6 +87,24 @@ describe('loadSchemaJSON()', () => {
       path.resolve(__dirname, './fixtures/graphbrainz.graphql')
     )
     expect(graphqlFileSchema.__schema.queryType.name).toBe('Query')
+  })
+
+  it('can call fetch with correct parameters', async () => {
+    fetch.mockImplementation(() =>
+      Promise.resolve({
+        json: () => resolveFrom('.', 'graphbrainz/schema.json')
+      })
+    )
+
+    await loadSchemaJSON('http://example.com', {
+      headers: { key1: 'value1' }
+    })
+    expect(fetch.mock.calls[0][0]).toBe('http://example.com')
+    expect(fetch.mock.calls[0][1].headers).toEqual({
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      key1: 'value1'
+    })
   })
 })
 
