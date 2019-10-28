@@ -477,6 +477,8 @@ Object {
                            create (if the file does not exist)
     --require <module>     If importing the schema from a module, require the specified
                            module first (useful for e.g. babel-register)
+    --header <name=value>  Additional header(s) to use in GraphQL request
+                           e.g. --header \\"Authorization=Bearer ey...\\"
     --version              Print version and exit
 
 ",
@@ -510,6 +512,8 @@ Object {
                            create (if the file does not exist)
     --require <module>     If importing the schema from a module, require the specified
                            module first (useful for e.g. babel-register)
+    --header <name=value>  Additional header(s) to use in GraphQL request
+                           e.g. --header \\"Authorization=Bearer ey...\\"
     --version              Print version and exit
 
 ",
