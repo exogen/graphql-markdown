@@ -39,6 +39,8 @@ function printHelp(console) {
                            create (if the file does not exist)
     --require <module>     If importing the schema from a module, require the specified
                            module first (useful for e.g. babel-register)
+    --header <name=value>  Additional header(s) to use in GraphQL request
+                           e.g. --header "Authorization=Bearer ey..."
     --version              Print version and exit
 `)
 }
@@ -63,7 +65,13 @@ function run(
       }
     }
     const schemaPath = args._[0]
-    loadSchemaJSON(schemaPath).then(schema => {
+    const headers = [].concat(args['header'] || []).reduce((obj, header) => {
+      const [key, ...value] = String(header).split('=')
+      obj[key] = value.join('=')
+      return obj
+    }, {})
+    const loadOptions = { headers }
+    loadSchemaJSON(schemaPath, loadOptions).then(schema => {
       const options = {
         title: args.title,
         skipTitle: false,

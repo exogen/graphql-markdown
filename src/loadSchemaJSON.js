@@ -32,7 +32,8 @@ function fetchSchemaJSON(url, options) {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      ...options.headers
     },
     body: JSON.stringify({ query: graphql.introspectionQuery })
   })
@@ -90,9 +91,9 @@ async function requireSchema(schemaPath) {
   )
 }
 
-function loadSchemaJSON(schemaPath) {
+function loadSchemaJSON(schemaPath, loadOptions) {
   if (schemaPath.indexOf('://') >= 0) {
-    return fetchSchemaJSON(schemaPath)
+    return fetchSchemaJSON(schemaPath, loadOptions)
   } else if (schemaPath.match(/\.g(raph)?ql$/)) {
     return parseSchemaGraphQL(schemaPath).then(schemaToJSON)
   }
