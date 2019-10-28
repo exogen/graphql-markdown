@@ -66,8 +66,8 @@ function run(
     }
     const schemaPath = args._[0]
     const headers = [].concat(args['header'] || []).reduce((obj, header) => {
-      const [key, value] = String(header).split('=', 2)
-      obj[key] = value
+      const [key, ...value] = String(header).split('=')
+      obj[key] = value.join('=')
       return obj
     }, {})
     const loadOptions = { headers }
