@@ -85,6 +85,8 @@ Options:
                          create (if the file does not exist)
   --require <module>     If importing the schema from a module, require the specified
                          module first (useful for e.g. babel-register)
+  --header <name=value>  Additional header(s) to use in GraphQL request
+                         e.g. --header "Authorization=Bearer ey..."
   --version              Print version and exit
 ```
 
@@ -93,7 +95,7 @@ Options:
 The following functions are exported from the `graphql-markdown` module for
 programmatic use.
 
-#### loadSchemaJSON(schemaPath: string)
+#### loadSchemaJSON(schemaPath: string, options: object)
 
 Given a string pointing to a GraphQL schema (URL, module, or file path), get the
 result of the introspection query, suitable for use as input to `renderSchema`.
