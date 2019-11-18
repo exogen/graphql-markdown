@@ -54,6 +54,16 @@ describe('renderSchema()', () => {
     const expected = await readFile('./fixtures/input-objects.md')
     expect(printer.output).toBe(expected)
   })
+
+  it('supports no rendering of table of contents', async () => {
+    const schema = await loadSchemaJSON(
+      path.resolve(__dirname, './fixtures/input-objects.graphql')
+    )
+    const printer = createPrinter()
+    renderSchema(schema, { printer, skipTableOfContents: true })
+    const expected = await readFile('./fixtures/no-toc.md')
+    expect(printer.output).toBe(expected)
+  })
 })
 
 describe('diffSchema()', () => {
