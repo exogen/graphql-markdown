@@ -113,7 +113,8 @@ with a `__schema` property), render the schema to the console or the provided
 * **`prologue`**: Markdown content to include after the title.
 * **`epilogue`**: Markdown content to include after everything else.
 * **`printer`**: A function to handle each line of output, defaults to `console.log`.
-* **`skipTableOfContents`**: When set, rendering of "Table of contents" section is skipped
+* **`skipTableOfContents`**: When set, rendering of "Table of contents" section
+  is skipped.
 * **`headingLevel`**: The initial level at which to render Markdown headings in
   the output, defaults to 1. Use this if you are using `updateSchema` to embed
   the output in a larger document with other sections.
