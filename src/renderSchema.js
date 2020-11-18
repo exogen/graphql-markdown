@@ -61,13 +61,13 @@ function renderObject(type, options) {
     if (field.description || field.isDeprecated) {
       printer('<td>')
       if (field.description) {
-        printer(`\n${field.description}\n`)
+        printer(`${field.description}`)
       }
       if (field.isDeprecated) {
         printer('<p>⚠️ <strong>DEPRECATED</strong></p>')
         if (field.deprecationReason) {
           printer('<blockquote>')
-          printer(`\n${field.deprecationReason}\n`)
+          printer(`${field.deprecationReason}`)
           printer('</blockquote>')
         }
       }
@@ -83,7 +83,7 @@ function renderObject(type, options) {
         printer(`<td valign="top">${renderType(arg.type, { getTypeURL })}</td>`)
         if (arg.description) {
           printer('<td>')
-          printer(`\n${arg.description}\n`)
+          printer(`${arg.description}`)
           printer('</td>')
         } else {
           printer(`<td></td>`)
@@ -256,13 +256,13 @@ function renderSchema(schema, options) {
         if (value.description || value.isDeprecated) {
           printer('<td>')
           if (value.description) {
-            printer(`\n${value.description}\n`)
+            printer(`${value.description}`)
           }
           if (value.isDeprecated) {
             printer('<p>⚠️ <strong>DEPRECATED</strong></p>')
             if (value.deprecationReason) {
               printer('<blockquote>')
-              printer(`\n${value.deprecationReason}\n`)
+              printer(`${value.deprecationReason}`)
               printer('</blockquote>')
             }
           }
