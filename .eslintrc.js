@@ -12,10 +12,6 @@ module.exports = {
   rules: {
     'prettier/prettier': [
       'warn',
-      {
-        singleQuote: true,
-        semi: false
-      }
     ]
   }
 }
