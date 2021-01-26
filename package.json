@@ -16,7 +16,8 @@
   ],
   "scripts": {
     "coverage": "cat coverage/lcov.info | coveralls",
-    "format": "npm run lint:fix || true",
+    "format": "npm run lint:fix && npm run prettier || true",
+    "prettier": "prettier src/** test/** --write",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "npm run lint && npm run test:coverage",
