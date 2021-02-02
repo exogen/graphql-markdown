@@ -20,9 +20,11 @@ function readFile(filename) {
 function schemaToJSON(schema, options) {
   options = options || {}
   const graphql = options.graphql || DEFAULT_GRAPHQL
-  return graphql.graphql(schema, graphql.introspectionQuery).then(result => {
-    return result.data
-  })
+  return graphql
+    .graphql(schema, graphql.getIntrospectionQuery())
+    .then(result => {
+      return result.data
+    })
 }
 
 function fetchSchemaJSON(url, options) {
@@ -35,7 +37,7 @@ function fetchSchemaJSON(url, options) {
       'Content-Type': 'application/json',
       ...options.headers
     },
-    body: JSON.stringify({ query: graphql.introspectionQuery })
+    body: JSON.stringify({ query: graphql.getIntrospectionQuery() })
   })
     .then(res => res.json())
     .then(result => result.data)
