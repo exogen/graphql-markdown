@@ -14,6 +14,7 @@ This package will generate Markdown that beautifully renders your GraphQL schema
 in an easily explorable document.
 
 ```console
+$ yarn add graphql-markdown --dev
 $ npm install graphql-markdown --save-dev
 ```
 
@@ -24,7 +25,9 @@ $ npm install graphql-markdown --save-dev
 ### Command Line API
 
 Installing the package adds a `graphql-markdown` script. Point it at a schema
-and the output will be written to stdout.
+and the output will be written to stdout. You must install `graphql` alongside
+this package according to the
+[compatible versions specified in `peerDependencies`](./package.json).
 
 The schema may be retrieved from a GraphQL endpoint:
 
@@ -51,11 +54,12 @@ $ graphql-markdown ./path/to/schema.json > schema.md
 ```
 
 If `--update-file` is given, the generated Markdown will be output to the given
-file between the `<!-- START graphql-markdown -->` and `<!-- END graphql-markdown -->`
-comment markers instead of printed to STDOUT. If the file does not exist, it
-will be created (and will include the comment markers for future updates). Use
-this if you’d like to embed the rendered Markdown as just one part of a larger
-document (see also the `--heading-level` option).
+file between the `<!-- START graphql-markdown -->` and
+`<!-- END graphql-markdown -->` comment markers instead of printed to STDOUT. If
+the file does not exist, it will be created (and will include the comment
+markers for future updates). Use this if you’d like to embed the rendered
+Markdown as just one part of a larger document (see also the `--heading-level`
+option).
 
 #### Options
 
@@ -109,16 +113,17 @@ with a `__schema` property), render the schema to the console or the provided
 
 ##### Options
 
-* **`title`**: The title of the document, defaults to “Schema Types”.
-* **`prologue`**: Markdown content to include after the title.
-* **`epilogue`**: Markdown content to include after everything else.
-* **`printer`**: A function to handle each line of output, defaults to `console.log`.
-* **`skipTableOfContents`**: When set, rendering of "Table of contents" section
+- **`title`**: The title of the document, defaults to “Schema Types”.
+- **`prologue`**: Markdown content to include after the title.
+- **`epilogue`**: Markdown content to include after everything else.
+- **`printer`**: A function to handle each line of output, defaults to
+  `console.log`.
+- **`skipTableOfContents`**: When set, rendering of "Table of contents" section
   is skipped.
-* **`headingLevel`**: The initial level at which to render Markdown headings in
+- **`headingLevel`**: The initial level at which to render Markdown headings in
   the output, defaults to 1. Use this if you are using `updateSchema` to embed
   the output in a larger document with other sections.
-* **`unknownTypeURL`**: A string or function to determine the URL for linking to
+- **`unknownTypeURL`**: A string or function to determine the URL for linking to
   types that aren’t found in the schema being rendered. This may be the case if
   you’re rendering the result of `diffSchema()`, for example. String values will
   have `#${type.name.toLowerCase()}` appended, and function values will be
@@ -145,15 +150,14 @@ the effects of a schema extension (e.g. `extend type` definitions).
 
 ##### Options
 
-* **`processTypeDiff`**: A function to add or modify fields on each type that
+- **`processTypeDiff`**: A function to add or modify fields on each type that
   will be output.
 
 ## Output
 
-Output is optimized for display on GitHub, using GitHub Flavored Markdown. Due to the
-complexity of the tables in the generated document, much of the table output is raw HTML
-(as allowed by Markdown).
-
+Output is optimized for display on GitHub, using GitHub Flavored Markdown. Due
+to the complexity of the tables in the generated document, much of the table
+output is raw HTML (as allowed by Markdown).
 
 [example]: https://github.com/exogen/graphbrainz/blob/master/docs/types.md
 [graphbrainz]: https://github.com/exogen/graphbrainz
