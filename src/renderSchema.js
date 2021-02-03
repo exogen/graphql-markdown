@@ -139,12 +139,14 @@ function renderSchema(schema, options) {
   const enums = types.filter(type => type.kind === 'ENUM')
   const scalars = types.filter(type => type.kind === 'SCALAR')
   const interfaces = types.filter(type => type.kind === 'INTERFACE')
+  const unions = types.filter(type => type.kind === 'UNION')
 
   sortBy(objects, 'name')
   sortBy(inputs, 'name')
   sortBy(enums, 'name')
   sortBy(scalars, 'name')
   sortBy(interfaces, 'name')
+  sortBy(unions, 'name')
 
   if (!skipTitle) {
     printer(`${'#'.repeat(headingLevel)} ${title}\n`)
@@ -190,6 +192,12 @@ function renderSchema(schema, options) {
     if (interfaces.length) {
       printer('  * [Interfaces](#interfaces)')
       interfaces.forEach(type => {
+        printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
+      })
+    }
+    if (unions.length) {
+      printer('  * [Unions](#unions)')
+      unions.forEach(type => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
       })
     }
@@ -292,6 +300,40 @@ function renderSchema(schema, options) {
     interfaces.forEach(type =>
       renderObject(type, { headingLevel, printer, getTypeURL })
     )
+  }
+
+  if (unions.length) {
+    printer(`\n${'#'.repeat(headingLevel + 1)} Unions`)
+    unions.forEach(type => {
+      printer(`\n${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
+      if (type.description) {
+        printer(`${type.description}\n`)
+      }
+      printer('<table>')
+      printer('<thead>')
+      printer('<th align="left">Type</th>')
+      printer('<th align="left">Description</th>')
+      printer('</thead>')
+      printer('<tbody>')
+      type.possibleTypes.forEach(objType => {
+        const obj = objects.find(o => objType.name === o.name)
+        const desc = objType.description || (obj && obj.description)
+        printer('<tr>')
+        printer(
+          `<td valign="top"><strong>${renderType(objType, {
+            getTypeURL
+          })}</strong></td>`
+        )
+        if (desc) {
+          printer(`<td valign="top">${desc}</td>`)
+        } else {
+          printer('<td></td>')
+        }
+        printer('</tr>')
+      })
+      printer('</tbody>')
+      printer('</table>')
+    })
   }
 
   if (epilogue) {

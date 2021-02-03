@@ -64,6 +64,16 @@ describe('renderSchema()', () => {
     const expected = await readFile('./fixtures/no-toc.md')
     expect(printer.output).toBe(expected)
   })
+
+  it('supports unions', async () => {
+    const schema = await loadSchemaJSON(
+      path.resolve(__dirname, './fixtures/union-test.graphql')
+    )
+    const printer = createPrinter()
+    renderSchema(schema, { printer })
+    const expected = await readFile('./fixtures/union-test.md')
+    expect(printer.output).toBe(expected)
+  })
 })
 
 describe('diffSchema()', () => {

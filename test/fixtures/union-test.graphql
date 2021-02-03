@@ -1,0 +1,30 @@
+"A human being"
+type Person {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String
+  age: Int
+  dob: String
+}
+
+"A group of persons working together for a purpose"
+type Organization {
+  "Node ID"
+  id: ID!
+  "Name of the organization"
+  name: String!
+  "Main contact email address"
+  email: String
+  "Date the organization was founded"
+  founded: String
+  "The CEO"
+  ceo: Person
+}
+
+"Either a person or an organization"
+union Party = Person | Organization
+
+type Query {
+  party(id: ID!): Party
+}
