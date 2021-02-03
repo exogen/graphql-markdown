@@ -8,7 +8,7 @@ const updateSchema = require('./updateSchema')
 const diffSchema = require('./diffSchema')
 
 function safeExit(code) {
-  process.on('exit', function() {
+  process.on('exit', function () {
     process.exit(code)
   })
 }
@@ -72,20 +72,20 @@ function run(
       return obj
     }, {})
     const loadOptions = { headers }
-    loadSchemaJSON(schemaPath, loadOptions).then(schema => {
+    loadSchemaJSON(schemaPath, loadOptions).then((schema) => {
       const options = {
         title: args.title,
         skipTitle: false,
         prologue: args.prologue,
         epilogue: args.epilogue,
         skipTableOfContents: args['toc'] === false,
-        headingLevel: args['heading-level']
+        headingLevel: args['heading-level'],
       }
       if (options.title === false) {
         options.title = ''
         options.skipTitle = true
       } else if (Array.isArray(options.title)) {
-        options.title.forEach(value => {
+        options.title.forEach((value) => {
           if (typeof value === 'string') {
             options.title = value
           } else if (value === false) {
@@ -101,7 +101,7 @@ function run(
               safeExit(0)
             }
           })
-          .catch(err => {
+          .catch((err) => {
             console.error(err)
             if (exit) {
               safeExit(1)
@@ -128,7 +128,7 @@ module.exports = {
   schemaToJSON,
   renderSchema,
   updateSchema,
-  diffSchema
+  diffSchema,
 }
 
 if (require.main === module) {

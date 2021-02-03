@@ -34,7 +34,7 @@ function updateSchema(path, schema, options) {
         }
       }
       let newContent = ''
-      const printer = line => {
+      const printer = (line) => {
         newContent += `${line}\n`
       }
       renderSchema(schema, Object.assign({}, options, { printer }))
@@ -47,7 +47,7 @@ function updateSchema(path, schema, options) {
       } catch (err) {
         return reject(err)
       }
-      fs.writeFile(path, newDoc, 'utf8', err => {
+      fs.writeFile(path, newDoc, 'utf8', (err) => {
         if (err) {
           return reject(err)
         }

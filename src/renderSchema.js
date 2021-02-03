@@ -50,7 +50,7 @@ function renderObject(type, options) {
   printer('<tbody>')
 
   const fields = isInputObject ? type.inputFields : type.fields
-  fields.forEach(field => {
+  fields.forEach((field) => {
     printer('<tr>')
     printer(
       `<td colspan="2" valign="top"><strong>${field.name}</strong>${
@@ -111,11 +111,11 @@ function renderSchema(schema, options) {
     schema = schema.__schema
   }
 
-  const types = schema.types.filter(type => !type.name.startsWith('__'))
+  const types = schema.types.filter((type) => !type.name.startsWith('__'))
   const typeMap = schema.types.reduce((typeMap, type) => {
     return Object.assign(typeMap, { [type.name]: type })
   }, {})
-  const getTypeURL = type => {
+  const getTypeURL = (type) => {
     const url = `#${type.name.toLowerCase()}`
     if (typeMap[type.name]) {
       return url
@@ -128,18 +128,18 @@ function renderSchema(schema, options) {
 
   const queryType = schema.queryType
   const query =
-    queryType && types.find(type => type.name === schema.queryType.name)
+    queryType && types.find((type) => type.name === schema.queryType.name)
   const mutationType = schema.mutationType
   const mutation =
-    mutationType && types.find(type => type.name === schema.mutationType.name)
+    mutationType && types.find((type) => type.name === schema.mutationType.name)
   const objects = types.filter(
-    type => type.kind === 'OBJECT' && type !== query && type !== mutation
+    (type) => type.kind === 'OBJECT' && type !== query && type !== mutation
   )
-  const inputs = types.filter(type => type.kind === 'INPUT_OBJECT')
-  const enums = types.filter(type => type.kind === 'ENUM')
-  const scalars = types.filter(type => type.kind === 'SCALAR')
-  const interfaces = types.filter(type => type.kind === 'INTERFACE')
-  const unions = types.filter(type => type.kind === 'UNION')
+  const inputs = types.filter((type) => type.kind === 'INPUT_OBJECT')
+  const enums = types.filter((type) => type.kind === 'ENUM')
+  const scalars = types.filter((type) => type.kind === 'SCALAR')
+  const interfaces = types.filter((type) => type.kind === 'INTERFACE')
+  const unions = types.filter((type) => type.kind === 'UNION')
 
   sortBy(objects, 'name')
   sortBy(inputs, 'name')
@@ -167,37 +167,37 @@ function renderSchema(schema, options) {
     }
     if (objects.length) {
       printer('  * [Objects](#objects)')
-      objects.forEach(type => {
+      objects.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
       })
     }
     if (inputs.length) {
       printer('  * [Inputs](#inputs)')
-      inputs.forEach(type => {
+      inputs.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
       })
     }
     if (enums.length) {
       printer('  * [Enums](#enums)')
-      enums.forEach(type => {
+      enums.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
       })
     }
     if (scalars.length) {
       printer('  * [Scalars](#scalars)')
-      scalars.forEach(type => {
+      scalars.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
       })
     }
     if (interfaces.length) {
       printer('  * [Interfaces](#interfaces)')
-      interfaces.forEach(type => {
+      interfaces.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
       })
     }
     if (unions.length) {
       printer('  * [Unions](#unions)')
-      unions.forEach(type => {
+      unions.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
       })
     }
@@ -223,27 +223,27 @@ function renderSchema(schema, options) {
       skipTitle: true,
       headingLevel,
       printer,
-      getTypeURL
+      getTypeURL,
     })
   }
 
   if (objects.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Objects`)
-    objects.forEach(type =>
+    objects.forEach((type) =>
       renderObject(type, { headingLevel, printer, getTypeURL })
     )
   }
 
   if (inputs.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Inputs`)
-    inputs.forEach(type =>
+    inputs.forEach((type) =>
       renderObject(type, { headingLevel, printer, getTypeURL })
     )
   }
 
   if (enums.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Enums`)
-    enums.forEach(type => {
+    enums.forEach((type) => {
       printer(`\n${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
       if (type.description) {
         printer(`${type.description}\n`)
@@ -254,7 +254,7 @@ function renderSchema(schema, options) {
       printer('<th align="left">Description</th>')
       printer('</thead>')
       printer('<tbody>')
-      type.enumValues.forEach(value => {
+      type.enumValues.forEach((value) => {
         printer('<tr>')
         printer(
           `<td valign="top"><strong>${value.name}</strong>${
@@ -287,7 +287,7 @@ function renderSchema(schema, options) {
 
   if (scalars.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Scalars\n`)
-    scalars.forEach(type => {
+    scalars.forEach((type) => {
       printer(`${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
       if (type.description) {
         printer(`${type.description}\n`)
@@ -297,14 +297,14 @@ function renderSchema(schema, options) {
 
   if (interfaces.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Interfaces\n`)
-    interfaces.forEach(type =>
+    interfaces.forEach((type) =>
       renderObject(type, { headingLevel, printer, getTypeURL })
     )
   }
 
   if (unions.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Unions`)
-    unions.forEach(type => {
+    unions.forEach((type) => {
       printer(`\n${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
       if (type.description) {
         printer(`${type.description}\n`)
@@ -315,13 +315,13 @@ function renderSchema(schema, options) {
       printer('<th align="left">Description</th>')
       printer('</thead>')
       printer('<tbody>')
-      type.possibleTypes.forEach(objType => {
-        const obj = objects.find(o => objType.name === o.name)
+      type.possibleTypes.forEach((objType) => {
+        const obj = objects.find((o) => objType.name === o.name)
         const desc = objType.description || (obj && obj.description)
         printer('<tr>')
         printer(
           `<td valign="top"><strong>${renderType(objType, {
-            getTypeURL
+            getTypeURL,
           })}</strong></td>`
         )
         if (desc) {

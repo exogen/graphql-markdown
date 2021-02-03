@@ -9,10 +9,8 @@ const DEFAULT_GRAPHQL = graphql
 
 function readFile(filename) {
   return new Promise((resolve, reject) => {
-    fs.readFile(
-      filename,
-      'utf8',
-      (err, data) => (err ? reject(err) : resolve(data))
+    fs.readFile(filename, 'utf8', (err, data) =>
+      err ? reject(err) : resolve(data)
     )
   })
 }
@@ -22,7 +20,7 @@ function schemaToJSON(schema, options) {
   const graphql = options.graphql || DEFAULT_GRAPHQL
   return graphql
     .graphql(schema, graphql.getIntrospectionQuery())
-    .then(result => {
+    .then((result) => {
       return result.data
     })
 }
@@ -35,18 +33,18 @@ function fetchSchemaJSON(url, options) {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      ...options.headers
+      ...options.headers,
     },
-    body: JSON.stringify({ query: graphql.getIntrospectionQuery() })
+    body: JSON.stringify({ query: graphql.getIntrospectionQuery() }),
   })
-    .then(res => res.json())
-    .then(result => result.data)
+    .then((res) => res.json())
+    .then((result) => result.data)
 }
 
 function parseSchemaGraphQL(filename, options) {
   options = options || {}
   const graphql = options.graphql || DEFAULT_GRAPHQL
-  return readFile(filename).then(data => graphql.buildSchema(data))
+  return readFile(filename).then((data) => graphql.buildSchema(data))
 }
 
 async function requireSchema(schemaPath) {
