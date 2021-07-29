@@ -17,7 +17,8 @@ function renderType(type, options) {
     return `[${renderType(type.ofType, options)}]`
   }
   const url = options.getTypeURL(type)
-  return url ? `<a href="${url}">${type.name}</a>` : type.name
+  return url ? `[${type.name}](${url})` : type.name
+  // return url ? `<a href="${url}">${type.name}</a>` : type.name
 }
 
 function renderObject(type, options) {
@@ -34,25 +35,49 @@ function renderObject(type, options) {
   if (type.description) {
     printer(`${type.description}\n`)
   }
-  printer('<table>')
-  printer('<thead>')
-  printer('<tr>')
+
   if (isInputObject) {
-    printer('<th colspan="2" align="left">Field</th>')
+    printer(`\n`)
+    printer('|Field|Type|Description|')
+    printer('| --- | --- | --- |')
   } else {
-    printer('<th align="left">Field</th>')
-    printer('<th align="right">Argument</th>')
+    printer('|Field|Argument|Type|Description|')
+    printer('| --- | --- | --- | --- |')
   }
-  printer('<th align="left">Type</th>')
-  printer('<th align="left">Description</th>')
-  printer('</tr>')
-  printer('</thead>')
-  printer('<tbody>')
 
   const fields = isInputObject ? type.inputFields : type.fields
   fields.forEach(field => {
-    printer('<tr>')
-    printer(
+    if (!isInputObject && field.args.length) {
+      printer(
+        `|${field.name}${field.isDeprecated ? ' ⚠️' : ''}||${renderType(
+          field.type,
+          { getTypeURL }
+        )}|${field.description}|`
+      )
+      field.args.forEach((arg, i) => {
+        printer(`||${arg.name}|${renderType(arg.type, { getTypeURL })}||`)
+      })
+    } else if (!isInputObject) {
+      printer(
+        `|${field.name}${field.isDeprecated ? ' ⚠️' : ''}||${renderType(
+          field.type,
+          { getTypeURL }
+        )}|${field.description}|`
+      )
+    } else {
+      printer(
+        `|${field.name}${field.isDeprecated} ? " ⚠️" : ""|${renderType(
+          field.type,
+          { getTypeURL }
+        )}|${field.description}|`
+      )
+    }
+  })
+  if (options.newpage) {
+    printer(`\\newpage`)
+  }
+  // printer('<tr>')
+  /* printer(
       `<td colspan="2" valign="top"><strong>${field.name}</strong>${
         field.isDeprecated ? ' ⚠️' : ''
       }</td>`
@@ -75,7 +100,8 @@ function renderObject(type, options) {
     } else {
       printer('<td></td>')
     }
-    printer('</tr>')
+    printer('</tr>') */
+  /*
     if (!isInputObject && field.args.length) {
       field.args.forEach((arg, i) => {
         printer('<tr>')
@@ -94,6 +120,9 @@ function renderObject(type, options) {
   })
   printer('</tbody>')
   printer('</table>')
+  if (options.newPage) {
+    printer(`\\newpage`)
+  } */
 }
 
 function renderSchema(schema, options) {
@@ -106,6 +135,7 @@ function renderSchema(schema, options) {
   const printer = options.printer || console.log
   const headingLevel = options.headingLevel || 1
   const unknownTypeURL = options.unknownTypeURL
+  const newpage = options.newPage || false
 
   if (schema.__schema) {
     schema = schema.__schema
@@ -150,15 +180,19 @@ function renderSchema(schema, options) {
 
   if (!skipTitle) {
     printer(`${'#'.repeat(headingLevel)} ${title}\n`)
+    printer(`\\newpage`)
   }
 
   if (prologue) {
     printer(`${prologue}\n`)
+    if (options.newPage) {
+      printer(`\\newpage`)
+    }
   }
 
   if (!skipTableOfContents) {
-    printer('<details>')
-    printer('  <summary><strong>Table of Contents</strong></summary>\n')
+    // printer('<details>')
+    printer('## Table of Contents\n')
     if (query) {
       printer('  * [Query](#query)')
     }
@@ -201,7 +235,10 @@ function renderSchema(schema, options) {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
       })
     }
-    printer('\n</details>')
+    if (options.newPage) {
+      printer(`\n`)
+      printer(`\\newpage`)
+    }
   }
 
   if (query) {
@@ -210,7 +247,16 @@ function renderSchema(schema, options) {
         query.name === 'Query' ? '' : ' (' + query.name + ')'
       }`
     )
-    renderObject(query, { skipTitle: true, headingLevel, printer, getTypeURL })
+    renderObject(query, {
+      skipTitle: true,
+      headingLevel,
+      printer,
+      getTypeURL,
+      newpage
+    })
+    if (options.newPage) {
+      // printer(`\\newpage`)
+    }
   }
 
   if (mutation) {
@@ -223,22 +269,32 @@ function renderSchema(schema, options) {
       skipTitle: true,
       headingLevel,
       printer,
-      getTypeURL
+      getTypeURL,
+      newpage
     })
+    if (options.newPage) {
+      // printer(`\\newpage`)
+    }
   }
 
   if (objects.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Objects`)
     objects.forEach(type =>
-      renderObject(type, { headingLevel, printer, getTypeURL })
+      renderObject(type, { headingLevel, printer, getTypeURL, newpage })
     )
+    if (options.newPage) {
+      // printer(`\\newpage`)
+    }
   }
 
   if (inputs.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Inputs`)
     inputs.forEach(type =>
-      renderObject(type, { headingLevel, printer, getTypeURL })
+      renderObject(type, { headingLevel, printer, getTypeURL, newpage })
     )
+    if (options.newPage) {
+      printer(`\\newpage`)
+    }
   }
 
   if (enums.length) {
@@ -248,14 +304,21 @@ function renderSchema(schema, options) {
       if (type.description) {
         printer(`${type.description}\n`)
       }
-      printer('<table>')
+      /* printer('<table>')
       printer('<thead>')
       printer('<th align="left">Value</th>')
       printer('<th align="left">Description</th>')
       printer('</thead>')
-      printer('<tbody>')
+      printer('<tbody>') */
+      printer('|Value|Description|')
+      printer('| --- | --- |')
       type.enumValues.forEach(value => {
-        printer('<tr>')
+        printer(
+          `|${value.name}${value.isDeprecated ? ' ⚠️' : ''}|${
+            value.description
+          }|`
+        )
+        /* printer('<tr>')
         printer(
           `<td valign="top"><strong>${value.name}</strong>${
             value.isDeprecated ? ' ⚠️' : ''
@@ -278,10 +341,13 @@ function renderSchema(schema, options) {
         } else {
           printer('<td></td>')
         }
-        printer('</tr>')
+        printer('</tr>') */
       })
-      printer('</tbody>')
-      printer('</table>')
+      // printer('</tbody>')
+      // printer('</table>')
+      if (options.newPage) {
+        printer(`\\newpage`)
+      }
     })
   }
 
@@ -293,6 +359,9 @@ function renderSchema(schema, options) {
         printer(`${type.description}\n`)
       }
     })
+    if (options.newPage) {
+      printer(`\\newpage`)
+    }
   }
 
   if (interfaces.length) {
@@ -300,6 +369,9 @@ function renderSchema(schema, options) {
     interfaces.forEach(type =>
       renderObject(type, { headingLevel, printer, getTypeURL })
     )
+    if (options.newPage) {
+      printer(`\\newpage`)
+    }
   }
 
   if (unions.length) {
@@ -338,6 +410,9 @@ function renderSchema(schema, options) {
 
   if (epilogue) {
     printer(`\n${epilogue}`)
+    if (options.newPage) {
+      printer(`\\newpage`)
+    }
   }
 }
 
