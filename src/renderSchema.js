@@ -18,7 +18,6 @@ function renderType(type, options) {
   }
   const url = options.getTypeURL(type)
   return url ? `[${type.name}](${url})` : type.name
-  // return url ? `<a href="${url}">${type.name}</a>` : type.name
 }
 
 function renderObject(type, options) {
@@ -52,7 +51,7 @@ function renderObject(type, options) {
         `|${field.name}${field.isDeprecated ? ' ⚠️' : ''}||${renderType(
           field.type,
           { getTypeURL }
-        )}|${field.description}|`
+        )}|${field.description ? field.description : ''}|`
       )
       field.args.forEach((arg, i) => {
         printer(`||${arg.name}|${renderType(arg.type, { getTypeURL })}||`)
@@ -62,67 +61,20 @@ function renderObject(type, options) {
         `|${field.name}${field.isDeprecated ? ' ⚠️' : ''}||${renderType(
           field.type,
           { getTypeURL }
-        )}|${field.description}|`
+        )}|${field.description ? field.description : ''}|`
       )
     } else {
       printer(
         `|${field.name}${field.isDeprecated} ? " ⚠️" : ""|${renderType(
           field.type,
           { getTypeURL }
-        )}|${field.description}|`
+        )}|${field.description ? field.description : ''}|`
       )
     }
   })
   if (options.newpage) {
     printer(`\\newpage`)
   }
-  // printer('<tr>')
-  /* printer(
-      `<td colspan="2" valign="top"><strong>${field.name}</strong>${
-        field.isDeprecated ? ' ⚠️' : ''
-      }</td>`
-    )
-    printer(`<td valign="top">${renderType(field.type, { getTypeURL })}</td>`)
-    if (field.description || field.isDeprecated) {
-      printer('<td>')
-      if (field.description) {
-        printer(`\n${field.description}\n`)
-      }
-      if (field.isDeprecated) {
-        printer('<p>⚠️ <strong>DEPRECATED</strong></p>')
-        if (field.deprecationReason) {
-          printer('<blockquote>')
-          printer(`\n${field.deprecationReason}\n`)
-          printer('</blockquote>')
-        }
-      }
-      printer('</td>')
-    } else {
-      printer('<td></td>')
-    }
-    printer('</tr>') */
-  /*
-    if (!isInputObject && field.args.length) {
-      field.args.forEach((arg, i) => {
-        printer('<tr>')
-        printer(`<td colspan="2" align="right" valign="top">${arg.name}</td>`)
-        printer(`<td valign="top">${renderType(arg.type, { getTypeURL })}</td>`)
-        if (arg.description) {
-          printer('<td>')
-          printer(`\n${arg.description}\n`)
-          printer('</td>')
-        } else {
-          printer(`<td></td>`)
-        }
-        printer('</tr>')
-      })
-    }
-  })
-  printer('</tbody>')
-  printer('</table>')
-  if (options.newPage) {
-    printer(`\\newpage`)
-  } */
 }
 
 function renderSchema(schema, options) {
@@ -254,9 +206,6 @@ function renderSchema(schema, options) {
       getTypeURL,
       newpage
     })
-    if (options.newPage) {
-      // printer(`\\newpage`)
-    }
   }
 
   if (mutation) {
@@ -272,9 +221,6 @@ function renderSchema(schema, options) {
       getTypeURL,
       newpage
     })
-    if (options.newPage) {
-      // printer(`\\newpage`)
-    }
   }
 
   if (objects.length) {
@@ -282,9 +228,6 @@ function renderSchema(schema, options) {
     objects.forEach(type =>
       renderObject(type, { headingLevel, printer, getTypeURL, newpage })
     )
-    if (options.newPage) {
-      // printer(`\\newpage`)
-    }
   }
 
   if (inputs.length) {
@@ -304,12 +247,7 @@ function renderSchema(schema, options) {
       if (type.description) {
         printer(`${type.description}\n`)
       }
-      /* printer('<table>')
-      printer('<thead>')
-      printer('<th align="left">Value</th>')
-      printer('<th align="left">Description</th>')
-      printer('</thead>')
-      printer('<tbody>') */
+
       printer('|Value|Description|')
       printer('| --- | --- |')
       type.enumValues.forEach(value => {
@@ -318,33 +256,7 @@ function renderSchema(schema, options) {
             value.description
           }|`
         )
-        /* printer('<tr>')
-        printer(
-          `<td valign="top"><strong>${value.name}</strong>${
-            value.isDeprecated ? ' ⚠️' : ''
-          }</td>`
-        )
-        if (value.description || value.isDeprecated) {
-          printer('<td>')
-          if (value.description) {
-            printer(`\n${value.description}\n`)
-          }
-          if (value.isDeprecated) {
-            printer('<p>⚠️ <strong>DEPRECATED</strong></p>')
-            if (value.deprecationReason) {
-              printer('<blockquote>')
-              printer(`\n${value.deprecationReason}\n`)
-              printer('</blockquote>')
-            }
-          }
-          printer('</td>')
-        } else {
-          printer('<td></td>')
-        }
-        printer('</tr>') */
       })
-      // printer('</tbody>')
-      // printer('</table>')
       if (options.newPage) {
         printer(`\\newpage`)
       }
@@ -369,9 +281,6 @@ function renderSchema(schema, options) {
     interfaces.forEach(type =>
       renderObject(type, { headingLevel, printer, getTypeURL })
     )
-    if (options.newPage) {
-      printer(`\\newpage`)
-    }
   }
 
   if (unions.length) {
@@ -387,25 +296,17 @@ function renderSchema(schema, options) {
       printer('<th align="left">Description</th>')
       printer('</thead>')
       printer('<tbody>')
+      printer('|Type|Description|')
+      printer('| --- | --- |')
       type.possibleTypes.forEach(objType => {
         const obj = objects.find(o => objType.name === o.name)
         const desc = objType.description || (obj && obj.description)
-        printer('<tr>')
-        printer(
-          `<td valign="top"><strong>${renderType(objType, {
-            getTypeURL
-          })}</strong></td>`
-        )
-        if (desc) {
-          printer(`<td valign="top">${desc}</td>`)
-        } else {
-          printer('<td></td>')
-        }
-        printer('</tr>')
+        printer(`|${renderType(objType, { getTypeURL })}|${desc || ''}|`)
       })
-      printer('</tbody>')
-      printer('</table>')
     })
+    if (options.newPage) {
+      printer(`\\newpage`)
+    }
   }
 
   if (epilogue) {
