@@ -48,7 +48,7 @@ function renderObject(type, options) {
   fields.forEach(field => {
     if (!isInputObject && field.args.length) {
       printer(
-        `|${field.name}${field.isDeprecated ? ' ⚠️' : ''}||${renderType(
+        `|${field.name}${field.isDeprecated ? ' *' : ''}||${renderType(
           field.type,
           { getTypeURL }
         )}|${field.description ? field.description : ''}|`
@@ -58,17 +58,15 @@ function renderObject(type, options) {
       })
     } else if (!isInputObject) {
       printer(
-        `|${field.name}${field.isDeprecated ? ' ⚠️' : ''}||${renderType(
-          field.type,
-          { getTypeURL }
-        )}|${field.description ? field.description : ''}|`
+        `|${field.name}||${renderType(field.type, { getTypeURL })}|${
+          field.description ? field.description : ''
+        }|`
       )
     } else {
       printer(
-        `|${field.name}${field.isDeprecated} ? " ⚠️" : ""|${renderType(
-          field.type,
-          { getTypeURL }
-        )}|${field.description ? field.description : ''}|`
+        `|${field.name}|${renderType(field.type, { getTypeURL })}|${
+          field.description ? field.description : ''
+        }|`
       )
     }
   })
