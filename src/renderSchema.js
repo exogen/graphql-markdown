@@ -1,4 +1,5 @@
 'use strict'
+
 function sortBy(arr, property) {
   arr.sort((a, b) => {
     const aValue = a[property]
@@ -53,9 +54,9 @@ function renderObject(type, options) {
   fields.forEach(field => {
     printer('<tr>')
     printer(
-      `<td colspan="2" valign="top"><strong>${field.name}</strong>${
-        field.isDeprecated ? ' ⚠️' : ''
-      }</td>`
+      `<td colspan="2" valign="top"><strong><a name="${`${field.name.toLowerCase()}`}">${
+        field.name
+      }</a></strong>${field.isDeprecated ? ' ⚠️' : ''}</td>`
     )
     printer(`<td valign="top">${renderType(field.type, { getTypeURL })}</td>`)
     if (field.description || field.isDeprecated) {
@@ -113,7 +114,9 @@ function renderSchema(schema, options) {
 
   const types = schema.types.filter(type => !type.name.startsWith('__'))
   const typeMap = schema.types.reduce((typeMap, type) => {
-    return Object.assign(typeMap, { [type.name]: type })
+    return Object.assign(typeMap, {
+      [type.name]: type
+    })
   }, {})
   const getTypeURL = type => {
     const url = `#${type.name.toLowerCase()}`
@@ -210,7 +213,12 @@ function renderSchema(schema, options) {
         query.name === 'Query' ? '' : ' (' + query.name + ')'
       }`
     )
-    renderObject(query, { skipTitle: true, headingLevel, printer, getTypeURL })
+    renderObject(query, {
+      skipTitle: true,
+      headingLevel,
+      printer,
+      getTypeURL
+    })
   }
 
   if (mutation) {
@@ -230,14 +238,22 @@ function renderSchema(schema, options) {
   if (objects.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Objects`)
     objects.forEach(type =>
-      renderObject(type, { headingLevel, printer, getTypeURL })
+      renderObject(type, {
+        headingLevel,
+        printer,
+        getTypeURL
+      })
     )
   }
 
   if (inputs.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Inputs`)
     inputs.forEach(type =>
-      renderObject(type, { headingLevel, printer, getTypeURL })
+      renderObject(type, {
+        headingLevel,
+        printer,
+        getTypeURL
+      })
     )
   }
 
@@ -298,7 +314,11 @@ function renderSchema(schema, options) {
   if (interfaces.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Interfaces\n`)
     interfaces.forEach(type =>
-      renderObject(type, { headingLevel, printer, getTypeURL })
+      renderObject(type, {
+        headingLevel,
+        printer,
+        getTypeURL
+      })
     )
   }
 

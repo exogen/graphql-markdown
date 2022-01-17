@@ -29,7 +29,7 @@
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>party</strong></td>
+<td colspan="2" valign="top"><strong><a name="party">party</a></strong></td>
 <td valign="top"><a href="#party">Party</a></td>
 <td></td>
 </tr>
@@ -58,7 +58,7 @@ A group of persons working together for a purpose
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -67,7 +67,7 @@ Node ID
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -76,7 +76,7 @@ Name of the organization
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>email</strong></td>
+<td colspan="2" valign="top"><strong><a name="email">email</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -85,7 +85,7 @@ Main contact email address
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>founded</strong></td>
+<td colspan="2" valign="top"><strong><a name="founded">founded</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -94,7 +94,7 @@ Date the organization was founded
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>ceo</strong></td>
+<td colspan="2" valign="top"><strong><a name="ceo">ceo</a></strong></td>
 <td valign="top"><a href="#person">Person</a></td>
 <td>
 
@@ -120,32 +120,32 @@ A human being
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>firstName</strong></td>
+<td colspan="2" valign="top"><strong><a name="firstname">firstName</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>lastName</strong></td>
+<td colspan="2" valign="top"><strong><a name="lastname">lastName</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>email</strong></td>
+<td colspan="2" valign="top"><strong><a name="email">email</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>age</strong></td>
+<td colspan="2" valign="top"><strong><a name="age">age</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>dob</strong></td>
+<td colspan="2" valign="top"><strong><a name="dob">dob</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>

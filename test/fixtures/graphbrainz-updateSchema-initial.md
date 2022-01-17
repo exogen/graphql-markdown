@@ -107,7 +107,7 @@ requests can be made.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>lookup</strong></td>
+<td colspan="2" valign="top"><strong><a name="lookup">lookup</a></strong></td>
 <td valign="top"><a href="#lookupquery">LookupQuery</a></td>
 <td>
 
@@ -116,7 +116,7 @@ Perform a lookup of a MusicBrainz entity by its MBID.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>browse</strong></td>
+<td colspan="2" valign="top"><strong><a name="browse">browse</a></strong></td>
 <td valign="top"><a href="#browsequery">BrowseQuery</a></td>
 <td>
 
@@ -125,7 +125,7 @@ Browse all MusicBrainz entities directly linked to another entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>search</strong></td>
+<td colspan="2" valign="top"><strong><a name="search">search</a></strong></td>
 <td valign="top"><a href="#searchquery">SearchQuery</a></td>
 <td>
 
@@ -134,7 +134,7 @@ Search for MusicBrainz entities using Lucene query syntax.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#node">Node</a></td>
 <td>
 
@@ -173,7 +173,7 @@ entity will be given as a result – even if the actual name wouldn’t be.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -182,7 +182,7 @@ The aliased name of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>sortName</strong></td>
+<td colspan="2" valign="top"><strong><a name="sortname">sortName</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -193,7 +193,7 @@ the front).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>locale</strong></td>
+<td colspan="2" valign="top"><strong><a name="locale">locale</a></strong></td>
 <td valign="top"><a href="#locale">Locale</a></td>
 <td>
 
@@ -203,7 +203,7 @@ used.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>primary</strong></td>
+<td colspan="2" valign="top"><strong><a name="primary">primary</a></strong></td>
 <td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
@@ -213,7 +213,7 @@ specified locale (this could mean the most recent or the most common).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -223,7 +223,7 @@ search hint, etc.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -251,7 +251,7 @@ or settlements (countries, cities, or the like).
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -260,7 +260,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -269,7 +269,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -278,7 +278,7 @@ The official name of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>sortName</strong></td>
+<td colspan="2" valign="top"><strong><a name="sortname">sortName</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -289,7 +289,7 @@ the front).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -298,7 +298,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>aliases</strong></td>
+<td colspan="2" valign="top"><strong><a name="aliases">aliases</a></strong></td>
 <td valign="top">[<a href="#alias">Alias</a>]</td>
 <td>
 
@@ -308,7 +308,7 @@ alternate names or misspellings.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>isoCodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="isocodes">isoCodes</a></strong></td>
 <td valign="top">[<a href="#string">String</a>]</td>
 <td>
 
@@ -328,7 +328,7 @@ Available ISO standards are 3166-1, 3166-2, and 3166-3.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -338,7 +338,7 @@ values](https://musicbrainz.org/doc/Area)).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -348,7 +348,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artists</strong></td>
+<td colspan="2" valign="top"><strong><a name="artists">artists</a></strong></td>
 <td valign="top"><a href="#artistconnection">ArtistConnection</a></td>
 <td>
 
@@ -367,7 +367,7 @@ A list of artists linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>events</strong></td>
+<td colspan="2" valign="top"><strong><a name="events">events</a></strong></td>
 <td valign="top"><a href="#eventconnection">EventConnection</a></td>
 <td>
 
@@ -386,7 +386,7 @@ A list of events linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>labels</strong></td>
+<td colspan="2" valign="top"><strong><a name="labels">labels</a></strong></td>
 <td valign="top"><a href="#labelconnection">LabelConnection</a></td>
 <td>
 
@@ -405,7 +405,7 @@ A list of labels linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>places</strong></td>
+<td colspan="2" valign="top"><strong><a name="places">places</a></strong></td>
 <td valign="top"><a href="#placeconnection">PlaceConnection</a></td>
 <td>
 
@@ -424,7 +424,7 @@ A list of places linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releases</strong></td>
+<td colspan="2" valign="top"><strong><a name="releases">releases</a></strong></td>
 <td valign="top"><a href="#releaseconnection">ReleaseConnection</a></td>
 <td>
 
@@ -461,7 +461,7 @@ Filter by one or more release statuses.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -470,7 +470,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -489,7 +489,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -525,7 +525,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -534,7 +534,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#areaedge">AreaEdge</a>]</td>
 <td>
 
@@ -543,7 +543,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#area">Area</a>]</td>
 <td>
 
@@ -553,7 +553,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -580,7 +580,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#area">Area</a></td>
 <td>
 
@@ -589,7 +589,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -598,7 +598,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -629,7 +629,7 @@ even a fictional character.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -638,7 +638,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -647,7 +647,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -656,7 +656,7 @@ The official name of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>sortName</strong></td>
+<td colspan="2" valign="top"><strong><a name="sortname">sortName</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -667,7 +667,7 @@ the front).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -676,7 +676,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>aliases</strong></td>
+<td colspan="2" valign="top"><strong><a name="aliases">aliases</a></strong></td>
 <td valign="top">[<a href="#alias">Alias</a>]</td>
 <td>
 
@@ -686,7 +686,7 @@ alternate names or misspellings.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>country</strong></td>
+<td colspan="2" valign="top"><strong><a name="country">country</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -696,7 +696,7 @@ is often, but not always, its birth/formation country.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>area</strong></td>
+<td colspan="2" valign="top"><strong><a name="area">area</a></strong></td>
 <td valign="top"><a href="#area">Area</a></td>
 <td>
 
@@ -706,7 +706,7 @@ is often, but not always, its birth/formation country.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>beginArea</strong></td>
+<td colspan="2" valign="top"><strong><a name="beginarea">beginArea</a></strong></td>
 <td valign="top"><a href="#area">Area</a></td>
 <td>
 
@@ -716,7 +716,7 @@ they were born, if the artist is a person).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>endArea</strong></td>
+<td colspan="2" valign="top"><strong><a name="endarea">endArea</a></strong></td>
 <td valign="top"><a href="#area">Area</a></td>
 <td>
 
@@ -726,7 +726,7 @@ they died, if the artist is a person).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>lifeSpan</strong></td>
+<td colspan="2" valign="top"><strong><a name="lifespan">lifeSpan</a></strong></td>
 <td valign="top"><a href="#lifespan">LifeSpan</a></td>
 <td>
 
@@ -736,7 +736,7 @@ meaning depends on the type of entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>gender</strong></td>
+<td colspan="2" valign="top"><strong><a name="gender">gender</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -746,7 +746,7 @@ neither. Groups do not have genders.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>genderID</strong></td>
+<td colspan="2" valign="top"><strong><a name="genderid">genderID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -756,7 +756,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -765,7 +765,7 @@ Whether an artist is a person, a group, or something else.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -775,7 +775,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>ipis</strong></td>
+<td colspan="2" valign="top"><strong><a name="ipis">ipis</a></strong></td>
 <td valign="top">[<a href="#ipi">IPI</a>]</td>
 <td>
 
@@ -785,7 +785,7 @@ List of [Interested Parties Information](https://musicbrainz.org/doc/IPI)
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>isnis</strong></td>
+<td colspan="2" valign="top"><strong><a name="isnis">isnis</a></strong></td>
 <td valign="top">[<a href="#isni">ISNI</a>]</td>
 <td>
 
@@ -795,7 +795,7 @@ List of [International Standard Name Identifier](https://musicbrainz.org/doc/ISN
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>recordings</strong></td>
+<td colspan="2" valign="top"><strong><a name="recordings">recordings</a></strong></td>
 <td valign="top"><a href="#recordingconnection">RecordingConnection</a></td>
 <td>
 
@@ -814,7 +814,7 @@ A list of recordings linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releases</strong></td>
+<td colspan="2" valign="top"><strong><a name="releases">releases</a></strong></td>
 <td valign="top"><a href="#releaseconnection">ReleaseConnection</a></td>
 <td>
 
@@ -851,7 +851,7 @@ Filter by one or more release statuses.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releaseGroups</strong></td>
+<td colspan="2" valign="top"><strong><a name="releasegroups">releaseGroups</a></strong></td>
 <td valign="top"><a href="#releasegroupconnection">ReleaseGroupConnection</a></td>
 <td>
 
@@ -879,7 +879,7 @@ Filter by one or more release group types.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>works</strong></td>
+<td colspan="2" valign="top"><strong><a name="works">works</a></strong></td>
 <td valign="top"><a href="#workconnection">WorkConnection</a></td>
 <td>
 
@@ -898,7 +898,7 @@ A list of works linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -907,7 +907,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -926,7 +926,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>rating</strong></td>
+<td colspan="2" valign="top"><strong><a name="rating">rating</a></strong></td>
 <td valign="top"><a href="#rating">Rating</a></td>
 <td>
 
@@ -935,7 +935,7 @@ The rating users have given to this entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -971,7 +971,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -980,7 +980,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#artistedge">ArtistEdge</a>]</td>
 <td>
 
@@ -989,7 +989,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#artist">Artist</a>]</td>
 <td>
 
@@ -999,7 +999,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -1030,7 +1030,7 @@ track, etc., and join phrases between them.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>artist</strong></td>
+<td colspan="2" valign="top"><strong><a name="artist">artist</a></strong></td>
 <td valign="top"><a href="#artist">Artist</a></td>
 <td>
 
@@ -1040,7 +1040,7 @@ credits.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -1050,7 +1050,7 @@ track, etc.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>joinPhrase</strong></td>
+<td colspan="2" valign="top"><strong><a name="joinphrase">joinPhrase</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -1077,7 +1077,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#artist">Artist</a></td>
 <td>
 
@@ -1086,7 +1086,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -1095,7 +1095,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -1123,7 +1123,7 @@ entity.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>areas</strong></td>
+<td colspan="2" valign="top"><strong><a name="areas">areas</a></strong></td>
 <td valign="top"><a href="#areaconnection">AreaConnection</a></td>
 <td>
 
@@ -1151,7 +1151,7 @@ The MBID of a collection in which the entity is found.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artists</strong></td>
+<td colspan="2" valign="top"><strong><a name="artists">artists</a></strong></td>
 <td valign="top"><a href="#artistconnection">ArtistConnection</a></td>
 <td>
 
@@ -1224,7 +1224,7 @@ The MBID of a work to which the entity is linked.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -1333,7 +1333,7 @@ The MBID of a work to which the entity is linked.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>events</strong></td>
+<td colspan="2" valign="top"><strong><a name="events">events</a></strong></td>
 <td valign="top"><a href="#eventconnection">EventConnection</a></td>
 <td>
 
@@ -1388,7 +1388,7 @@ The MBID of a place to which the entity is linked.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>labels</strong></td>
+<td colspan="2" valign="top"><strong><a name="labels">labels</a></strong></td>
 <td valign="top"><a href="#labelconnection">LabelConnection</a></td>
 <td>
 
@@ -1434,7 +1434,7 @@ The MBID of a release to which the entity is linked.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>places</strong></td>
+<td colspan="2" valign="top"><strong><a name="places">places</a></strong></td>
 <td valign="top"><a href="#placeconnection">PlaceConnection</a></td>
 <td>
 
@@ -1471,7 +1471,7 @@ The MBID of a collection in which the entity is found.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>recordings</strong></td>
+<td colspan="2" valign="top"><strong><a name="recordings">recordings</a></strong></td>
 <td valign="top"><a href="#recordingconnection">RecordingConnection</a></td>
 <td>
 
@@ -1527,7 +1527,7 @@ The MBID of a release to which the entity is linked.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releases</strong></td>
+<td colspan="2" valign="top"><strong><a name="releases">releases</a></strong></td>
 <td valign="top"><a href="#releaseconnection">ReleaseConnection</a></td>
 <td>
 
@@ -1647,7 +1647,7 @@ Filter by one or more release statuses.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releaseGroups</strong></td>
+<td colspan="2" valign="top"><strong><a name="releasegroups">releaseGroups</a></strong></td>
 <td valign="top"><a href="#releasegroupconnection">ReleaseGroupConnection</a></td>
 <td>
 
@@ -1702,7 +1702,7 @@ Filter by one or more release group types.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>works</strong></td>
+<td colspan="2" valign="top"><strong><a name="works">works</a></strong></td>
 <td valign="top"><a href="#workconnection">WorkConnection</a></td>
 <td>
 
@@ -1767,7 +1767,7 @@ lists of entities that users can create.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -1776,7 +1776,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -1785,7 +1785,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -1794,7 +1794,7 @@ The official name of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>editor</strong></td>
+<td colspan="2" valign="top"><strong><a name="editor">editor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -1803,7 +1803,7 @@ The username of the editor who created the collection.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>entityType</strong></td>
+<td colspan="2" valign="top"><strong><a name="entitytype">entityType</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -1812,7 +1812,7 @@ The type of entity listed in the collection.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -1821,7 +1821,7 @@ The type of collection.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -1831,7 +1831,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>areas</strong></td>
+<td colspan="2" valign="top"><strong><a name="areas">areas</a></strong></td>
 <td valign="top"><a href="#areaconnection">AreaConnection</a></td>
 <td>
 
@@ -1850,7 +1850,7 @@ The list of areas found in this collection.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artists</strong></td>
+<td colspan="2" valign="top"><strong><a name="artists">artists</a></strong></td>
 <td valign="top"><a href="#artistconnection">ArtistConnection</a></td>
 <td>
 
@@ -1869,7 +1869,7 @@ The list of artists found in this collection.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>events</strong></td>
+<td colspan="2" valign="top"><strong><a name="events">events</a></strong></td>
 <td valign="top"><a href="#eventconnection">EventConnection</a></td>
 <td>
 
@@ -1888,7 +1888,7 @@ The list of events found in this collection.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>instruments</strong></td>
+<td colspan="2" valign="top"><strong><a name="instruments">instruments</a></strong></td>
 <td valign="top"><a href="#instrumentconnection">InstrumentConnection</a></td>
 <td>
 
@@ -1907,7 +1907,7 @@ The list of instruments found in this collection.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>labels</strong></td>
+<td colspan="2" valign="top"><strong><a name="labels">labels</a></strong></td>
 <td valign="top"><a href="#labelconnection">LabelConnection</a></td>
 <td>
 
@@ -1926,7 +1926,7 @@ The list of labels found in this collection.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>places</strong></td>
+<td colspan="2" valign="top"><strong><a name="places">places</a></strong></td>
 <td valign="top"><a href="#placeconnection">PlaceConnection</a></td>
 <td>
 
@@ -1945,7 +1945,7 @@ The list of places found in this collection.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>recordings</strong></td>
+<td colspan="2" valign="top"><strong><a name="recordings">recordings</a></strong></td>
 <td valign="top"><a href="#recordingconnection">RecordingConnection</a></td>
 <td>
 
@@ -1964,7 +1964,7 @@ The list of recordings found in this collection.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releases</strong></td>
+<td colspan="2" valign="top"><strong><a name="releases">releases</a></strong></td>
 <td valign="top"><a href="#releaseconnection">ReleaseConnection</a></td>
 <td>
 
@@ -2001,7 +2001,7 @@ Filter by one or more release statuses.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releaseGroups</strong></td>
+<td colspan="2" valign="top"><strong><a name="releasegroups">releaseGroups</a></strong></td>
 <td valign="top"><a href="#releasegroupconnection">ReleaseGroupConnection</a></td>
 <td>
 
@@ -2029,7 +2029,7 @@ Filter by one or more release group types.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>series</strong></td>
+<td colspan="2" valign="top"><strong><a name="series">series</a></strong></td>
 <td valign="top"><a href="#seriesconnection">SeriesConnection</a></td>
 <td>
 
@@ -2048,7 +2048,7 @@ The list of series found in this collection.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>works</strong></td>
+<td colspan="2" valign="top"><strong><a name="works">works</a></strong></td>
 <td valign="top"><a href="#workconnection">WorkConnection</a></td>
 <td>
 
@@ -2084,7 +2084,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -2093,7 +2093,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#collectionedge">CollectionEdge</a>]</td>
 <td>
 
@@ -2102,7 +2102,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#collection">Collection</a>]</td>
 <td>
 
@@ -2112,7 +2112,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -2139,7 +2139,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#collection">Collection</a></td>
 <td>
 
@@ -2148,7 +2148,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -2157,7 +2157,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -2184,7 +2184,7 @@ Geographic coordinates described with latitude and longitude.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>latitude</strong></td>
+<td colspan="2" valign="top"><strong><a name="latitude">latitude</a></strong></td>
 <td valign="top"><a href="#degrees">Degrees</a></td>
 <td>
 
@@ -2193,7 +2193,7 @@ The north–south position of a point on the Earth’s surface.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>longitude</strong></td>
+<td colspan="2" valign="top"><strong><a name="longitude">longitude</a></strong></td>
 <td valign="top"><a href="#degrees">Degrees</a></td>
 <td>
 
@@ -2220,7 +2220,7 @@ particular [disc ID](https://musicbrainz.org/doc/Disc_ID).
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -2229,7 +2229,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>discID</strong></td>
+<td colspan="2" valign="top"><strong><a name="discid">discID</a></strong></td>
 <td valign="top"><a href="#discid">DiscID</a>!</td>
 <td>
 
@@ -2238,7 +2238,7 @@ The [disc ID](https://musicbrainz.org/doc/Disc_ID) of this disc.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>offsetCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="offsetcount">offsetCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td>
 
@@ -2247,7 +2247,7 @@ The number of offsets (tracks) on the disc.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>offsets</strong></td>
+<td colspan="2" valign="top"><strong><a name="offsets">offsets</a></strong></td>
 <td valign="top">[<a href="#int">Int</a>]</td>
 <td>
 
@@ -2256,7 +2256,7 @@ The sector offset of each track on the disc.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>sectors</strong></td>
+<td colspan="2" valign="top"><strong><a name="sectors">sectors</a></strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td>
 
@@ -2265,7 +2265,7 @@ The sector offset of the lead-out (the end of the disc).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releases</strong></td>
+<td colspan="2" valign="top"><strong><a name="releases">releases</a></strong></td>
 <td valign="top"><a href="#releaseconnection">ReleaseConnection</a></td>
 <td>
 
@@ -2303,7 +2303,7 @@ Generally this means live performances, like concerts and festivals.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -2312,7 +2312,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -2321,7 +2321,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2330,7 +2330,7 @@ The official name of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2339,7 +2339,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>aliases</strong></td>
+<td colspan="2" valign="top"><strong><a name="aliases">aliases</a></strong></td>
 <td valign="top">[<a href="#alias">Alias</a>]</td>
 <td>
 
@@ -2349,7 +2349,7 @@ alternate names or misspellings.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>lifeSpan</strong></td>
+<td colspan="2" valign="top"><strong><a name="lifespan">lifeSpan</a></strong></td>
 <td valign="top"><a href="#lifespan">LifeSpan</a></td>
 <td>
 
@@ -2359,7 +2359,7 @@ meaning depends on the type of entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>time</strong></td>
+<td colspan="2" valign="top"><strong><a name="time">time</a></strong></td>
 <td valign="top"><a href="#time">Time</a></td>
 <td>
 
@@ -2368,7 +2368,7 @@ The start time of the event.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cancelled</strong></td>
+<td colspan="2" valign="top"><strong><a name="cancelled">cancelled</a></strong></td>
 <td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
@@ -2377,7 +2377,7 @@ Whether or not the event took place.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>setlist</strong></td>
+<td colspan="2" valign="top"><strong><a name="setlist">setlist</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2388,7 +2388,7 @@ for syntax and examples.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2397,7 +2397,7 @@ What kind of event the event is, e.g. concert, festival, etc.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -2407,7 +2407,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -2416,7 +2416,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -2435,7 +2435,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>rating</strong></td>
+<td colspan="2" valign="top"><strong><a name="rating">rating</a></strong></td>
 <td valign="top"><a href="#rating">Rating</a></td>
 <td>
 
@@ -2444,7 +2444,7 @@ The rating users have given to this entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -2480,7 +2480,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -2489,7 +2489,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#eventedge">EventEdge</a>]</td>
 <td>
 
@@ -2498,7 +2498,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#event">Event</a>]</td>
 <td>
 
@@ -2508,7 +2508,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -2535,7 +2535,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#event">Event</a></td>
 <td>
 
@@ -2544,7 +2544,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -2553,7 +2553,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -2582,7 +2582,7 @@ used in relationships between two other entities.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -2591,7 +2591,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -2600,7 +2600,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2609,7 +2609,7 @@ The official name of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2618,7 +2618,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>aliases</strong></td>
+<td colspan="2" valign="top"><strong><a name="aliases">aliases</a></strong></td>
 <td valign="top">[<a href="#alias">Alias</a>]</td>
 <td>
 
@@ -2628,7 +2628,7 @@ alternate names or misspellings.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>description</strong></td>
+<td colspan="2" valign="top"><strong><a name="description">description</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2638,7 +2638,7 @@ instrument.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2649,7 +2649,7 @@ classification.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -2659,7 +2659,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -2668,7 +2668,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -2687,7 +2687,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -2723,7 +2723,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -2732,7 +2732,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#instrumentedge">InstrumentEdge</a>]</td>
 <td>
 
@@ -2741,7 +2741,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#instrument">Instrument</a>]</td>
 <td>
 
@@ -2751,7 +2751,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -2778,7 +2778,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#instrument">Instrument</a></td>
 <td>
 
@@ -2787,7 +2787,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -2796,7 +2796,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -2825,7 +2825,7 @@ represent a record company.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -2834,7 +2834,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -2843,7 +2843,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2852,7 +2852,7 @@ The official name of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>sortName</strong></td>
+<td colspan="2" valign="top"><strong><a name="sortname">sortName</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2863,7 +2863,7 @@ the front).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2872,7 +2872,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>aliases</strong></td>
+<td colspan="2" valign="top"><strong><a name="aliases">aliases</a></strong></td>
 <td valign="top">[<a href="#alias">Alias</a>]</td>
 <td>
 
@@ -2882,7 +2882,7 @@ alternate names or misspellings.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>country</strong></td>
+<td colspan="2" valign="top"><strong><a name="country">country</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2891,7 +2891,7 @@ The country of origin for the label.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>area</strong></td>
+<td colspan="2" valign="top"><strong><a name="area">area</a></strong></td>
 <td valign="top"><a href="#area">Area</a></td>
 <td>
 
@@ -2900,7 +2900,7 @@ The area in which the label is based.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>lifeSpan</strong></td>
+<td colspan="2" valign="top"><strong><a name="lifespan">lifeSpan</a></strong></td>
 <td valign="top"><a href="#lifespan">LifeSpan</a></td>
 <td>
 
@@ -2910,7 +2910,7 @@ meaning depends on the type of entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>labelCode</strong></td>
+<td colspan="2" valign="top"><strong><a name="labelcode">labelCode</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -2920,7 +2920,7 @@ of the label.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>ipis</strong></td>
+<td colspan="2" valign="top"><strong><a name="ipis">ipis</a></strong></td>
 <td valign="top">[<a href="#ipi">IPI</a>]</td>
 <td>
 
@@ -2930,7 +2930,7 @@ codes for the label.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -2940,7 +2940,7 @@ imprint, production, distributor, rights society, etc.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -2950,7 +2950,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releases</strong></td>
+<td colspan="2" valign="top"><strong><a name="releases">releases</a></strong></td>
 <td valign="top"><a href="#releaseconnection">ReleaseConnection</a></td>
 <td>
 
@@ -2987,7 +2987,7 @@ Filter by one or more release statuses.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -2996,7 +2996,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -3015,7 +3015,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>rating</strong></td>
+<td colspan="2" valign="top"><strong><a name="rating">rating</a></strong></td>
 <td valign="top"><a href="#rating">Rating</a></td>
 <td>
 
@@ -3024,7 +3024,7 @@ The rating users have given to this entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -3060,7 +3060,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -3069,7 +3069,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#labeledge">LabelEdge</a>]</td>
 <td>
 
@@ -3078,7 +3078,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#label">Label</a>]</td>
 <td>
 
@@ -3088,7 +3088,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -3115,7 +3115,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#label">Label</a></td>
 <td>
 
@@ -3124,7 +3124,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -3133,7 +3133,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -3161,7 +3161,7 @@ lifetime, including whether it has ended (even if the date is unknown).
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>begin</strong></td>
+<td colspan="2" valign="top"><strong><a name="begin">begin</a></strong></td>
 <td valign="top"><a href="#date">Date</a></td>
 <td>
 
@@ -3170,7 +3170,7 @@ The start date of the entity’s life span.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>end</strong></td>
+<td colspan="2" valign="top"><strong><a name="end">end</a></strong></td>
 <td valign="top"><a href="#date">Date</a></td>
 <td>
 
@@ -3179,7 +3179,7 @@ The end date of the entity’s life span.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>ended</strong></td>
+<td colspan="2" valign="top"><strong><a name="ended">ended</a></strong></td>
 <td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
@@ -3205,7 +3205,7 @@ A lookup of an individual MusicBrainz entity by its MBID.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>area</strong></td>
+<td colspan="2" valign="top"><strong><a name="area">area</a></strong></td>
 <td valign="top"><a href="#area">Area</a></td>
 <td>
 
@@ -3223,7 +3223,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artist</strong></td>
+<td colspan="2" valign="top"><strong><a name="artist">artist</a></strong></td>
 <td valign="top"><a href="#artist">Artist</a></td>
 <td>
 
@@ -3241,7 +3241,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collection</strong></td>
+<td colspan="2" valign="top"><strong><a name="collection">collection</a></strong></td>
 <td valign="top"><a href="#collection">Collection</a></td>
 <td>
 
@@ -3259,7 +3259,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disc</strong></td>
+<td colspan="2" valign="top"><strong><a name="disc">disc</a></strong></td>
 <td valign="top"><a href="#disc">Disc</a></td>
 <td>
 
@@ -3278,7 +3278,7 @@ of the disc.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>event</strong></td>
+<td colspan="2" valign="top"><strong><a name="event">event</a></strong></td>
 <td valign="top"><a href="#event">Event</a></td>
 <td>
 
@@ -3296,7 +3296,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>instrument</strong></td>
+<td colspan="2" valign="top"><strong><a name="instrument">instrument</a></strong></td>
 <td valign="top"><a href="#instrument">Instrument</a></td>
 <td>
 
@@ -3314,7 +3314,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>label</strong></td>
+<td colspan="2" valign="top"><strong><a name="label">label</a></strong></td>
 <td valign="top"><a href="#label">Label</a></td>
 <td>
 
@@ -3332,7 +3332,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>place</strong></td>
+<td colspan="2" valign="top"><strong><a name="place">place</a></strong></td>
 <td valign="top"><a href="#place">Place</a></td>
 <td>
 
@@ -3350,7 +3350,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>recording</strong></td>
+<td colspan="2" valign="top"><strong><a name="recording">recording</a></strong></td>
 <td valign="top"><a href="#recording">Recording</a></td>
 <td>
 
@@ -3368,7 +3368,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>release</strong></td>
+<td colspan="2" valign="top"><strong><a name="release">release</a></strong></td>
 <td valign="top"><a href="#release">Release</a></td>
 <td>
 
@@ -3386,7 +3386,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releaseGroup</strong></td>
+<td colspan="2" valign="top"><strong><a name="releasegroup">releaseGroup</a></strong></td>
 <td valign="top"><a href="#releasegroup">ReleaseGroup</a></td>
 <td>
 
@@ -3404,7 +3404,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>series</strong></td>
+<td colspan="2" valign="top"><strong><a name="series">series</a></strong></td>
 <td valign="top"><a href="#series">Series</a></td>
 <td>
 
@@ -3422,7 +3422,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>url</strong></td>
+<td colspan="2" valign="top"><strong><a name="url">url</a></strong></td>
 <td valign="top"><a href="#url">URL</a></td>
 <td>
 
@@ -3449,7 +3449,7 @@ The web address of the URL entity to look up.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>work</strong></td>
+<td colspan="2" valign="top"><strong><a name="work">work</a></strong></td>
 <td valign="top"><a href="#work">Work</a></td>
 <td>
 
@@ -3488,7 +3488,7 @@ cassette) and can optionally also have a title.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>title</strong></td>
+<td colspan="2" valign="top"><strong><a name="title">title</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -3497,7 +3497,7 @@ The title of this particular medium.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>format</strong></td>
+<td colspan="2" valign="top"><strong><a name="format">format</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -3507,7 +3507,7 @@ the medium (e.g. CD, DVD, vinyl, cassette).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>formatID</strong></td>
+<td colspan="2" valign="top"><strong><a name="formatid">formatID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -3517,7 +3517,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>position</strong></td>
+<td colspan="2" valign="top"><strong><a name="position">position</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -3527,7 +3527,7 @@ multi-disc release).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>trackCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="trackcount">trackCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -3536,7 +3536,7 @@ The number of audio tracks on this medium.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>discs</strong></td>
+<td colspan="2" valign="top"><strong><a name="discs">discs</a></strong></td>
 <td valign="top">[<a href="#disc">Disc</a>]</td>
 <td>
 
@@ -3545,7 +3545,7 @@ A list of physical discs and their disc IDs for this medium.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tracks</strong></td>
+<td colspan="2" valign="top"><strong><a name="tracks">tracks</a></strong></td>
 <td valign="top">[<a href="#track">Track</a>]</td>
 <td>
 
@@ -3571,7 +3571,7 @@ Information about pagination in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>hasNextPage</strong></td>
+<td colspan="2" valign="top"><strong><a name="hasnextpage">hasNextPage</a></strong></td>
 <td valign="top"><a href="#boolean">Boolean</a>!</td>
 <td>
 
@@ -3580,7 +3580,7 @@ When paginating forwards, are there more items?
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>hasPreviousPage</strong></td>
+<td colspan="2" valign="top"><strong><a name="haspreviouspage">hasPreviousPage</a></strong></td>
 <td valign="top"><a href="#boolean">Boolean</a>!</td>
 <td>
 
@@ -3589,7 +3589,7 @@ When paginating backwards, are there more items?
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>startCursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="startcursor">startCursor</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -3598,7 +3598,7 @@ When paginating backwards, the cursor to continue.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>endCursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="endcursor">endCursor</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -3625,7 +3625,7 @@ or other place where music is performed, recorded, engineered, etc.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -3634,7 +3634,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -3643,7 +3643,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -3652,7 +3652,7 @@ The official name of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -3661,7 +3661,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>aliases</strong></td>
+<td colspan="2" valign="top"><strong><a name="aliases">aliases</a></strong></td>
 <td valign="top">[<a href="#alias">Alias</a>]</td>
 <td>
 
@@ -3671,7 +3671,7 @@ alternate names or misspellings.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>address</strong></td>
+<td colspan="2" valign="top"><strong><a name="address">address</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -3681,7 +3681,7 @@ standard addressing format for the country it is located in.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>area</strong></td>
+<td colspan="2" valign="top"><strong><a name="area">area</a></strong></td>
 <td valign="top"><a href="#area">Area</a></td>
 <td>
 
@@ -3691,7 +3691,7 @@ which the place is located.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>coordinates</strong></td>
+<td colspan="2" valign="top"><strong><a name="coordinates">coordinates</a></strong></td>
 <td valign="top"><a href="#coordinates">Coordinates</a></td>
 <td>
 
@@ -3700,7 +3700,7 @@ The geographic coordinates of the place.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>lifeSpan</strong></td>
+<td colspan="2" valign="top"><strong><a name="lifespan">lifeSpan</a></strong></td>
 <td valign="top"><a href="#lifespan">LifeSpan</a></td>
 <td>
 
@@ -3710,7 +3710,7 @@ meaning depends on the type of entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -3720,7 +3720,7 @@ function.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -3730,7 +3730,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>events</strong></td>
+<td colspan="2" valign="top"><strong><a name="events">events</a></strong></td>
 <td valign="top"><a href="#eventconnection">EventConnection</a></td>
 <td>
 
@@ -3749,7 +3749,7 @@ A list of events linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -3758,7 +3758,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -3777,7 +3777,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -3813,7 +3813,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -3822,7 +3822,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#placeedge">PlaceEdge</a>]</td>
 <td>
 
@@ -3831,7 +3831,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#place">Place</a>]</td>
 <td>
 
@@ -3841,7 +3841,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -3868,7 +3868,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#place">Place</a></td>
 <td>
 
@@ -3877,7 +3877,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -3886,7 +3886,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -3916,7 +3916,7 @@ for the entity.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>voteCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="votecount">voteCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td>
 
@@ -3925,7 +3925,7 @@ The number of votes that have contributed to the rating.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>value</strong></td>
+<td colspan="2" valign="top"><strong><a name="value">value</a></strong></td>
 <td valign="top"><a href="#float">Float</a></td>
 <td>
 
@@ -3962,7 +3962,7 @@ or mixing.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -3971,7 +3971,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -3980,7 +3980,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>title</strong></td>
+<td colspan="2" valign="top"><strong><a name="title">title</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -3989,7 +3989,7 @@ The official title of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -3998,7 +3998,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>aliases</strong></td>
+<td colspan="2" valign="top"><strong><a name="aliases">aliases</a></strong></td>
 <td valign="top">[<a href="#alias">Alias</a>]</td>
 <td>
 
@@ -4008,7 +4008,7 @@ alternate names or misspellings.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artistCredit</strong> ⚠️</td>
+<td colspan="2" valign="top"><strong><a name="artistcredit">artistCredit</a></strong> ⚠️</td>
 <td valign="top">[<a href="#artistcredit">ArtistCredit</a>]</td>
 <td>
 
@@ -4027,7 +4027,7 @@ and will be removed in a major release in the future. Use the equivalent
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artistCredits</strong></td>
+<td colspan="2" valign="top"><strong><a name="artistcredits">artistCredits</a></strong></td>
 <td valign="top">[<a href="#artistcredit">ArtistCredit</a>]</td>
 <td>
 
@@ -4036,7 +4036,7 @@ The main credited artist(s).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>isrcs</strong></td>
+<td colspan="2" valign="top"><strong><a name="isrcs">isrcs</a></strong></td>
 <td valign="top">[<a href="#isrc">ISRC</a>]</td>
 <td>
 
@@ -4046,7 +4046,7 @@ A list of [International Standard Recording Codes](https://musicbrainz.org/doc/I
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>length</strong></td>
+<td colspan="2" valign="top"><strong><a name="length">length</a></strong></td>
 <td valign="top"><a href="#duration">Duration</a></td>
 <td>
 
@@ -4056,7 +4056,7 @@ from the lengths of the tracks using it.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>video</strong></td>
+<td colspan="2" valign="top"><strong><a name="video">video</a></strong></td>
 <td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
@@ -4065,7 +4065,7 @@ Whether this is a video recording.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artists</strong></td>
+<td colspan="2" valign="top"><strong><a name="artists">artists</a></strong></td>
 <td valign="top"><a href="#artistconnection">ArtistConnection</a></td>
 <td>
 
@@ -4084,7 +4084,7 @@ A list of artists linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releases</strong></td>
+<td colspan="2" valign="top"><strong><a name="releases">releases</a></strong></td>
 <td valign="top"><a href="#releaseconnection">ReleaseConnection</a></td>
 <td>
 
@@ -4121,7 +4121,7 @@ Filter by one or more release statuses.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -4130,7 +4130,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -4149,7 +4149,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>rating</strong></td>
+<td colspan="2" valign="top"><strong><a name="rating">rating</a></strong></td>
 <td valign="top"><a href="#rating">Rating</a></td>
 <td>
 
@@ -4158,7 +4158,7 @@ The rating users have given to this entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -4194,7 +4194,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -4203,7 +4203,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#recordingedge">RecordingEdge</a>]</td>
 <td>
 
@@ -4212,7 +4212,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#recording">Recording</a>]</td>
 <td>
 
@@ -4222,7 +4222,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -4249,7 +4249,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#recording">Recording</a></td>
 <td>
 
@@ -4258,7 +4258,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -4267,7 +4267,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -4296,7 +4296,7 @@ other and to URLs outside MusicBrainz.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>target</strong></td>
+<td colspan="2" valign="top"><strong><a name="target">target</a></strong></td>
 <td valign="top"><a href="#entity">Entity</a>!</td>
 <td>
 
@@ -4305,7 +4305,7 @@ The target entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>direction</strong></td>
+<td colspan="2" valign="top"><strong><a name="direction">direction</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -4314,7 +4314,7 @@ The direction of the relationship.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>targetType</strong></td>
+<td colspan="2" valign="top"><strong><a name="targettype">targetType</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -4323,7 +4323,7 @@ The type of entity on the receiving end of the relationship.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>sourceCredit</strong></td>
+<td colspan="2" valign="top"><strong><a name="sourcecredit">sourceCredit</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -4333,7 +4333,7 @@ from its main (performance) name.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>targetCredit</strong></td>
+<td colspan="2" valign="top"><strong><a name="targetcredit">targetCredit</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -4343,7 +4343,7 @@ from its main (performance) name.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>begin</strong></td>
+<td colspan="2" valign="top"><strong><a name="begin">begin</a></strong></td>
 <td valign="top"><a href="#date">Date</a></td>
 <td>
 
@@ -4352,7 +4352,7 @@ The date on which the relationship became applicable.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>end</strong></td>
+<td colspan="2" valign="top"><strong><a name="end">end</a></strong></td>
 <td valign="top"><a href="#date">Date</a></td>
 <td>
 
@@ -4361,7 +4361,7 @@ The date on which the relationship became no longer applicable.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>ended</strong></td>
+<td colspan="2" valign="top"><strong><a name="ended">ended</a></strong></td>
 <td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
@@ -4370,7 +4370,7 @@ Whether the relationship still applies.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>attributes</strong></td>
+<td colspan="2" valign="top"><strong><a name="attributes">attributes</a></strong></td>
 <td valign="top">[<a href="#string">String</a>]</td>
 <td>
 
@@ -4382,7 +4382,7 @@ relationship type.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -4391,7 +4391,7 @@ The type of relationship.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -4418,7 +4418,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -4427,7 +4427,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#relationshipedge">RelationshipEdge</a>]</td>
 <td>
 
@@ -4436,7 +4436,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#relationship">Relationship</a>]</td>
 <td>
 
@@ -4446,7 +4446,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -4473,7 +4473,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#relationship">Relationship</a></td>
 <td>
 
@@ -4482,7 +4482,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -4491,7 +4491,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -4518,7 +4518,7 @@ Lists of entity relationships for each entity type.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>areas</strong></td>
+<td colspan="2" valign="top"><strong><a name="areas">areas</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -4575,7 +4575,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artists</strong></td>
+<td colspan="2" valign="top"><strong><a name="artists">artists</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -4632,7 +4632,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>events</strong></td>
+<td colspan="2" valign="top"><strong><a name="events">events</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -4689,7 +4689,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>instruments</strong></td>
+<td colspan="2" valign="top"><strong><a name="instruments">instruments</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -4746,7 +4746,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>labels</strong></td>
+<td colspan="2" valign="top"><strong><a name="labels">labels</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -4803,7 +4803,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>places</strong></td>
+<td colspan="2" valign="top"><strong><a name="places">places</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -4860,7 +4860,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>recordings</strong></td>
+<td colspan="2" valign="top"><strong><a name="recordings">recordings</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -4917,7 +4917,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releases</strong></td>
+<td colspan="2" valign="top"><strong><a name="releases">releases</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -4974,7 +4974,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releaseGroups</strong></td>
+<td colspan="2" valign="top"><strong><a name="releasegroups">releaseGroups</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -5031,7 +5031,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>series</strong></td>
+<td colspan="2" valign="top"><strong><a name="series">series</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -5088,7 +5088,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>urls</strong></td>
+<td colspan="2" valign="top"><strong><a name="urls">urls</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -5145,7 +5145,7 @@ field.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>works</strong></td>
+<td colspan="2" valign="top"><strong><a name="works">works</a></strong></td>
 <td valign="top"><a href="#relationshipconnection">RelationshipConnection</a></td>
 <td>
 
@@ -5223,7 +5223,7 @@ MusicBrainz as one release.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -5232,7 +5232,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -5241,7 +5241,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>title</strong></td>
+<td colspan="2" valign="top"><strong><a name="title">title</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -5250,7 +5250,7 @@ The official title of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -5259,7 +5259,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>aliases</strong></td>
+<td colspan="2" valign="top"><strong><a name="aliases">aliases</a></strong></td>
 <td valign="top">[<a href="#alias">Alias</a>]</td>
 <td>
 
@@ -5269,7 +5269,7 @@ alternate names or misspellings.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artistCredit</strong> ⚠️</td>
+<td colspan="2" valign="top"><strong><a name="artistcredit">artistCredit</a></strong> ⚠️</td>
 <td valign="top">[<a href="#artistcredit">ArtistCredit</a>]</td>
 <td>
 
@@ -5288,7 +5288,7 @@ and will be removed in a major release in the future. Use the equivalent
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artistCredits</strong></td>
+<td colspan="2" valign="top"><strong><a name="artistcredits">artistCredits</a></strong></td>
 <td valign="top">[<a href="#artistcredit">ArtistCredit</a>]</td>
 <td>
 
@@ -5297,7 +5297,7 @@ The main credited artist(s).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releaseEvents</strong></td>
+<td colspan="2" valign="top"><strong><a name="releaseevents">releaseEvents</a></strong></td>
 <td valign="top">[<a href="#releaseevent">ReleaseEvent</a>]</td>
 <td>
 
@@ -5306,7 +5306,7 @@ The release events for this release.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>date</strong></td>
+<td colspan="2" valign="top"><strong><a name="date">date</a></strong></td>
 <td valign="top"><a href="#date">Date</a></td>
 <td>
 
@@ -5317,7 +5317,7 @@ distribution mechanism.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>country</strong></td>
+<td colspan="2" valign="top"><strong><a name="country">country</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -5326,7 +5326,7 @@ The country in which the release was issued.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>asin</strong></td>
+<td colspan="2" valign="top"><strong><a name="asin">asin</a></strong></td>
 <td valign="top"><a href="#asin">ASIN</a></td>
 <td>
 
@@ -5336,7 +5336,7 @@ of the release.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>barcode</strong></td>
+<td colspan="2" valign="top"><strong><a name="barcode">barcode</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -5348,7 +5348,7 @@ release has one. The most common types found on releases are 12-digit
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>status</strong></td>
+<td colspan="2" valign="top"><strong><a name="status">status</a></strong></td>
 <td valign="top"><a href="#releasestatus">ReleaseStatus</a></td>
 <td>
 
@@ -5357,7 +5357,7 @@ The status describes how “official” a release is.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>statusID</strong></td>
+<td colspan="2" valign="top"><strong><a name="statusid">statusID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -5367,7 +5367,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>packaging</strong></td>
+<td colspan="2" valign="top"><strong><a name="packaging">packaging</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -5378,7 +5378,7 @@ information.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>packagingID</strong></td>
+<td colspan="2" valign="top"><strong><a name="packagingid">packagingID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -5388,7 +5388,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>quality</strong></td>
+<td colspan="2" valign="top"><strong><a name="quality">quality</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -5399,7 +5399,7 @@ It is not a mark of how good or bad the music itself is – for that, use
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>media</strong></td>
+<td colspan="2" valign="top"><strong><a name="media">media</a></strong></td>
 <td valign="top">[<a href="#medium">Medium</a>]</td>
 <td>
 
@@ -5408,7 +5408,7 @@ The media on which the release was distributed.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artists</strong></td>
+<td colspan="2" valign="top"><strong><a name="artists">artists</a></strong></td>
 <td valign="top"><a href="#artistconnection">ArtistConnection</a></td>
 <td>
 
@@ -5427,7 +5427,7 @@ A list of artists linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>labels</strong></td>
+<td colspan="2" valign="top"><strong><a name="labels">labels</a></strong></td>
 <td valign="top"><a href="#labelconnection">LabelConnection</a></td>
 <td>
 
@@ -5446,7 +5446,7 @@ A list of labels linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>recordings</strong></td>
+<td colspan="2" valign="top"><strong><a name="recordings">recordings</a></strong></td>
 <td valign="top"><a href="#recordingconnection">RecordingConnection</a></td>
 <td>
 
@@ -5465,7 +5465,7 @@ A list of recordings linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releaseGroups</strong></td>
+<td colspan="2" valign="top"><strong><a name="releasegroups">releaseGroups</a></strong></td>
 <td valign="top"><a href="#releasegroupconnection">ReleaseGroupConnection</a></td>
 <td>
 
@@ -5493,7 +5493,7 @@ Filter by one or more release group types.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -5502,7 +5502,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -5521,7 +5521,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -5557,7 +5557,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -5566,7 +5566,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#releaseedge">ReleaseEdge</a>]</td>
 <td>
 
@@ -5575,7 +5575,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#release">Release</a>]</td>
 <td>
 
@@ -5585,7 +5585,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -5612,7 +5612,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#release">Release</a></td>
 <td>
 
@@ -5621,7 +5621,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -5630,7 +5630,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -5658,12 +5658,12 @@ a particular label, catalog number, barcode, and format.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>area</strong></td>
+<td colspan="2" valign="top"><strong><a name="area">area</a></strong></td>
 <td valign="top"><a href="#area">Area</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>date</strong></td>
+<td colspan="2" valign="top"><strong><a name="date">date</a></strong></td>
 <td valign="top"><a href="#date">Date</a></td>
 <td></td>
 </tr>
@@ -5692,7 +5692,7 @@ album – it doesn’t matter how many CDs or editions/versions it had.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -5701,7 +5701,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -5710,7 +5710,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>title</strong></td>
+<td colspan="2" valign="top"><strong><a name="title">title</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -5719,7 +5719,7 @@ The official title of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -5728,7 +5728,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>aliases</strong></td>
+<td colspan="2" valign="top"><strong><a name="aliases">aliases</a></strong></td>
 <td valign="top">[<a href="#alias">Alias</a>]</td>
 <td>
 
@@ -5738,7 +5738,7 @@ alternate names or misspellings.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artistCredit</strong> ⚠️</td>
+<td colspan="2" valign="top"><strong><a name="artistcredit">artistCredit</a></strong> ⚠️</td>
 <td valign="top">[<a href="#artistcredit">ArtistCredit</a>]</td>
 <td>
 
@@ -5757,7 +5757,7 @@ and will be removed in a major release in the future. Use the equivalent
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artistCredits</strong></td>
+<td colspan="2" valign="top"><strong><a name="artistcredits">artistCredits</a></strong></td>
 <td valign="top">[<a href="#artistcredit">ArtistCredit</a>]</td>
 <td>
 
@@ -5766,7 +5766,7 @@ The main credited artist(s).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>firstReleaseDate</strong></td>
+<td colspan="2" valign="top"><strong><a name="firstreleasedate">firstReleaseDate</a></strong></td>
 <td valign="top"><a href="#date">Date</a></td>
 <td>
 
@@ -5775,7 +5775,7 @@ The date of the earliest release in the group.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>primaryType</strong></td>
+<td colspan="2" valign="top"><strong><a name="primarytype">primaryType</a></strong></td>
 <td valign="top"><a href="#releasegrouptype">ReleaseGroupType</a></td>
 <td>
 
@@ -5787,7 +5787,7 @@ e.g. album, single, soundtrack, compilation, etc. A release group can have a
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>primaryTypeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="primarytypeid">primaryTypeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -5797,7 +5797,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>secondaryTypes</strong></td>
+<td colspan="2" valign="top"><strong><a name="secondarytypes">secondaryTypes</a></strong></td>
 <td valign="top">[<a href="#releasegrouptype">ReleaseGroupType</a>]</td>
 <td>
 
@@ -5807,7 +5807,7 @@ that apply to this release group.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>secondaryTypeIDs</strong></td>
+<td colspan="2" valign="top"><strong><a name="secondarytypeids">secondaryTypeIDs</a></strong></td>
 <td valign="top">[<a href="#mbid">MBID</a>]</td>
 <td>
 
@@ -5817,7 +5817,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artists</strong></td>
+<td colspan="2" valign="top"><strong><a name="artists">artists</a></strong></td>
 <td valign="top"><a href="#artistconnection">ArtistConnection</a></td>
 <td>
 
@@ -5836,7 +5836,7 @@ A list of artists linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releases</strong></td>
+<td colspan="2" valign="top"><strong><a name="releases">releases</a></strong></td>
 <td valign="top"><a href="#releaseconnection">ReleaseConnection</a></td>
 <td>
 
@@ -5873,7 +5873,7 @@ Filter by one or more release statuses.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -5882,7 +5882,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -5901,7 +5901,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>rating</strong></td>
+<td colspan="2" valign="top"><strong><a name="rating">rating</a></strong></td>
 <td valign="top"><a href="#rating">Rating</a></td>
 <td>
 
@@ -5910,7 +5910,7 @@ The rating users have given to this entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -5946,7 +5946,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -5955,7 +5955,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#releasegroupedge">ReleaseGroupEdge</a>]</td>
 <td>
 
@@ -5964,7 +5964,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#releasegroup">ReleaseGroup</a>]</td>
 <td>
 
@@ -5974,7 +5974,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -6001,7 +6001,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#releasegroup">ReleaseGroup</a></td>
 <td>
 
@@ -6010,7 +6010,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -6019,7 +6019,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -6046,7 +6046,7 @@ A search for MusicBrainz entities using Lucene query syntax.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>areas</strong></td>
+<td colspan="2" valign="top"><strong><a name="areas">areas</a></strong></td>
 <td valign="top"><a href="#areaconnection">AreaConnection</a></td>
 <td>
 
@@ -6075,7 +6075,7 @@ and search fields](https://musicbrainz.org/doc/Development/XML_Web_Service/Versi
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artists</strong></td>
+<td colspan="2" valign="top"><strong><a name="artists">artists</a></strong></td>
 <td valign="top"><a href="#artistconnection">ArtistConnection</a></td>
 <td>
 
@@ -6104,7 +6104,7 @@ and search fields](https://musicbrainz.org/doc/Development/XML_Web_Service/Versi
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>events</strong></td>
+<td colspan="2" valign="top"><strong><a name="events">events</a></strong></td>
 <td valign="top"><a href="#eventconnection">EventConnection</a></td>
 <td>
 
@@ -6133,7 +6133,7 @@ and search fields](https://musicbrainz.org/doc/Development/XML_Web_Service/Versi
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>instruments</strong></td>
+<td colspan="2" valign="top"><strong><a name="instruments">instruments</a></strong></td>
 <td valign="top"><a href="#instrumentconnection">InstrumentConnection</a></td>
 <td>
 
@@ -6162,7 +6162,7 @@ and search fields](https://musicbrainz.org/doc/Development/XML_Web_Service/Versi
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>labels</strong></td>
+<td colspan="2" valign="top"><strong><a name="labels">labels</a></strong></td>
 <td valign="top"><a href="#labelconnection">LabelConnection</a></td>
 <td>
 
@@ -6191,7 +6191,7 @@ and search fields](https://musicbrainz.org/doc/Development/XML_Web_Service/Versi
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>places</strong></td>
+<td colspan="2" valign="top"><strong><a name="places">places</a></strong></td>
 <td valign="top"><a href="#placeconnection">PlaceConnection</a></td>
 <td>
 
@@ -6220,7 +6220,7 @@ and search fields](https://musicbrainz.org/doc/Development/XML_Web_Service/Versi
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>recordings</strong></td>
+<td colspan="2" valign="top"><strong><a name="recordings">recordings</a></strong></td>
 <td valign="top"><a href="#recordingconnection">RecordingConnection</a></td>
 <td>
 
@@ -6249,7 +6249,7 @@ and search fields](https://musicbrainz.org/doc/Development/XML_Web_Service/Versi
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releases</strong></td>
+<td colspan="2" valign="top"><strong><a name="releases">releases</a></strong></td>
 <td valign="top"><a href="#releaseconnection">ReleaseConnection</a></td>
 <td>
 
@@ -6278,7 +6278,7 @@ and search fields](https://musicbrainz.org/doc/Development/XML_Web_Service/Versi
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>releaseGroups</strong></td>
+<td colspan="2" valign="top"><strong><a name="releasegroups">releaseGroups</a></strong></td>
 <td valign="top"><a href="#releasegroupconnection">ReleaseGroupConnection</a></td>
 <td>
 
@@ -6307,7 +6307,7 @@ and search fields](https://musicbrainz.org/doc/Development/XML_Web_Service/Versi
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>series</strong></td>
+<td colspan="2" valign="top"><strong><a name="series">series</a></strong></td>
 <td valign="top"><a href="#seriesconnection">SeriesConnection</a></td>
 <td>
 
@@ -6336,7 +6336,7 @@ and search fields](https://musicbrainz.org/doc/Development/XML_Web_Service/Versi
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>works</strong></td>
+<td colspan="2" valign="top"><strong><a name="works">works</a></strong></td>
 <td valign="top"><a href="#workconnection">WorkConnection</a></td>
 <td>
 
@@ -6384,7 +6384,7 @@ theme.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -6393,7 +6393,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -6402,7 +6402,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -6411,7 +6411,7 @@ The official name of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -6420,7 +6420,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -6430,7 +6430,7 @@ contains.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -6440,7 +6440,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -6449,7 +6449,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -6468,7 +6468,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -6504,7 +6504,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -6513,7 +6513,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#seriesedge">SeriesEdge</a>]</td>
 <td>
 
@@ -6522,7 +6522,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#series">Series</a>]</td>
 <td>
 
@@ -6532,7 +6532,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -6559,7 +6559,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#series">Series</a></td>
 <td>
 
@@ -6568,7 +6568,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -6577,7 +6577,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -6606,7 +6606,7 @@ release, or recording.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>name</strong></td>
+<td colspan="2" valign="top"><strong><a name="name">name</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -6615,7 +6615,7 @@ The tag label.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>count</strong></td>
+<td colspan="2" valign="top"><strong><a name="count">count</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -6641,7 +6641,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -6650,7 +6650,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#tagedge">TagEdge</a>]</td>
 <td>
 
@@ -6659,7 +6659,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#tag">Tag</a>]</td>
 <td>
 
@@ -6669,7 +6669,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -6696,7 +6696,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#tag">Tag</a></td>
 <td>
 
@@ -6705,7 +6705,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -6714,7 +6714,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -6743,7 +6743,7 @@ A track is the way a recording is represented on a particular
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -6752,7 +6752,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>title</strong></td>
+<td colspan="2" valign="top"><strong><a name="title">title</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -6761,7 +6761,7 @@ The official title of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>position</strong></td>
+<td colspan="2" valign="top"><strong><a name="position">position</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -6771,7 +6771,7 @@ tracks from all discs).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>number</strong></td>
+<td colspan="2" valign="top"><strong><a name="number">number</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -6781,7 +6781,7 @@ disc or side it appears on, e.g. “A1” or “B3”.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>length</strong></td>
+<td colspan="2" valign="top"><strong><a name="length">length</a></strong></td>
 <td valign="top"><a href="#duration">Duration</a></td>
 <td>
 
@@ -6790,7 +6790,7 @@ The length of the track.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>recording</strong></td>
+<td colspan="2" valign="top"><strong><a name="recording">recording</a></strong></td>
 <td valign="top"><a href="#recording">Recording</a></td>
 <td>
 
@@ -6818,7 +6818,7 @@ acquired, an entry in another database, etc.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -6827,7 +6827,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -6836,7 +6836,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>resource</strong></td>
+<td colspan="2" valign="top"><strong><a name="resource">resource</a></strong></td>
 <td valign="top"><a href="#urlstring">URLString</a>!</td>
 <td>
 
@@ -6845,7 +6845,7 @@ The actual URL string.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -6873,7 +6873,7 @@ more audio recordings.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
@@ -6882,7 +6882,7 @@ The ID of an object
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -6891,7 +6891,7 @@ The MBID of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>title</strong></td>
+<td colspan="2" valign="top"><strong><a name="title">title</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -6900,7 +6900,7 @@ The official title of the entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>disambiguation</strong></td>
+<td colspan="2" valign="top"><strong><a name="disambiguation">disambiguation</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -6909,7 +6909,7 @@ A comment used to help distinguish identically named entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>aliases</strong></td>
+<td colspan="2" valign="top"><strong><a name="aliases">aliases</a></strong></td>
 <td valign="top">[<a href="#alias">Alias</a>]</td>
 <td>
 
@@ -6919,7 +6919,7 @@ alternate names or misspellings.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>iswcs</strong></td>
+<td colspan="2" valign="top"><strong><a name="iswcs">iswcs</a></strong></td>
 <td valign="top">[<a href="#string">String</a>]</td>
 <td>
 
@@ -6929,7 +6929,7 @@ to the work by copyright collecting agencies.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>language</strong></td>
+<td colspan="2" valign="top"><strong><a name="language">language</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -6938,7 +6938,7 @@ The language in which the work was originally written.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>type</strong></td>
+<td colspan="2" valign="top"><strong><a name="type">type</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
@@ -6947,7 +6947,7 @@ The type of work.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>typeID</strong></td>
+<td colspan="2" valign="top"><strong><a name="typeid">typeID</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a></td>
 <td>
 
@@ -6957,7 +6957,7 @@ field.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artists</strong></td>
+<td colspan="2" valign="top"><strong><a name="artists">artists</a></strong></td>
 <td valign="top"><a href="#artistconnection">ArtistConnection</a></td>
 <td>
 
@@ -6976,7 +6976,7 @@ A list of artists linked to this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>relationships</strong></td>
+<td colspan="2" valign="top"><strong><a name="relationships">relationships</a></strong></td>
 <td valign="top"><a href="#relationships">Relationships</a></td>
 <td>
 
@@ -6985,7 +6985,7 @@ Relationships between this entity and other entitites.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>collections</strong></td>
+<td colspan="2" valign="top"><strong><a name="collections">collections</a></strong></td>
 <td valign="top"><a href="#collectionconnection">CollectionConnection</a></td>
 <td>
 
@@ -7004,7 +7004,7 @@ A list of collections containing this entity.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>rating</strong></td>
+<td colspan="2" valign="top"><strong><a name="rating">rating</a></strong></td>
 <td valign="top"><a href="#rating">Rating</a></td>
 <td>
 
@@ -7013,7 +7013,7 @@ The rating users have given to this entity.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tags</strong></td>
+<td colspan="2" valign="top"><strong><a name="tags">tags</a></strong></td>
 <td valign="top"><a href="#tagconnection">TagConnection</a></td>
 <td>
 
@@ -7049,7 +7049,7 @@ A connection to a list of items.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>pageInfo</strong></td>
+<td colspan="2" valign="top"><strong><a name="pageinfo">pageInfo</a></strong></td>
 <td valign="top"><a href="#pageinfo">PageInfo</a>!</td>
 <td>
 
@@ -7058,7 +7058,7 @@ Information to aid in pagination.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edges</strong></td>
+<td colspan="2" valign="top"><strong><a name="edges">edges</a></strong></td>
 <td valign="top">[<a href="#workedge">WorkEdge</a>]</td>
 <td>
 
@@ -7067,7 +7067,7 @@ A list of edges.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>nodes</strong></td>
+<td colspan="2" valign="top"><strong><a name="nodes">nodes</a></strong></td>
 <td valign="top">[<a href="#work">Work</a>]</td>
 <td>
 
@@ -7077,7 +7077,7 @@ A list of nodes in the connection (without going through the
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalCount</strong></td>
+<td colspan="2" valign="top"><strong><a name="totalcount">totalCount</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -7104,7 +7104,7 @@ An edge in a connection.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>node</strong></td>
+<td colspan="2" valign="top"><strong><a name="node">node</a></strong></td>
 <td valign="top"><a href="#work">Work</a></td>
 <td>
 
@@ -7113,7 +7113,7 @@ The item at the end of the edge
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>cursor</strong></td>
+<td colspan="2" valign="top"><strong><a name="cursor">cursor</a></strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
@@ -7122,7 +7122,7 @@ A cursor for use in pagination
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>score</strong></td>
+<td colspan="2" valign="top"><strong><a name="score">score</a></strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td>
 
@@ -7483,7 +7483,7 @@ An entity in the MusicBrainz schema.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>mbid</strong></td>
+<td colspan="2" valign="top"><strong><a name="mbid">mbid</a></strong></td>
 <td valign="top"><a href="#mbid">MBID</a>!</td>
 <td>
 
@@ -7509,7 +7509,7 @@ An object with an ID
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
