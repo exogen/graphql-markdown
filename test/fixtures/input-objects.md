@@ -28,7 +28,7 @@
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>getMessage</strong></td>
+<td colspan="2" valign="top"><strong><a name="getmessage">getMessage</a></strong></td>
 <td valign="top"><a href="#message">Message</a></td>
 <td></td>
 </tr>
@@ -52,7 +52,7 @@
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>createMessage</strong></td>
+<td colspan="2" valign="top"><strong><a name="createmessage">createMessage</a></strong></td>
 <td valign="top"><a href="#message">Message</a></td>
 <td></td>
 </tr>
@@ -62,7 +62,7 @@
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>updateMessage</strong></td>
+<td colspan="2" valign="top"><strong><a name="updatemessage">updateMessage</a></strong></td>
 <td valign="top"><a href="#message">Message</a></td>
 <td></td>
 </tr>
@@ -94,17 +94,17 @@
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong><a name="id">id</a></strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>content</strong></td>
+<td colspan="2" valign="top"><strong><a name="content">content</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>author</strong></td>
+<td colspan="2" valign="top"><strong><a name="author">author</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -125,12 +125,12 @@
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>content</strong></td>
+<td colspan="2" valign="top"><strong><a name="content">content</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>author</strong></td>
+<td colspan="2" valign="top"><strong><a name="author">author</a></strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>

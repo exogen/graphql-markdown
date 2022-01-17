@@ -9,10 +9,8 @@ const DEFAULT_GRAPHQL = graphql
 
 function readFile(filename) {
   return new Promise((resolve, reject) => {
-    fs.readFile(
-      filename,
-      'utf8',
-      (err, data) => (err ? reject(err) : resolve(data))
+    fs.readFile(filename, 'utf8', (err, data) =>
+      err ? reject(err) : resolve(data)
     )
   })
 }
