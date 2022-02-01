@@ -42,6 +42,7 @@ function printHelp(console) {
                            module first (useful for e.g. babel-register)
     --header <name=value>  Additional header(s) to use in GraphQL request
                            e.g. --header "Authorization=Bearer ey..."
+    --newpage              Add \\newpage to markdown
     --version              Print version and exit
 `)
 }
@@ -71,6 +72,15 @@ function run(
       obj[key] = value.join('=')
       return obj
     }, {})
+
+    var NEWPAGE
+
+    if (args.newpage === 1) {
+      NEWPAGE = true
+    } else {
+      NEWPAGE = false
+    }
+
     const loadOptions = { headers }
     loadSchemaJSON(schemaPath, loadOptions).then(schema => {
       const options = {
@@ -79,7 +89,8 @@ function run(
         prologue: args.prologue,
         epilogue: args.epilogue,
         skipTableOfContents: args['toc'] === false,
-        headingLevel: args['heading-level']
+        headingLevel: args['heading-level'],
+        newPage: NEWPAGE
       }
       if (options.title === false) {
         options.title = ''
@@ -93,6 +104,7 @@ function run(
           }
         })
       }
+
       const updateFile = args['update-file']
       if (updateFile) {
         updateSchema(updateFile, schema, options)
