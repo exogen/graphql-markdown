@@ -20,11 +20,10 @@ function readFile(filename) {
 function schemaToJSON(schema, options) {
   options = options || {}
   const graphql = options.graphql || DEFAULT_GRAPHQL
-  return graphql
-    .graphql(schema, graphql.getIntrospectionQuery())
-    .then(result => {
-      return result.data
-    })
+  const source = graphql.getIntrospectionQuery()
+  return graphql.graphql({ schema, source }).then(result => {
+    return result.data
+  })
 }
 
 function fetchSchemaJSON(url, options) {

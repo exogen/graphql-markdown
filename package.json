@@ -35,7 +35,7 @@
     ]
   },
   "peerDependencies": {
-    "graphql": "^14.0.2 || ^15.0.0"
+    "graphql": "^14.0.2 || ^15.0.0 || ^16.0.0"
   },
   "dependencies": {
     "deep-diff": "^1.0.2",
@@ -55,7 +55,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "graphbrainz": "^8.1.0",
-    "graphql": "^14.0.2",
+    "graphql": "^16.0.0",
     "husky": "^1.1.0",
     "jest": "^23.6.0",
     "lint-staged": "^7.3.0",
