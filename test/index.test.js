@@ -6,14 +6,14 @@ const {
   run,
   loadSchemaJSON,
   renderSchema,
-  updateSchema
+  updateSchema,
 } = require('../src/index')
 
 jest.mock('node-fetch')
 const fetch = require('node-fetch')
 
 function createPrinter() {
-  const printer = chunk => {
+  const printer = (chunk) => {
     printer.output += `${chunk}\n`
   }
   printer.output = ''
@@ -23,7 +23,7 @@ function createPrinter() {
 function createMockConsole() {
   return {
     log: createPrinter(),
-    error: createPrinter()
+    error: createPrinter(),
   }
 }
 
@@ -112,18 +112,18 @@ describe('loadSchemaJSON()', () => {
   it('can call fetch with correct parameters', async () => {
     fetch.mockImplementation(() =>
       Promise.resolve({
-        json: () => resolveFrom('.', 'graphbrainz/schema.json')
+        json: () => resolveFrom('.', 'graphbrainz/schema.json'),
       })
     )
 
     await loadSchemaJSON('http://example.com', {
-      headers: { key1: 'value1' }
+      headers: { key1: 'value1' },
     })
     expect(fetch.mock.calls[0][0]).toBe('http://example.com')
     expect(fetch.mock.calls[0][1].headers).toEqual({
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      key1: 'value1'
+      key1: 'value1',
     })
   })
 })
@@ -160,7 +160,7 @@ describe('run()', () => {
       run([], { console, exit: false })
       expect({
         stdout: console.log.output,
-        stderr: console.error.output
+        stderr: console.error.output,
       }).toMatchSnapshot()
     })
   })
@@ -171,7 +171,7 @@ describe('run()', () => {
       run(['--help'], { console, exit: false })
       expect({
         stdout: console.log.output,
-        stderr: console.error.output
+        stderr: console.error.output,
       }).toMatchSnapshot()
     })
   })

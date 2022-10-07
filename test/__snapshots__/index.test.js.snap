@@ -1,27 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`diffSchema() outputs a JSON schema containing only additions 1`] = `
-Object {
-  "__schema": Object {
-    "directives": Array [],
-    "types": Array [
-      Object {
+{
+  "__schema": {
+    "directives": [],
+    "types": [
+      {
         "description": "A [release](https://musicbrainz.org/doc/Release) represents the
 unique release (i.e. issuing) of a product on a specific date with specific
 release information such as the country, label, barcode, packaging, etc. If you
 walk into a store and purchase an album or single, they’re each represented in
 MusicBrainz as one release.",
         "enumValues": null,
-        "fields": Array [
-          Object {
-            "args": Array [],
+        "fields": [
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "An object containing a list and summary of the cover art images that are
 present for this release from the [Cover Art Archive](https://musicbrainz.org/doc/Cover_Art_Archive).
 This field is provided by the Cover Art Archive extension.",
             "isDeprecated": false,
             "name": "coverArtArchive",
-            "type": Object {
+            "type": {
               "kind": "OBJECT",
               "name": "CoverArtArchiveRelease",
               "ofType": null,
@@ -29,13 +29,13 @@ This field is provided by the Cover Art Archive extension.",
           },
         ],
         "inputFields": null,
-        "interfaces": Array [
-          Object {
+        "interfaces": [
+          {
             "kind": "INTERFACE",
             "name": "Node",
             "ofType": null,
           },
-          Object {
+          {
             "kind": "INTERFACE",
             "name": "Entity",
             "ofType": null,
@@ -45,7 +45,7 @@ This field is provided by the Cover Art Archive extension.",
         "name": "Release",
         "possibleTypes": null,
       },
-      Object {
+      {
         "description": "A [release group](https://musicbrainz.org/doc/Release_Group) is
 used to group several different releases into a single logical entity. Every
 release belongs to one, and only one release group.
@@ -55,9 +55,9 @@ important difference: a release is something you can buy as media such as a CD
 or a vinyl record, while a release group embraces the overall concept of an
 album – it doesn’t matter how many CDs or editions/versions it had.",
         "enumValues": null,
-        "fields": Array [
-          Object {
-            "args": Array [],
+        "fields": [
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "The cover art for a release in the release group, obtained from the
 [Cover Art Archive](https://musicbrainz.org/doc/Cover_Art_Archive). A
@@ -66,7 +66,7 @@ group.
 This field is provided by the Cover Art Archive extension.",
             "isDeprecated": false,
             "name": "coverArtArchive",
-            "type": Object {
+            "type": {
               "kind": "OBJECT",
               "name": "CoverArtArchiveRelease",
               "ofType": null,
@@ -74,13 +74,13 @@ This field is provided by the Cover Art Archive extension.",
           },
         ],
         "inputFields": null,
-        "interfaces": Array [
-          Object {
+        "interfaces": [
+          {
             "kind": "INTERFACE",
             "name": "Node",
             "ofType": null,
           },
-          Object {
+          {
             "kind": "INTERFACE",
             "name": "Entity",
             "ofType": null,
@@ -90,21 +90,21 @@ This field is provided by the Cover Art Archive extension.",
         "name": "ReleaseGroup",
         "possibleTypes": null,
       },
-      Object {
+      {
         "description": "An object containing a list of the cover art images for a release obtained
 from the [Cover Art Archive](https://musicbrainz.org/doc/Cover_Art_Archive),
 as well as a summary of what artwork is available.",
         "enumValues": null,
-        "fields": Array [
-          Object {
-            "args": Array [
-              Object {
+        "fields": [
+          {
+            "args": [
+              {
                 "defaultValue": "FULL",
                 "description": "The size of the image to retrieve. By default, the returned image will
 have its full original dimensions, but certain thumbnail sizes may be
 retrieved as well.",
                 "name": "size",
-                "type": Object {
+                "type": {
                   "kind": "ENUM",
                   "name": "CoverArtArchiveImageSize",
                   "ofType": null,
@@ -122,21 +122,21 @@ itself if one exists. You can check for null if you just want to determine
 the presence of an image.",
             "isDeprecated": false,
             "name": "front",
-            "type": Object {
+            "type": {
               "kind": "SCALAR",
               "name": "URLString",
               "ofType": null,
             },
           },
-          Object {
-            "args": Array [
-              Object {
+          {
+            "args": [
+              {
                 "defaultValue": "FULL",
                 "description": "The size of the image to retrieve. By default, the returned image will
 have its full original dimensions, but certain thumbnail sizes may be
 retrieved as well.",
                 "name": "size",
-                "type": Object {
+                "type": {
                   "kind": "ENUM",
                   "name": "CoverArtArchiveImageSize",
                   "ofType": null,
@@ -153,26 +153,26 @@ itself. You can check for null if you just want to determine the presence of
 an image.",
             "isDeprecated": false,
             "name": "back",
-            "type": Object {
+            "type": {
               "kind": "SCALAR",
               "name": "URLString",
               "ofType": null,
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "A list of images depicting the different sides and surfaces of a release’s
 media and packaging.",
             "isDeprecated": false,
             "name": "images",
-            "type": Object {
+            "type": {
               "kind": "NON_NULL",
               "name": null,
-              "ofType": Object {
+              "ofType": {
                 "kind": "LIST",
                 "name": null,
-                "ofType": Object {
+                "ofType": {
                   "kind": "OBJECT",
                   "name": "CoverArtArchiveImage",
                   "ofType": null,
@@ -180,45 +180,45 @@ media and packaging.",
               },
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "Whether there is artwork present for this release.",
             "isDeprecated": false,
             "name": "artwork",
-            "type": Object {
+            "type": {
               "kind": "NON_NULL",
               "name": null,
-              "ofType": Object {
+              "ofType": {
                 "kind": "SCALAR",
                 "name": "Boolean",
                 "ofType": null,
               },
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "The number of artwork images present for this release.",
             "isDeprecated": false,
             "name": "count",
-            "type": Object {
+            "type": {
               "kind": "NON_NULL",
               "name": null,
-              "ofType": Object {
+              "ofType": {
                 "kind": "SCALAR",
                 "name": "Int",
                 "ofType": null,
               },
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "The particular release shown in the returned cover art.",
             "isDeprecated": false,
             "name": "release",
-            "type": Object {
+            "type": {
               "kind": "OBJECT",
               "name": "Release",
               "ofType": null,
@@ -226,27 +226,27 @@ media and packaging.",
           },
         ],
         "inputFields": null,
-        "interfaces": Array [],
+        "interfaces": [],
         "kind": "OBJECT",
         "name": "CoverArtArchiveRelease",
         "possibleTypes": null,
       },
-      Object {
+      {
         "description": "The image sizes that may be requested at the [Cover Art Archive](https://musicbrainz.org/doc/Cover_Art_Archive).",
-        "enumValues": Array [
-          Object {
+        "enumValues": [
+          {
             "deprecationReason": null,
             "description": "A maximum dimension of 250px.",
             "isDeprecated": false,
             "name": "SMALL",
           },
-          Object {
+          {
             "deprecationReason": null,
             "description": "A maximum dimension of 500px.",
             "isDeprecated": false,
             "name": "LARGE",
           },
-          Object {
+          {
             "deprecationReason": null,
             "description": "The image’s original dimensions, with no maximum.",
             "isDeprecated": false,
@@ -260,104 +260,104 @@ media and packaging.",
         "name": "CoverArtArchiveImageSize",
         "possibleTypes": null,
       },
-      Object {
+      {
         "description": "An individual piece of album artwork from the [Cover Art Archive](https://musicbrainz.org/doc/Cover_Art_Archive).",
         "enumValues": null,
-        "fields": Array [
-          Object {
-            "args": Array [],
+        "fields": [
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "The Internet Archive’s internal file ID for the image.",
             "isDeprecated": false,
             "name": "fileID",
-            "type": Object {
+            "type": {
               "kind": "NON_NULL",
               "name": null,
-              "ofType": Object {
+              "ofType": {
                 "kind": "SCALAR",
                 "name": "String",
                 "ofType": null,
               },
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "The URL at which the image can be found.",
             "isDeprecated": false,
             "name": "image",
-            "type": Object {
+            "type": {
               "kind": "NON_NULL",
               "name": null,
-              "ofType": Object {
+              "ofType": {
                 "kind": "SCALAR",
                 "name": "URLString",
                 "ofType": null,
               },
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "A set of thumbnails for the image.",
             "isDeprecated": false,
             "name": "thumbnails",
-            "type": Object {
+            "type": {
               "kind": "NON_NULL",
               "name": null,
-              "ofType": Object {
+              "ofType": {
                 "kind": "OBJECT",
                 "name": "CoverArtArchiveImageThumbnails",
                 "ofType": null,
               },
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "Whether this image depicts the “main front” of the release.",
             "isDeprecated": false,
             "name": "front",
-            "type": Object {
+            "type": {
               "kind": "NON_NULL",
               "name": null,
-              "ofType": Object {
+              "ofType": {
                 "kind": "SCALAR",
                 "name": "Boolean",
                 "ofType": null,
               },
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "Whether this image depicts the “main back” of the release.",
             "isDeprecated": false,
             "name": "back",
-            "type": Object {
+            "type": {
               "kind": "NON_NULL",
               "name": null,
-              "ofType": Object {
+              "ofType": {
                 "kind": "SCALAR",
                 "name": "Boolean",
                 "ofType": null,
               },
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "A list of [image types](https://musicbrainz.org/doc/Cover_Art/Types)
 describing what part(s) of the release the image includes.",
             "isDeprecated": false,
             "name": "types",
-            "type": Object {
+            "type": {
               "kind": "NON_NULL",
               "name": null,
-              "ofType": Object {
+              "ofType": {
                 "kind": "LIST",
                 "name": null,
-                "ofType": Object {
+                "ofType": {
                   "kind": "SCALAR",
                   "name": "String",
                   "ofType": null,
@@ -365,37 +365,37 @@ describing what part(s) of the release the image includes.",
               },
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "The MusicBrainz edit ID.",
             "isDeprecated": false,
             "name": "edit",
-            "type": Object {
+            "type": {
               "kind": "SCALAR",
               "name": "Int",
               "ofType": null,
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "Whether the image was approved by the MusicBrainz edit system.",
             "isDeprecated": false,
             "name": "approved",
-            "type": Object {
+            "type": {
               "kind": "SCALAR",
               "name": "Boolean",
               "ofType": null,
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "A free-text comment left for the image.",
             "isDeprecated": false,
             "name": "comment",
-            "type": Object {
+            "type": {
               "kind": "SCALAR",
               "name": "String",
               "ofType": null,
@@ -403,36 +403,36 @@ describing what part(s) of the release the image includes.",
           },
         ],
         "inputFields": null,
-        "interfaces": Array [],
+        "interfaces": [],
         "kind": "OBJECT",
         "name": "CoverArtArchiveImage",
         "possibleTypes": null,
       },
-      Object {
+      {
         "description": "URLs for thumbnails of different sizes for a particular piece of cover art.",
         "enumValues": null,
-        "fields": Array [
-          Object {
-            "args": Array [],
+        "fields": [
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "The URL of a small version of the cover art, where the maximum dimension is
 250px.",
             "isDeprecated": false,
             "name": "small",
-            "type": Object {
+            "type": {
               "kind": "SCALAR",
               "name": "URLString",
               "ofType": null,
             },
           },
-          Object {
-            "args": Array [],
+          {
+            "args": [],
             "deprecationReason": null,
             "description": "The URL of a large version of the cover art, where the maximum dimension is
 500px.",
             "isDeprecated": false,
             "name": "large",
-            "type": Object {
+            "type": {
               "kind": "SCALAR",
               "name": "URLString",
               "ofType": null,
@@ -440,7 +440,7 @@ describing what part(s) of the release the image includes.",
           },
         ],
         "inputFields": null,
-        "interfaces": Array [],
+        "interfaces": [],
         "kind": "OBJECT",
         "name": "CoverArtArchiveImageThumbnails",
         "possibleTypes": null,
@@ -451,7 +451,7 @@ describing what part(s) of the release the image includes.",
 `;
 
 exports[`run() with --help arg prints the help message 1`] = `
-Object {
+{
   "stderr": "",
   "stdout": "
   Usage: graphql-markdown [options] <schema>
@@ -479,7 +479,7 @@ Object {
     --require <module>     If importing the schema from a module, require the specified
                            module first (useful for e.g. babel-register)
     --header <name=value>  Additional header(s) to use in GraphQL request
-                           e.g. --header \\"Authorization=Bearer ey...\\"
+                           e.g. --header "Authorization=Bearer ey..."
     --version              Print version and exit
 
 ",
@@ -487,7 +487,7 @@ Object {
 `;
 
 exports[`run() with no args prints the help message 1`] = `
-Object {
+{
   "stderr": "",
   "stdout": "
   Usage: graphql-markdown [options] <schema>
@@ -515,7 +515,7 @@ Object {
     --require <module>     If importing the schema from a module, require the specified
                            module first (useful for e.g. babel-register)
     --header <name=value>  Additional header(s) to use in GraphQL request
-                           e.g. --header \\"Authorization=Bearer ey...\\"
+                           e.g. --header "Authorization=Bearer ey..."
     --version              Print version and exit
 
 ",

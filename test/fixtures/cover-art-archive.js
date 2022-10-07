@@ -1,7 +1,7 @@
 const resolveFrom = require('resolve-from')
 const {
   default: graphBrainzSchema,
-  createSchema
+  createSchema,
 } = require('graphbrainz/lib/schema')
 const { schemaToJSON, diffSchema } = require('../../src/index')
 
@@ -16,7 +16,7 @@ async function generateDiff() {
   ))
 
   const extendedSchema = createSchema(graphBrainzSchema, {
-    extensions: ['graphbrainz/extensions/cover-art-archive']
+    extensions: ['graphbrainz/extensions/cover-art-archive'],
   })
 
   const schemaJSON = await schemaToJSON(graphBrainzSchema, { graphql })
