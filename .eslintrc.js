@@ -1,12 +1,12 @@
 module.exports = {
-  extends: ['standard', 'prettier', 'prettier/standard'],
+  extends: ['standard', 'prettier'],
   env: {
     es6: true,
     node: true,
-    jest: true
+    jest: true,
   },
   parserOptions: {
-    ecmaVersion: 2018
+    ecmaVersion: 2018,
   },
   plugins: ['prettier'],
   rules: {
@@ -14,8 +14,8 @@ module.exports = {
       'warn',
       {
         singleQuote: true,
-        semi: false
-      }
-    ]
-  }
+        semi: false,
+      },
+    ],
+  },
 }

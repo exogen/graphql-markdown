@@ -1,7 +1,7 @@
 const resolveFrom = require('resolve-from')
 const {
   default: graphBrainzSchema,
-  createSchema
+  createSchema,
 } = require('graphbrainz/lib/schema')
 const { schemaToJSON } = require('../../src/index')
 
@@ -16,7 +16,7 @@ function generateSchema() {
   ))
 
   const extendedSchema = createSchema(graphBrainzSchema, {
-    extensions: ['graphbrainz/extensions/cover-art-archive']
+    extensions: ['graphbrainz/extensions/cover-art-archive'],
   })
 
   return schemaToJSON(extendedSchema, { graphql })
