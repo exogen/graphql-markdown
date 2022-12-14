@@ -45,7 +45,15 @@
 
 ### Organization
 
-A group of persons working together for a purpose
+A group of **persons** <em>working</em> together for a purpose
+
+This is a more elaborate description
+
+* with some
+* items
+* to see
+* if this markdown is properly
+* translated
 
 <table>
 <thead>
@@ -175,7 +183,7 @@ The `String` scalar type represents textual data, represented as UTF-8 character
 
 ### Party
 
-Either a person or an organization
+Either a `Person` or an `Organization`
 
 <table>
 <thead>
@@ -185,11 +193,23 @@ Either a person or an organization
 <tbody>
 <tr>
 <td valign="top"><strong><a href="#person">Person</a></strong></td>
-<td valign="top">A human being</td>
+<td valign="top">
+A human being
+</td>
 </tr>
 <tr>
 <td valign="top"><strong><a href="#organization">Organization</a></strong></td>
-<td valign="top">A group of persons working together for a purpose</td>
+<td valign="top">
+A group of **persons** <em>working</em> together for a purpose
+
+This is a more elaborate description
+
+* with some
+* items
+* to see
+* if this markdown is properly
+* translated
+</td>
 </tr>
 </tbody>
 </table>

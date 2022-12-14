@@ -1,0 +1,23 @@
+type Query {
+  mammals: [Mammal]
+}
+
+"""
+*italic*
+
+* list item 1
+* list item 2
+* list item 3
+"""
+type Dog {
+  legs: Int
+}
+
+"""
+abcde
+"""
+type Seal {
+  fins: Int
+}
+
+union Mammal = Dog | Seal
