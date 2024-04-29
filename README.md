@@ -20,6 +20,15 @@ $ npm install graphql-markdown --save-dev
 
 **[See an example][example]** generated from the [GraphBrainz][] schema.
 
+## Support
+
+Did this project bring you joy? Want to support updates? Check out
+[my GitHub Sponsors page](https://github.com/sponsors/exogen).
+
+Alternatively…
+
+<a href="https://www.buymeacoffee.com/mosswood" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;"></a>
+
 ## Usage
 
 ### Command Line API
