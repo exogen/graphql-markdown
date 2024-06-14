@@ -74,6 +74,16 @@ describe('renderSchema()', () => {
     const expected = await readFile('./fixtures/union-test.md')
     expect(printer.output).toBe(expected)
   })
+
+  it('renders markdown properly in unions', async () => {
+    const schema = await loadSchemaJSON(
+      path.resolve(__dirname, './fixtures/union-test-2.graphql')
+    )
+    const printer = createPrinter()
+    renderSchema(schema, { printer })
+    const expected = await readFile('./fixtures/union-test-2.md')
+    expect(printer.output).toBe(expected)
+  })
 })
 
 describe('diffSchema()', () => {

@@ -8,7 +8,18 @@ type Person {
   dob: String
 }
 
-"A group of persons working together for a purpose"
+"""
+A group of **persons** <em>working</em> together for a purpose
+
+This is a more elaborate description
+
+* with some
+* items
+* to see
+* if this markdown is properly
+* translated
+
+"""
 type Organization {
   "Node ID"
   id: ID!
@@ -22,7 +33,7 @@ type Organization {
   ceo: Person
 }
 
-"Either a person or an organization"
+"Either a `Person` or an `Organization`"
 union Party = Person | Organization
 
 type Query {
