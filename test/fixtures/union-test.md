@@ -179,8 +179,10 @@ Either a person or an organization
 
 <table>
 <thead>
+<tr>
 <th align="left">Type</th>
 <th align="left">Description</th>
+</tr>
 </thead>
 <tbody>
 <tr>

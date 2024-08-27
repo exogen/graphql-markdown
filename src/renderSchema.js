@@ -250,8 +250,10 @@ function renderSchema(schema, options) {
       }
       printer('<table>')
       printer('<thead>')
+      printer('<tr>')
       printer('<th align="left">Value</th>')
       printer('<th align="left">Description</th>')
+      printer('</tr>')
       printer('</thead>')
       printer('<tbody>')
       type.enumValues.forEach((value) => {
@@ -311,8 +313,10 @@ function renderSchema(schema, options) {
       }
       printer('<table>')
       printer('<thead>')
+      printer('<tr>')
       printer('<th align="left">Type</th>')
       printer('<th align="left">Description</th>')
+      printer('</tr>')
       printer('</thead>')
       printer('<tbody>')
       type.possibleTypes.forEach((objType) => {

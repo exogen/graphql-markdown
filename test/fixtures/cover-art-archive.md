@@ -338,8 +338,10 @@ The image sizes that may be requested at the [Cover Art Archive](https://musicbr
 
 <table>
 <thead>
+<tr>
 <th align="left">Value</th>
 <th align="left">Description</th>
+</tr>
 </thead>
 <tbody>
 <tr>
