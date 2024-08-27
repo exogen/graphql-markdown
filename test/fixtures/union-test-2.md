@@ -106,8 +106,10 @@ The `String` scalar type represents textual data, represented as UTF-8 character
 
 <table>
 <thead>
+<tr>
 <th align="left">Type</th>
 <th align="left">Description</th>
+</tr>
 </thead>
 <tbody>
 <tr>
