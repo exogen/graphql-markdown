@@ -132,8 +132,16 @@ function renderSchema(schema, options) {
   const mutationType = schema.mutationType
   const mutation =
     mutationType && types.find((type) => type.name === schema.mutationType.name)
+  const subscriptionType = schema.subscriptionType
+  const subscription =
+    subscriptionType &&
+    types.find((type) => type.name === schema.subscriptionType.name)
   const objects = types.filter(
-    (type) => type.kind === 'OBJECT' && type !== query && type !== mutation
+    (type) =>
+      type.kind === 'OBJECT' &&
+      type !== query &&
+      type !== mutation &&
+      type !== subscription
   )
   const inputs = types.filter((type) => type.kind === 'INPUT_OBJECT')
   const enums = types.filter((type) => type.kind === 'ENUM')
@@ -164,6 +172,9 @@ function renderSchema(schema, options) {
     }
     if (mutation) {
       printer('  * [Mutation](#mutation)')
+    }
+    if (subscription) {
+      printer('  * [Subscription](#subscription)')
     }
     if (objects.length) {
       printer('  * [Objects](#objects)')
@@ -220,6 +231,22 @@ function renderSchema(schema, options) {
       }`
     )
     renderObject(mutation, {
+      skipTitle: true,
+      headingLevel,
+      printer,
+      getTypeURL,
+    })
+  }
+
+  if (subscription) {
+    printer(
+      `\n${'#'.repeat(headingLevel + 1)} Subscription${
+        subscription.name === 'Subscription'
+          ? ''
+          : ' (' + subscription.name + ')'
+      }`
+    )
+    renderObject(subscription, {
       skipTitle: true,
       headingLevel,
       printer,
