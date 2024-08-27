@@ -33,9 +33,15 @@ Alternatively…
 
 ### Command Line API
 
-Installing the package adds a `graphql-markdown` script. Point it at a schema
-and the output will be written to stdout. You must install `graphql` alongside
-this package according to the
+Installing the package adds a `graphql-markdown` script via the standard package.json
+[`bin`](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#bin) field – see
+npm’s [Executables](https://docs.npmjs.com/cli/v10/configuring-npm/folders#executables)
+documentation to learn where this will be on your system. For local installs,
+this is typically `node_modules/.bin`. When referencing the executable in
+your package.json’s `scripts`, you may simply call `graphql-markdown`.
+
+Point the `graphql-markdown` script at a schema and the output will be written
+to stdout. You must install `graphql` alongside this package according to the
 [compatible versions specified in `peerDependencies`](./package.json).
 
 The schema may be retrieved from a GraphQL endpoint:
