@@ -196,12 +196,15 @@ Either a `Person` or an `Organization`
 <tr>
 <td valign="top"><strong><a href="#person">Person</a></strong></td>
 <td valign="top">
+
 A human being
+
 </td>
 </tr>
 <tr>
 <td valign="top"><strong><a href="#organization">Organization</a></strong></td>
 <td valign="top">
+
 A group of **persons** <em>working</em> together for a purpose
 
 This is a more elaborate description
@@ -211,6 +214,7 @@ This is a more elaborate description
 * to see
 * if this markdown is properly
 * translated
+
 </td>
 </tr>
 </tbody>

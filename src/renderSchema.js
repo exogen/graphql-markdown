@@ -329,7 +329,9 @@ function renderSchema(schema, options) {
           })}</strong></td>`
         )
         if (desc) {
-          printer(`<td valign="top">\n${desc}\n</td>`)
+          printer('<td valign="top">')
+          printer(`\n${desc}\n`)
+          printer('</td>')
         } else {
           printer('<td></td>')
         }

@@ -115,17 +115,21 @@ The `String` scalar type represents textual data, represented as UTF-8 character
 <tr>
 <td valign="top"><strong><a href="#dog">Dog</a></strong></td>
 <td valign="top">
+
 *italic*
 
 * list item 1
 * list item 2
 * list item 3
+
 </td>
 </tr>
 <tr>
 <td valign="top"><strong><a href="#seal">Seal</a></strong></td>
 <td valign="top">
+
 abcde
+
 </td>
 </tr>
 </tbody>
