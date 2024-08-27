@@ -5,6 +5,7 @@
 
   * [Query](#query)
   * [Mutation](#mutation)
+  * [Subscription](#subscription)
   * [Objects](#objects)
     * [Message](#message)
   * [Inputs](#inputs)
@@ -75,6 +76,29 @@
 <td colspan="2" align="right" valign="top">input</td>
 <td valign="top"><a href="#messageinput">MessageInput</a></td>
 <td></td>
+</tr>
+</tbody>
+</table>
+
+## Subscription
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong>messageSent</strong></td>
+<td valign="top"><a href="#message">Message</a></td>
+<td>
+
+Subscribe to new messages.
+
+</td>
 </tr>
 </tbody>
 </table>

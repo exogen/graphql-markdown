@@ -17,3 +17,10 @@ type Mutation {
   createMessage(input: MessageInput): Message
   updateMessage(id: ID!, input: MessageInput): Message
 }
+
+type Subscription {
+  """
+  Subscribe to new messages.
+  """
+  messageSent: Message
+}
