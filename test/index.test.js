@@ -84,6 +84,19 @@ describe('renderSchema()', () => {
     const expected = await readFile('./fixtures/union-test-2.md')
     expect(printer.output).toBe(expected)
   })
+
+  it('can link individual fields in the table of contents', async () => {
+    const schema = await loadSchemaJSON(
+      path.resolve(__dirname, './fixtures/input-objects.graphql')
+    )
+    const printer = createPrinter()
+    renderSchema(schema, {
+      printer,
+      tocFieldTypes: ['Query', 'Mutation', 'MessageInput'],
+    })
+    const expected = await readFile('./fixtures/toc-fields.md')
+    expect(printer.output).toBe(expected)
+  })
 })
 
 describe('diffSchema()', () => {

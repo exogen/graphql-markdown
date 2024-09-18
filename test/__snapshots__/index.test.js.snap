@@ -470,6 +470,9 @@ exports[`run() with --help arg prints the help message 1`] = `
     --title <string>       Change the top heading title (default: 'Schema Types')
     --no-title             Do not print a default title
     --no-toc               Do not print table of contents
+    --toc-fields <list>    Expand the table of contents for the listed types
+                           (comma-separated) to link to fields within the type
+                           e.g. --toc-fields "Query,Mutation,Subscription"
     --prologue <string>    Include custom Markdown after the title
     --epilogue <string>    Include custom Markdown after everything else
     --heading-level <num>  Heading level to begin at, useful if you are embedding the
@@ -506,6 +509,9 @@ exports[`run() with no args prints the help message 1`] = `
     --title <string>       Change the top heading title (default: 'Schema Types')
     --no-title             Do not print a default title
     --no-toc               Do not print table of contents
+    --toc-fields <list>    Expand the table of contents for the listed types
+                           (comma-separated) to link to fields within the type
+                           e.g. --toc-fields "Query,Mutation,Subscription"
     --prologue <string>    Include custom Markdown after the title
     --epilogue <string>    Include custom Markdown after everything else
     --heading-level <num>  Heading level to begin at, useful if you are embedding the

@@ -13,7 +13,7 @@
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>getMessage</strong></td>
+<td colspan="2" valign="top"><strong id="query.getmessage">getMessage</strong></td>
 <td valign="top"><a href="#message">Message</a></td>
 <td></td>
 </tr>
@@ -37,7 +37,7 @@
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>createMessage</strong></td>
+<td colspan="2" valign="top"><strong id="mutation.createmessage">createMessage</strong></td>
 <td valign="top"><a href="#message">Message</a></td>
 <td></td>
 </tr>
@@ -47,7 +47,7 @@
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>updateMessage</strong></td>
+<td colspan="2" valign="top"><strong id="mutation.updatemessage">updateMessage</strong></td>
 <td valign="top"><a href="#message">Message</a></td>
 <td></td>
 </tr>
@@ -76,7 +76,7 @@
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>messageSent</strong></td>
+<td colspan="2" valign="top"><strong id="subscription.messagesent">messageSent</strong></td>
 <td valign="top"><a href="#message">Message</a></td>
 <td>
 
@@ -102,17 +102,17 @@ Subscribe to new messages.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>id</strong></td>
+<td colspan="2" valign="top"><strong id="message.id">id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>content</strong></td>
+<td colspan="2" valign="top"><strong id="message.content">content</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>author</strong></td>
+<td colspan="2" valign="top"><strong id="message.author">author</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -133,12 +133,12 @@ Subscribe to new messages.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>content</strong></td>
+<td colspan="2" valign="top"><strong id="messageinput.content">content</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>author</strong></td>
+<td colspan="2" valign="top"><strong id="messageinput.author">author</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>

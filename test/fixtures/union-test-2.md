@@ -28,7 +28,7 @@
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>mammals</strong></td>
+<td colspan="2" valign="top"><strong id="query.mammals">mammals</strong></td>
 <td valign="top">[<a href="#mammal">Mammal</a>]</td>
 <td></td>
 </tr>
@@ -56,7 +56,7 @@
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>legs</strong></td>
+<td colspan="2" valign="top"><strong id="dog.legs">legs</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
@@ -78,7 +78,7 @@ abcde
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>fins</strong></td>
+<td colspan="2" valign="top"><strong id="seal.fins">fins</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
 </tr>
