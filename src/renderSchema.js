@@ -123,6 +123,7 @@ function renderSchema(schema, options) {
   const headingLevel = options.headingLevel || 1
   const unknownTypeURL = options.unknownTypeURL
   const tocFieldTypes = options.tocFieldTypes || []
+  const tocFieldAllTypes = tocFieldTypes.includes('*')
 
   if (schema.__schema) {
     schema = schema.__schema
@@ -193,7 +194,7 @@ function renderSchema(schema, options) {
     printer('  <summary><strong>Table of Contents</strong></summary>\n')
     if (query) {
       printer('  * [Query](#query)')
-      if (tocFieldTypes.includes(query.name)) {
+      if (tocFieldAllTypes || tocFieldTypes.includes(query.name)) {
         query.fields.forEach((field) => {
           printer(`    * [${field.name}](${getFieldURL(query, field)})`)
         })
@@ -201,7 +202,7 @@ function renderSchema(schema, options) {
     }
     if (mutation) {
       printer('  * [Mutation](#mutation)')
-      if (tocFieldTypes.includes(mutation.name)) {
+      if (tocFieldAllTypes || tocFieldTypes.includes(mutation.name)) {
         mutation.fields.forEach((field) => {
           printer(`    * [${field.name}](${getFieldURL(mutation, field)})`)
         })
@@ -209,7 +210,7 @@ function renderSchema(schema, options) {
     }
     if (subscription) {
       printer('  * [Subscription](#subscription)')
-      if (tocFieldTypes.includes(subscription.name)) {
+      if (tocFieldAllTypes || tocFieldTypes.includes(subscription.name)) {
         subscription.fields.forEach((field) => {
           printer(`    * [${field.name}](${getFieldURL(subscription, field)})`)
         })
@@ -219,7 +220,7 @@ function renderSchema(schema, options) {
       printer('  * [Objects](#objects)')
       objects.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
-        if (tocFieldTypes.includes(type.name)) {
+        if (tocFieldAllTypes || tocFieldTypes.includes(type.name)) {
           type.fields.forEach((field) => {
             printer(`      * [${field.name}](${getFieldURL(type, field)})`)
           })
@@ -230,7 +231,7 @@ function renderSchema(schema, options) {
       printer('  * [Inputs](#inputs)')
       inputs.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
-        if (tocFieldTypes.includes(type.name)) {
+        if (tocFieldAllTypes || tocFieldTypes.includes(type.name)) {
           type.inputFields.forEach((field) => {
             printer(`      * [${field.name}](${getFieldURL(type, field)})`)
           })
@@ -253,8 +254,8 @@ function renderSchema(schema, options) {
       printer('  * [Interfaces](#interfaces)')
       interfaces.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
-        if (tocFieldTypes.includes(type.name)) {
-          type.inputFields.forEach((field) => {
+        if (tocFieldAllTypes || tocFieldTypes.includes(type.name)) {
+          type.fields.forEach((field) => {
             printer(`      * [${field.name}](${getFieldURL(type, field)})`)
           })
         }

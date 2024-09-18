@@ -33,8 +33,9 @@ function printHelp(console) {
     --no-title             Do not print a default title
     --no-toc               Do not print table of contents
     --toc-fields <list>    Expand the table of contents for the listed types
-                           (comma-separated) to link to fields within the type
-                           e.g. --toc-fields "Query,Mutation,Subscription"
+                           (comma-separated) to link to fields within those types
+                           (e.g. --toc-fields "Query,Mutation,Subscription") or use
+                           the string "*" to link to fields for all types
     --prologue <string>    Include custom Markdown after the title
     --epilogue <string>    Include custom Markdown after everything else
     --heading-level <num>  Heading level to begin at, useful if you are embedding the
