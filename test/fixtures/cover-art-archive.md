@@ -31,7 +31,7 @@ An individual piece of album artwork from the [Cover Art Archive](https://musicb
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>fileID</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimage.fileid">fileID</strong></td>
 <td valign="top">String!</td>
 <td>
 
@@ -40,7 +40,7 @@ The Internet Archive’s internal file ID for the image.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>image</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimage.image">image</strong></td>
 <td valign="top">URLString!</td>
 <td>
 
@@ -49,7 +49,7 @@ The URL at which the image can be found.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>thumbnails</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimage.thumbnails">thumbnails</strong></td>
 <td valign="top"><a href="#coverartarchiveimagethumbnails">CoverArtArchiveImageThumbnails</a>!</td>
 <td>
 
@@ -58,7 +58,7 @@ A set of thumbnails for the image.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>front</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimage.front">front</strong></td>
 <td valign="top">Boolean!</td>
 <td>
 
@@ -67,7 +67,7 @@ Whether this image depicts the “main front” of the release.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>back</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimage.back">back</strong></td>
 <td valign="top">Boolean!</td>
 <td>
 
@@ -76,7 +76,7 @@ Whether this image depicts the “main back” of the release.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>types</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimage.types">types</strong></td>
 <td valign="top">[String]!</td>
 <td>
 
@@ -86,7 +86,7 @@ describing what part(s) of the release the image includes.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>edit</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimage.edit">edit</strong></td>
 <td valign="top">Int</td>
 <td>
 
@@ -95,7 +95,7 @@ The MusicBrainz edit ID.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>approved</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimage.approved">approved</strong></td>
 <td valign="top">Boolean</td>
 <td>
 
@@ -104,7 +104,7 @@ Whether the image was approved by the MusicBrainz edit system.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>comment</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimage.comment">comment</strong></td>
 <td valign="top">String</td>
 <td>
 
@@ -130,7 +130,7 @@ URLs for thumbnails of different sizes for a particular piece of cover art.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>small</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimagethumbnails.small">small</strong></td>
 <td valign="top">URLString</td>
 <td>
 
@@ -140,7 +140,7 @@ The URL of a small version of the cover art, where the maximum dimension is
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>large</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiveimagethumbnails.large">large</strong></td>
 <td valign="top">URLString</td>
 <td>
 
@@ -169,7 +169,7 @@ as well as a summary of what artwork is available.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>front</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiverelease.front">front</strong></td>
 <td valign="top">URLString</td>
 <td>
 
@@ -196,7 +196,7 @@ retrieved as well.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>back</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiverelease.back">back</strong></td>
 <td valign="top">URLString</td>
 <td>
 
@@ -222,7 +222,7 @@ retrieved as well.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>images</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiverelease.images">images</strong></td>
 <td valign="top">[<a href="#coverartarchiveimage">CoverArtArchiveImage</a>]!</td>
 <td>
 
@@ -232,7 +232,7 @@ media and packaging.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>artwork</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiverelease.artwork">artwork</strong></td>
 <td valign="top">Boolean!</td>
 <td>
 
@@ -241,7 +241,7 @@ Whether there is artwork present for this release.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>count</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiverelease.count">count</strong></td>
 <td valign="top">Int!</td>
 <td>
 
@@ -250,7 +250,7 @@ The number of artwork images present for this release.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>release</strong></td>
+<td colspan="2" valign="top"><strong id="coverartarchiverelease.release">release</strong></td>
 <td valign="top"><a href="#release">Release</a></td>
 <td>
 
@@ -280,7 +280,7 @@ MusicBrainz as one release.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>coverArtArchive</strong></td>
+<td colspan="2" valign="top"><strong id="release.coverartarchive">coverArtArchive</strong></td>
 <td valign="top"><a href="#coverartarchiverelease">CoverArtArchiveRelease</a></td>
 <td>
 
@@ -315,7 +315,7 @@ album – it doesn’t matter how many CDs or editions/versions it had.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong>coverArtArchive</strong></td>
+<td colspan="2" valign="top"><strong id="releasegroup.coverartarchive">coverArtArchive</strong></td>
 <td valign="top"><a href="#coverartarchiverelease">CoverArtArchiveRelease</a></td>
 <td>
 

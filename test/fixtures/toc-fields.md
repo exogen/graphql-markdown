@@ -4,12 +4,17 @@
   <summary><strong>Table of Contents</strong></summary>
 
   * [Query](#query)
+    * [getMessage](#query.getmessage)
   * [Mutation](#mutation)
+    * [createMessage](#mutation.createmessage)
+    * [updateMessage](#mutation.updatemessage)
   * [Subscription](#subscription)
   * [Objects](#objects)
     * [Message](#message)
   * [Inputs](#inputs)
     * [MessageInput](#messageinput)
+      * [content](#messageinput.content)
+      * [author](#messageinput.author)
   * [Scalars](#scalars)
     * [Boolean](#boolean)
     * [ID](#id)

@@ -26,6 +26,7 @@ function renderObject(type, options) {
   const printer = options.printer || console.log
   const headingLevel = options.headingLevel || 1
   const getTypeURL = options.getTypeURL
+  const getFieldURL = options.getFieldURL
   const isInputObject = type.kind === 'INPUT_OBJECT'
 
   if (!skipTitle) {
@@ -51,13 +52,23 @@ function renderObject(type, options) {
 
   const fields = isInputObject ? type.inputFields : type.fields
   fields.forEach((field) => {
+    const url = getFieldURL(type, field)
+    const anchor = url && url.split('#')[1]
+    const fieldNameMarkup = anchor
+      ? `<strong id="${anchor}">${field.name}</strong>`
+      : `<strong>${field.name}</strong>`
     printer('<tr>')
     printer(
-      `<td colspan="2" valign="top"><strong>${field.name}</strong>${
+      `<td colspan="2" valign="top">${fieldNameMarkup}${
         field.isDeprecated ? ' ⚠️' : ''
       }</td>`
     )
-    printer(`<td valign="top">${renderType(field.type, { getTypeURL })}</td>`)
+    printer(
+      `<td valign="top">${renderType(field.type, {
+        getTypeURL,
+        getFieldURL,
+      })}</td>`
+    )
     if (field.description || field.isDeprecated) {
       printer('<td>')
       if (field.description) {
@@ -80,7 +91,12 @@ function renderObject(type, options) {
       field.args.forEach((arg, i) => {
         printer('<tr>')
         printer(`<td colspan="2" align="right" valign="top">${arg.name}</td>`)
-        printer(`<td valign="top">${renderType(arg.type, { getTypeURL })}</td>`)
+        printer(
+          `<td valign="top">${renderType(arg.type, {
+            getTypeURL,
+            getFieldURL,
+          })}</td>`
+        )
         if (arg.description) {
           printer('<td>')
           printer(`\n${arg.description}\n`)
@@ -106,6 +122,8 @@ function renderSchema(schema, options) {
   const printer = options.printer || console.log
   const headingLevel = options.headingLevel || 1
   const unknownTypeURL = options.unknownTypeURL
+  const tocFieldTypes = options.tocFieldTypes || []
+  const tocFieldAllTypes = tocFieldTypes.includes('*')
 
   if (schema.__schema) {
     schema = schema.__schema
@@ -115,6 +133,7 @@ function renderSchema(schema, options) {
   const typeMap = schema.types.reduce((typeMap, type) => {
     return Object.assign(typeMap, { [type.name]: type })
   }, {})
+
   const getTypeURL = (type) => {
     const url = `#${type.name.toLowerCase()}`
     if (typeMap[type.name]) {
@@ -124,6 +143,11 @@ function renderSchema(schema, options) {
     } else if (unknownTypeURL) {
       return unknownTypeURL + url
     }
+  }
+
+  const getFieldURL = (type, field) => {
+    const url = getTypeURL(type)
+    return url && `${url}.${field.name.toLowerCase()}`
   }
 
   const queryType = schema.queryType
@@ -136,6 +160,7 @@ function renderSchema(schema, options) {
   const subscription =
     subscriptionType &&
     types.find((type) => type.name === schema.subscriptionType.name)
+
   const objects = types.filter(
     (type) =>
       type.kind === 'OBJECT' &&
@@ -169,23 +194,48 @@ function renderSchema(schema, options) {
     printer('  <summary><strong>Table of Contents</strong></summary>\n')
     if (query) {
       printer('  * [Query](#query)')
+      if (tocFieldAllTypes || tocFieldTypes.includes(query.name)) {
+        query.fields.forEach((field) => {
+          printer(`    * [${field.name}](${getFieldURL(query, field)})`)
+        })
+      }
     }
     if (mutation) {
       printer('  * [Mutation](#mutation)')
+      if (tocFieldAllTypes || tocFieldTypes.includes(mutation.name)) {
+        mutation.fields.forEach((field) => {
+          printer(`    * [${field.name}](${getFieldURL(mutation, field)})`)
+        })
+      }
     }
     if (subscription) {
       printer('  * [Subscription](#subscription)')
+      if (tocFieldAllTypes || tocFieldTypes.includes(subscription.name)) {
+        subscription.fields.forEach((field) => {
+          printer(`    * [${field.name}](${getFieldURL(subscription, field)})`)
+        })
+      }
     }
     if (objects.length) {
       printer('  * [Objects](#objects)')
       objects.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
+        if (tocFieldAllTypes || tocFieldTypes.includes(type.name)) {
+          type.fields.forEach((field) => {
+            printer(`      * [${field.name}](${getFieldURL(type, field)})`)
+          })
+        }
       })
     }
     if (inputs.length) {
       printer('  * [Inputs](#inputs)')
       inputs.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
+        if (tocFieldAllTypes || tocFieldTypes.includes(type.name)) {
+          type.inputFields.forEach((field) => {
+            printer(`      * [${field.name}](${getFieldURL(type, field)})`)
+          })
+        }
       })
     }
     if (enums.length) {
@@ -204,6 +254,11 @@ function renderSchema(schema, options) {
       printer('  * [Interfaces](#interfaces)')
       interfaces.forEach((type) => {
         printer(`    * [${type.name}](#${type.name.toLowerCase()})`)
+        if (tocFieldAllTypes || tocFieldTypes.includes(type.name)) {
+          type.fields.forEach((field) => {
+            printer(`      * [${field.name}](${getFieldURL(type, field)})`)
+          })
+        }
       })
     }
     if (unions.length) {
@@ -221,7 +276,13 @@ function renderSchema(schema, options) {
         query.name === 'Query' ? '' : ' (' + query.name + ')'
       }`
     )
-    renderObject(query, { skipTitle: true, headingLevel, printer, getTypeURL })
+    renderObject(query, {
+      skipTitle: true,
+      headingLevel,
+      printer,
+      getTypeURL,
+      getFieldURL,
+    })
   }
 
   if (mutation) {
@@ -235,6 +296,7 @@ function renderSchema(schema, options) {
       headingLevel,
       printer,
       getTypeURL,
+      getFieldURL,
     })
   }
 
@@ -251,20 +313,21 @@ function renderSchema(schema, options) {
       headingLevel,
       printer,
       getTypeURL,
+      getFieldURL,
     })
   }
 
   if (objects.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Objects`)
     objects.forEach((type) =>
-      renderObject(type, { headingLevel, printer, getTypeURL })
+      renderObject(type, { headingLevel, printer, getTypeURL, getFieldURL })
     )
   }
 
   if (inputs.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Inputs`)
     inputs.forEach((type) =>
-      renderObject(type, { headingLevel, printer, getTypeURL })
+      renderObject(type, { headingLevel, printer, getTypeURL, getFieldURL })
     )
   }
 
@@ -327,7 +390,7 @@ function renderSchema(schema, options) {
   if (interfaces.length) {
     printer(`\n${'#'.repeat(headingLevel + 1)} Interfaces\n`)
     interfaces.forEach((type) =>
-      renderObject(type, { headingLevel, printer, getTypeURL })
+      renderObject(type, { headingLevel, printer, getTypeURL, getFieldURL })
     )
   }
 
@@ -353,6 +416,7 @@ function renderSchema(schema, options) {
         printer(
           `<td valign="top"><strong>${renderType(objType, {
             getTypeURL,
+            getFieldURL,
           })}</strong></td>`
         )
         if (desc) {

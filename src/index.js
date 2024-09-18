@@ -32,6 +32,10 @@ function printHelp(console) {
     --title <string>       Change the top heading title (default: 'Schema Types')
     --no-title             Do not print a default title
     --no-toc               Do not print table of contents
+    --toc-fields <list>    Expand the table of contents for the listed types
+                           (comma-separated) to link to fields within those types
+                           (e.g. --toc-fields "Query,Mutation,Subscription") or use
+                           the string "*" to link to fields for all types
     --prologue <string>    Include custom Markdown after the title
     --epilogue <string>    Include custom Markdown after everything else
     --heading-level <num>  Heading level to begin at, useful if you are embedding the
@@ -71,6 +75,9 @@ function run(
       obj[key] = value.join('=')
       return obj
     }, {})
+    const tocFieldTypes = args['toc-fields']
+      ? args['toc-fields'].split(',')
+      : []
     const loadOptions = { headers }
     loadSchemaJSON(schemaPath, loadOptions).then((schema) => {
       const options = {
@@ -80,6 +87,7 @@ function run(
         epilogue: args.epilogue,
         skipTableOfContents: args.toc === false,
         headingLevel: args['heading-level'],
+        tocFieldTypes,
       }
       if (options.title === false) {
         options.title = ''
