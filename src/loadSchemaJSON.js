@@ -94,7 +94,7 @@ function loadSchemaJSON(schemaPath, loadOptions) {
   if (schemaPath.indexOf('://') >= 0) {
     return fetchSchemaJSON(schemaPath, loadOptions)
   } else if (schemaPath.match(/\.g(raph)?ql$/)) {
-    return parseSchemaGraphQL(schemaPath).then(schemaToJSON)
+    return parseSchemaGraphQL(schemaPath, loadOptions).then(schemaToJSON)
   }
   return requireSchema(schemaPath)
 }
