@@ -39,3 +39,8 @@ union Party = Person | Organization
 type Query {
   party(id: ID!): Party
 }
+
+extend type Query {
+  "A field that was added with extend"
+  extendo: String
+}
