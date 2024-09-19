@@ -28,6 +28,7 @@ function renderObject(type, options) {
   const getTypeURL = options.getTypeURL
   const getFieldURL = options.getFieldURL
   const isInputObject = type.kind === 'INPUT_OBJECT'
+  const isInterface = type.kind === 'INTERFACE'
 
   if (!skipTitle) {
     printer(`\n${'#'.repeat(headingLevel + 2)} ${type.name}\n`)
@@ -110,6 +111,14 @@ function renderObject(type, options) {
   })
   printer('</tbody>')
   printer('</table>')
+
+  if (isInterface && type.possibleTypes && type.possibleTypes.length) {
+    printer(
+      `\n**Possible Types:** ${type.possibleTypes
+        .map((type) => `[${type.name}](${getTypeURL(type)})`)
+        .join(', ')}`
+    )
+  }
 }
 
 function renderSchema(schema, options) {

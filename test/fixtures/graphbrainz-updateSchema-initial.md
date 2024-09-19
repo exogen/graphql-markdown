@@ -7498,6 +7498,8 @@ The MBID of the entity.
 </tbody>
 </table>
 
+**Possible Types:** [Area](#area), [Artist](#artist), [Recording](#recording), [Release](#release), [Track](#track), [Label](#label), [Collection](#collection), [Event](#event), [Instrument](#instrument), [Place](#place), [ReleaseGroup](#releasegroup), [Series](#series), [Work](#work), [URL](#url)
+
 ### Node
 
 An object with an ID
@@ -7523,5 +7525,7 @@ The id of the object.
 </tr>
 </tbody>
 </table>
+
+**Possible Types:** [Area](#area), [Artist](#artist), [Recording](#recording), [Release](#release), [Disc](#disc), [Label](#label), [Collection](#collection), [Event](#event), [Instrument](#instrument), [Place](#place), [ReleaseGroup](#releasegroup), [Series](#series), [Work](#work), [URL](#url)
 
 <!-- END graphql-markdown -->
